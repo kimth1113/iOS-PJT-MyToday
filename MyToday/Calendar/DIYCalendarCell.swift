@@ -28,7 +28,6 @@ class DIYCalendarCell: FSCalendarCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print(#function)
         
 //        let circleImageView = UIImageView(image: UIImage(named: "serious"))
         self.contentView.insertSubview(titleImageView, at: 0)
@@ -52,7 +51,7 @@ class DIYCalendarCell: FSCalendarCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print(#function)
+        
         self.titleImageView.frame = self.contentView.bounds
         
         self.backgroundView?.frame = self.bounds.insetBy(dx: 1, dy: 1)
@@ -71,7 +70,7 @@ class DIYCalendarCell: FSCalendarCell {
     
     override func configureAppearance() {
         super.configureAppearance()
-        print(#function)
+        
         
         // Override the build-in appearance configuration
         if self.isPlaceholder {

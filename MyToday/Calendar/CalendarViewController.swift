@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 import SnapKit
+import Toast
 
 class CalendarViewController: BaseViewController {
     
@@ -38,8 +39,13 @@ class CalendarViewController: BaseViewController {
     private lazy var today: Date = {
         return Date()
     }()
+    
 
     override func loadView() {
+        super.loadView()
+        
+        print(#function)
+        
         view = mainView
         
         mainView.calendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
@@ -47,16 +53,22 @@ class CalendarViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(#function)
         mainView.leftButton.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
         mainView.rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
+        mainView.headerButton.addTarget(self, action: #selector(headerButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print(#function)
         mainView.calendar.scope = .month
-        mainView.headerLabel.text = self.monthFormatter.string(from: mainView.calendar.currentPage)
+        mainView.headerButton.setTitle(self.monthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print(#function)
     }
     
     override func configure() {
@@ -73,6 +85,11 @@ class CalendarViewController: BaseViewController {
     @objc
     private func rightButtonTapped(_ sender: UIButton) {
         scrollCurrentPage(isPrev: false)
+    }
+    
+    @objc
+    private func headerButtonTapped() {
+        print(12312313)
     }
     
     private func scrollCurrentPage(isPrev: Bool) {
@@ -96,51 +113,48 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
 //        print(date, "해제")
 //    }
     
+    // CellForRow
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-        print(#function)
+        
         let cell = mainView.calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position) as! DIYCalendarCell
-        print(date)
         
         
         switch formatter.string(from: date) {
         case formatter.string(from: Date()):
-            cell.titleImageView.image = UIImage(named: "serious")
+            cell.titleImageView.image = Constants.BaseImage.Emotion.serious
         case "2022-09-03":
-            cell.titleImageView.image = UIImage(named: "smile")
+            cell.titleImageView.image = Constants.BaseImage.Emotion.happy
         case "2022-09-25":
-            cell.titleImageView.image = UIImage(named: "smile")
+            cell.titleImageView.image = Constants.BaseImage.Emotion.happy
         case "2022-09-20":
-            cell.titleImageView.image = UIImage(named: "serious")
+            cell.titleImageView.image = Constants.BaseImage.Emotion.serious
         default:
-            cell.titleImageView.image = UIImage(named: "square")
+            cell.titleImageView.image = Constants.BaseImage.Emotion.none
         }
         
         return cell
     }
     
+    // Title 색상 반환
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         switch dayFormatter.string(from: date) {
         case "Sat":
-            return .blue
+            return Constants.BaseColor.Calendar.saturday
         case "Sun":
-            return .red
+            return Constants.BaseColor.Calendar.sunday
         default:
-            return .white
+            return Constants.BaseColor.Calendar.weekday
         }
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        mainView.headerLabel.text = self.monthFormatter.string(from: mainView.calendar.currentPage)
+//        let cal = Calendar.current
+//        var dateComponents = DateComponents()
+//        dateComponents.month = isPrev ? -1 : 1
+            
+        self.currentPage = calendar.currentPage
+        mainView.headerButton.setTitle(self.monthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
     }
-    
-    // 날짜의 이미지
-//    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-//        let imageDateFormatter = DateFormatter()
-//        imageDateFormatter.dateFormat = "yyyyMMdd"
-//        
-//        return UIImage(named: "smile")
-//    }
-    
 
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        // Here you can return specify the height of the cell.
@@ -150,11 +164,21 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.formatter.string(from: date))")
 //        self.configureVisibleCells()
+        
+        self.view.makeToast(dayFormatter.string(from: date), duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
+            
+        }
+        
+
     }
     
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date) {
+//    func calendar(_ calendar: FSCalendar, didDeselect date: Date) {
+//        print("did deselect date \(self.formatter.string(from: date))")
+//        self.configureVisibleCells()
+//    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did deselect date \(self.formatter.string(from: date))")
-        self.configureVisibleCells()
     }
     
     private func configureVisibleCells() {
@@ -168,11 +192,22 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     
     private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         print(#function)
-        let diyCell = (cell as! DIYCalendarCell)
-        // Custom today circle
-        diyCell.titleImageView.isHidden = !self.gregorian.isDateInToday(date)
-        // Configure selection layer
-        
+//        let diyCell = (cell as! DIYCalendarCell)
+//        // Custom today circle
+//        diyCell.titleImageView.isHidden = !self.gregorian.isDateInToday(date)
+//        // Configure selection layer
+//
     }
 }
 
+
+// Status Bar 설정
+extension CalendarViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+        
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+}

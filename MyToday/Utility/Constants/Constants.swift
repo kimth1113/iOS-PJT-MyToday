@@ -11,5 +11,6 @@ enum Constants {
     
     enum BaseDesign {
         
+        static let tabBarRadius: CGFloat = 16
     }
 }

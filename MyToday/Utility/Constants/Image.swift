@@ -12,7 +12,12 @@ extension Constants {
     
     enum BaseImage {
         
-        static let add = UIImage(named: "pencils")
+        static let background = UIImage(named: "eugene-chystiakov-wcMysLw5ROM-unsplash")
+        
+        static let pencel = UIImage(named: "pencils")
+        
+        static let leftArrow = UIImage(systemName: "chevron.left.circle.fill")
+        static let rightArrow = UIImage(systemName: "chevron.right.circle.fill")
         
         enum TapMenu {
             static let calendar = UIImage(systemName: "note.text")
@@ -23,6 +28,12 @@ extension Constants {
             static let analysisFill = UIImage(systemName: "align.vertical.bottom.fill")
             static let setting = UIImage(systemName: "gearshape")
             static let settingFill = UIImage(systemName: "gearshape.fill")
+        }
+        
+        enum Emotion {
+            static let happy = UIImage(named: "smile")
+            static let serious = UIImage(named: "serious")
+            static let none = UIImage(named: "square")
         }
     }
 }

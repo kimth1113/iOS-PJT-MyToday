@@ -19,6 +19,12 @@
 		8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */; };
 		8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C3DF97A28C7AEB8001E69ED /* SnapKit */; };
 		8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */; };
+		8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */; };
+		8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FE28CF10650064EA0D /* QuoteView.swift */; };
+		8C9CD80228CF76590064EA0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9CD80128CF76590064EA0D /* Toast */; };
+		8C9CD80528CF7D1E0064EA0D /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80428CF7D1E0064EA0D /* UpdateView.swift */; };
+		8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */; };
+		8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */; };
 		8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */; };
 		8CE2849F28CB3BF700AC91EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE2849E28CB3BF700AC91EC /* Constants.swift */; };
 		8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284A028CB3C2B00AC91EC /* Color.swift */; };
@@ -42,6 +48,11 @@
 		8C3DF97528C7AA05001E69ED /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
+		8C9CD7FE28CF10650064EA0D /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		8C9CD80428CF7D1E0064EA0D /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
 		8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYCalendarCell.swift; sourceTree = "<group>"; };
 		8CE2849E28CB3BF700AC91EC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8CE284A028CB3C2B00AC91EC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -55,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9CD80228CF76590064EA0D /* Toast in Frameworks */,
 				8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */,
 				8CE284AF28CB9C7700AC91EC /* FSCalendar in Frameworks */,
 			);
@@ -82,16 +94,18 @@
 		8C3DF95928C7A79A001E69ED /* MyToday */ = {
 			isa = PBXGroup;
 			children = (
+				8C9CD80328CF7D0B0064EA0D /* Update */,
 				8C3DF98028C7B53B001E69ED /* TabBar */,
 				8C3DF96E28C7A8A0001E69ED /* Calendar */,
-				8C3DF95A28C7A79A001E69ED /* AppDelegate.swift */,
-				8C3DF95C28C7A79A001E69ED /* SceneDelegate.swift */,
-				8C3DF95E28C7A79A001E69ED /* ViewController.swift */,
+				8C3DF96F28C7A903001E69ED /* Utility */,
+				8C9CD7FB28CEF0DE0064EA0D /* Extension */,
 				8C3DF96028C7A79A001E69ED /* Main.storyboard */,
 				8C3DF96328C7A79B001E69ED /* Assets.xcassets */,
 				8C3DF96528C7A79B001E69ED /* LaunchScreen.storyboard */,
+				8C3DF95A28C7A79A001E69ED /* AppDelegate.swift */,
+				8C3DF95C28C7A79A001E69ED /* SceneDelegate.swift */,
+				8C3DF95E28C7A79A001E69ED /* ViewController.swift */,
 				8C3DF96828C7A79B001E69ED /* Info.plist */,
-				8C3DF96F28C7A903001E69ED /* Utility */,
 			);
 			path = MyToday;
 			sourceTree = "<group>";
@@ -134,6 +148,24 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		8C9CD7FB28CEF0DE0064EA0D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */,
+				8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8C9CD80328CF7D0B0064EA0D /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				8C9CD80428CF7D1E0064EA0D /* UpdateView.swift */,
+				8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
 		8CE2849D28CB3BC100AC91EC /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +180,7 @@
 		8CE284A628CB3CC700AC91EC /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				8C9CD7FE28CF10650064EA0D /* QuoteView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -171,6 +204,7 @@
 			packageProductDependencies = (
 				8C3DF97A28C7AEB8001E69ED /* SnapKit */,
 				8CE284AE28CB9C7700AC91EC /* FSCalendar */,
+				8C9CD80128CF76590064EA0D /* Toast */,
 			);
 			productName = MyToday;
 			productReference = 8C3DF95728C7A79A001E69ED /* MyToday.app */;
@@ -203,6 +237,7 @@
 			packageReferences = (
 				8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 8C3DF95828C7A79A001E69ED /* Products */;
 			projectDirPath = "";
@@ -234,11 +269,16 @@
 				8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */,
 				8C3DF95F28C7A79A001E69ED /* ViewController.swift in Sources */,
 				8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */,
+				8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */,
+				8C9CD80528CF7D1E0064EA0D /* UpdateView.swift in Sources */,
 				8CE284AC28CB795F00AC91EC /* CustomTabBar.swift in Sources */,
 				8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */,
 				8C3DF97628C7AA05001E69ED /* CalendarView.swift in Sources */,
+				8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */,
 				8C3DF97428C7A938001E69ED /* BaseView.swift in Sources */,
 				8C3DF95B28C7A79A001E69ED /* AppDelegate.swift in Sources */,
+				8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */,
+				8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */,
 				8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */,
 				8CE284A528CB3C6D00AC91EC /* Font.swift in Sources */,
 				8C3DF95D28C7A79A001E69ED /* SceneDelegate.swift in Sources */,
@@ -474,6 +514,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -489,6 +537,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8C9CD80128CF76590064EA0D /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		8CE284AE28CB9C7700AC91EC /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
