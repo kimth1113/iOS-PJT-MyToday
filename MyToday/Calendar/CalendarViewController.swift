@@ -44,16 +44,13 @@ class CalendarViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         
-        print(#function)
-        
         view = mainView
-        
         mainView.calendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
+
         mainView.leftButton.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
         mainView.rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         mainView.headerButton.addTarget(self, action: #selector(headerButtonTapped), for: .touchUpInside)
@@ -61,20 +58,14 @@ class CalendarViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(#function)
+        
         mainView.calendar.scope = .month
         mainView.headerButton.setTitle(self.monthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print(#function)
     }
     
     override func configure() {
         mainView.calendar.delegate = self
         mainView.calendar.dataSource = self
-        
     }
     
     @objc
@@ -89,7 +80,7 @@ class CalendarViewController: BaseViewController {
     
     @objc
     private func headerButtonTapped() {
-        print(12312313)
+        print("캘린더 월 버튼 탭")
     }
     
     private func scrollCurrentPage(isPrev: Bool) {
@@ -105,19 +96,10 @@ class CalendarViewController: BaseViewController {
 
 extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     
-//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        print(date, "선택")
-//    }
-//
-//    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        print(date, "해제")
-//    }
-    
     // CellForRow
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         
         let cell = mainView.calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position) as! DIYCalendarCell
-        
         
         switch formatter.string(from: date) {
         case formatter.string(from: Date()):
@@ -148,28 +130,17 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-//        let cal = Calendar.current
-//        var dateComponents = DateComponents()
-//        dateComponents.month = isPrev ? -1 : 1
-            
+        
         self.currentPage = calendar.currentPage
         mainView.headerButton.setTitle(self.monthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
     }
-
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        // Here you can return specify the height of the cell.
-//        return height!
-//    }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.formatter.string(from: date))")
 //        self.configureVisibleCells()
         
         self.view.makeToast(dayFormatter.string(from: date), duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
-            
         }
-        
-
     }
     
 //    func calendar(_ calendar: FSCalendar, didDeselect date: Date) {
@@ -181,23 +152,23 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         print("did deselect date \(self.formatter.string(from: date))")
     }
     
-    private func configureVisibleCells() {
-        print(#function)
-        mainView.calendar.visibleCells().forEach { (cell) in
-            let date = mainView.calendar.date(for: cell)
-            let position = mainView.calendar.monthPosition(for: cell)
-            self.configure(cell: cell, for: date!, at: position)
-        }
-    }
+//    private func configureVisibleCells() {
+//
+//        mainView.calendar.visibleCells().forEach { (cell) in
+//            let date = mainView.calendar.date(for: cell)
+//            let position = mainView.calendar.monthPosition(for: cell)
+//            self.configure(cell: cell, for: date!, at: position)
+//        }
+//    }
     
-    private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
-        print(#function)
+//    private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
+//        print(#function)
 //        let diyCell = (cell as! DIYCalendarCell)
 //        // Custom today circle
 //        diyCell.titleImageView.isHidden = !self.gregorian.isDateInToday(date)
 //        // Configure selection layer
 //
-    }
+//    }
 }
 
 

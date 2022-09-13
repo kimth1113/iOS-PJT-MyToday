@@ -17,7 +17,7 @@ class BaseView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        fatalError("Error was caused in UI.")
+        fatalError("Error was caused at BaseView.")
     }
     
     func configureUI() { }
