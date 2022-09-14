@@ -22,12 +22,15 @@
 		8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */; };
 		8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FE28CF10650064EA0D /* QuoteView.swift */; };
 		8C9CD80228CF76590064EA0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9CD80128CF76590064EA0D /* Toast */; };
-		8C9CD80528CF7D1E0064EA0D /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80428CF7D1E0064EA0D /* UpdateView.swift */; };
 		8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */; };
 		8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */; };
 		8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */; };
 		8CAE775328D0AF2800A1A799 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */; };
 		8CAE775728D0CD6F00A1A799 /* EmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */; };
+		8CCEC2EC28D1C2AB003F1487 /* TitleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */; };
+		8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */; };
+		8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */; };
+		8CCEC2F228D1FA01003F1487 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2F128D1FA01003F1487 /* UpdateView.swift */; };
 		8CE2849F28CB3BF700AC91EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE2849E28CB3BF700AC91EC /* Constants.swift */; };
 		8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284A028CB3C2B00AC91EC /* Color.swift */; };
 		8CE284A328CB3C5100AC91EC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284A228CB3C5100AC91EC /* Image.swift */; };
@@ -52,12 +55,15 @@
 		8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
 		8C9CD7FE28CF10650064EA0D /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
-		8C9CD80428CF7D1E0064EA0D /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 		8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
 		8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYCalendarCell.swift; sourceTree = "<group>"; };
 		8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionListView.swift; sourceTree = "<group>"; };
+		8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLineView.swift; sourceTree = "<group>"; };
+		8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
+		8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
+		8CCEC2F128D1FA01003F1487 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 		8CE2849E28CB3BF700AC91EC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8CE284A028CB3C2B00AC91EC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8CE284A228CB3C5100AC91EC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			children = (
 				8C3DF97128C7A92A001E69ED /* BaseViewController.swift */,
 				8C3DF97328C7A938001E69ED /* BaseView.swift */,
+				8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -164,7 +171,7 @@
 		8C9CD80328CF7D0B0064EA0D /* Update */ = {
 			isa = PBXGroup;
 			children = (
-				8C9CD80428CF7D1E0064EA0D /* UpdateView.swift */,
+				8CCEC2F128D1FA01003F1487 /* UpdateView.swift */,
 				8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */,
 			);
 			path = Update;
@@ -187,6 +194,8 @@
 				8C9CD7FE28CF10650064EA0D /* QuoteView.swift */,
 				8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */,
 				8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */,
+				8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */,
+				8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -273,16 +282,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */,
+				8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */,
 				8C3DF95F28C7A79A001E69ED /* ViewController.swift in Sources */,
 				8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */,
 				8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */,
-				8C9CD80528CF7D1E0064EA0D /* UpdateView.swift in Sources */,
 				8CE284AC28CB795F00AC91EC /* CustomTabBar.swift in Sources */,
 				8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */,
 				8C3DF97628C7AA05001E69ED /* CalendarView.swift in Sources */,
 				8CAE775728D0CD6F00A1A799 /* EmotionListView.swift in Sources */,
 				8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */,
 				8C3DF97428C7A938001E69ED /* BaseView.swift in Sources */,
+				8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */,
+				8CCEC2EC28D1C2AB003F1487 /* TitleLineView.swift in Sources */,
 				8C3DF95B28C7A79A001E69ED /* AppDelegate.swift in Sources */,
 				8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */,
 				8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */,
@@ -292,6 +303,7 @@
 				8CE284A328CB3C5100AC91EC /* Image.swift in Sources */,
 				8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */,
 				8CAE775328D0AF2800A1A799 /* CustomButtonView.swift in Sources */,
+				8CCEC2F228D1FA01003F1487 /* UpdateView.swift in Sources */,
 				8CE2849F28CB3BF700AC91EC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

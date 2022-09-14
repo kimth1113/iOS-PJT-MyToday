@@ -6,33 +6,41 @@
 //
 
 import UIKit
+import SnapKit
 
 class UpdateViewController: BaseViewController {
     
+    let scrollView = UIScrollView()
     let mainView = UpdateView()
-    
-    override func loadView() {
-        super.loadView()
-        
-        view = mainView
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.addSubview(scrollView)
+        scrollView.addSubview(mainView)
         
-        mainView.dismissView.customButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        mainView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView.contentLayoutGuide)
+            make.height.greaterThanOrEqualTo(view.snp.height).priority(.low)
+            make.width.equalTo(scrollView.snp.width)
+        }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        mainView.writeDiaryView.textView.delegate = self
     }
     
     override func configure() {
         setEmoticonButton()
-        mainView.contentTextView.delegate = self
         setTapGesture()
+        
+        mainView.dismissView.customButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
     }
 }
 
@@ -144,7 +152,7 @@ extension UpdateViewController: UIGestureRecognizerDelegate {
     private func setTapGesture() {
         let tapTerm = UITapGestureRecognizer(target: self, action: nil)
         tapTerm.delegate = self
-        mainView.contentTextView.addGestureRecognizer(tapTerm)
+        mainView.writeDiaryView.textView.addGestureRecognizer(tapTerm)
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

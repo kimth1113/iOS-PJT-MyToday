@@ -10,11 +10,6 @@ import SnapKit
 
 class EmotionListView: BaseView {
     
-    let buttonListView: UIView = {
-        let view = UIView()
-        return view
-    }()
-    
     let emoticonButtonView: CustomButtonView = {
         let view = CustomButtonView()
         view.customImageView.image = UIImage(named: "serious")
@@ -84,74 +79,59 @@ class EmotionListView: BaseView {
         view.customImageView.image = UIImage(named: "serious")
         view.layer.cornerRadius = 5
         view.customButton.tag = 9
+        view.customImageView.tintColor = .black
         return view
     }()
     
+    lazy var horizontalStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [emoticonButtonView, emoticonButtonView2, emoticonButtonView3])
+        view.axis = .horizontal
+        view.alignment = .fill
+        view.distribution = .fillEqually
+        view.spacing = 8
+        return view
+    }()
+    
+    lazy var horizontalStackView2: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [emoticonButtonView4, emoticonButtonView5, emoticonButtonView6])
+        view.axis = .horizontal
+        view.alignment = .fill
+        view.distribution = .fillEqually
+        view.spacing = 8
+        return view
+    }()
+    
+    lazy var horizontalStackView3: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [emoticonButtonView7, emoticonButtonView8, emoticonButtonView9])
+        view.axis = .horizontal
+        view.alignment = .fill
+        view.distribution = .fillEqually
+        view.spacing = 8
+        return view
+    }()
+    
+    lazy var verticalStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [horizontalStackView, horizontalStackView2, horizontalStackView3])
+        view.axis = .vertical
+        view.alignment = .fill
+        view.distribution = .fillEqually
+        view.spacing = 8
+        return view
+    }()
     
     override func configureUI() {
         
-        [emoticonButtonView, emoticonButtonView2, emoticonButtonView3, emoticonButtonView4, emoticonButtonView5, emoticonButtonView6, emoticonButtonView7, emoticonButtonView8, emoticonButtonView9].forEach {
-            buttonListView.addSubview($0)
-        }
-        
-        addSubview(buttonListView)
+        addSubview(verticalStackView)
     }
     
     override func setConstraint() {
         
-        buttonListView.snp.makeConstraints { make in
+        verticalStackView.snp.makeConstraints { make in
             make.centerX.equalTo(self)
             make.centerY.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.9)
-            make.height.equalTo(self).multipliedBy(0.9)
-        }
-        
-        configureButtonViewSize()
-        
-        emoticonButtonView.snp.makeConstraints { make in
-            make.top.leading.equalTo(buttonListView)
-        }
-        emoticonButtonView2.snp.makeConstraints { make in
-            make.centerX.equalTo(buttonListView)
-            make.centerY.equalTo(emoticonButtonView)
-        }
-        emoticonButtonView3.snp.makeConstraints { make in
-            make.top.trailing.equalTo(buttonListView)
-        }
-        emoticonButtonView4.snp.makeConstraints { make in
-            make.centerX.equalTo(emoticonButtonView)
-            make.centerY.equalTo(buttonListView)
-        }
-        emoticonButtonView5.snp.makeConstraints { make in
-            make.centerX.equalTo(buttonListView)
-            make.centerY.equalTo(buttonListView)
-        }
-        emoticonButtonView6.snp.makeConstraints { make in
-            make.centerX.equalTo(emoticonButtonView3)
-            make.centerY.equalTo(buttonListView)
-        }
-        emoticonButtonView7.snp.makeConstraints { make in
-            make.centerX.equalTo(emoticonButtonView4)
-            make.bottom.leading.equalTo(buttonListView)
-        }
-        emoticonButtonView8.snp.makeConstraints { make in
-            make.centerX.equalTo(buttonListView)
-            make.centerY.equalTo(emoticonButtonView7)
-        }
-        emoticonButtonView9.snp.makeConstraints { make in
-            make.centerX.equalTo(emoticonButtonView6)
-            make.centerY.equalTo(emoticonButtonView7)
+            make.width.equalTo(self).multipliedBy(0.8)
+            make.height.equalTo(self).multipliedBy(0.8)
         }
     }
     
-    private func configureButtonViewSize() {
-        let buttonViewList = [emoticonButtonView, emoticonButtonView2, emoticonButtonView3, emoticonButtonView4, emoticonButtonView5, emoticonButtonView6, emoticonButtonView7, emoticonButtonView8, emoticonButtonView9]
-        
-        for btnView in buttonViewList {
-            btnView.snp.makeConstraints { make in
-                make.width.equalTo(buttonListView).multipliedBy(0.3)
-                make.height.equalTo(buttonListView).multipliedBy(0.3)
-            }
-        }
-    }
 }
