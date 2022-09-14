@@ -43,20 +43,21 @@ class ViewController: UIViewController {
         
         scrollView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
-            $0.left.right.equalToSuperview().inset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         firstView.snp.makeConstraints {
             $0.top.left.equalToSuperview()
             $0.width.height.equalTo(100)
         }
         secondView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(1000)
-            $0.left.equalToSuperview()
+            $0.top.equalToSuperview().offset(1000)
+            $0.leading.equalToSuperview()
             $0.width.height.equalTo(100)
         }
         thirdView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(2000)
-            $0.left.equalToSuperview()
+            $0.top.equalToSuperview().offset(2000)
+            $0.leading.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.width.height.equalTo(100)
         }

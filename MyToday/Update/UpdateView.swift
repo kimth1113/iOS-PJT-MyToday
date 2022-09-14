@@ -10,28 +10,11 @@ import SnapKit
 
 class UpdateView: BaseView {
     
-    // 배경화면
     let backgroundImage: UIImageView = {
         let view = UIImageView()
-//        view.image = UIImage(named: "patrick-tomasso-Oaqk7qqNh_c-unsplash")
-        view.backgroundColor = .gray
+        view.image = UIImage(named: "patrick-tomasso-Oaqk7qqNh_c-unsplash")
         view.contentMode = .scaleAspectFill
-        return view
-    }()
-    
-    // 취소 버튼
-    let dismissView: CustomButtonView = {
-        let view = CustomButtonView()
-        view.backgroundColor = .systemPink
-        view.customImageView.image = UIImage(systemName: "xmark")
-        return view
-    }()
-    
-    // 저장 버튼
-    let saveView: CustomButtonView = {
-        let view = CustomButtonView()
-        view.backgroundColor = .green
-        view.customButton.setTitle("저장", for: .normal)
+        view.layer.opacity = 0.2
         return view
     }()
     
@@ -50,11 +33,30 @@ class UpdateView: BaseView {
         return view
     }()
     
+    // 취소 버튼
+    let dismissView: CustomButtonView = {
+        let view = CustomButtonView()
+        view.backgroundColor = .systemPink
+        view.customImageView.image = UIImage(systemName: "xmark")
+        view.layer.cornerRadius = 8
+        return view
+    }()
+    
+    // 저장 버튼
+    let saveView: CustomButtonView = {
+        let view = CustomButtonView()
+        view.backgroundColor = .green
+        view.customButton.setTitle("저장", for: .normal)
+        view.layer.cornerRadius = 8
+        return view
+    }()
+    
     // 배경: 노트 배경
-    let titleBackgroundView: UIImageView = {
+    let noteBackgroundView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "valentin-salja-CLvkkjb-i3g-unsplash")
         view.contentMode = .scaleAspectFill
+        view.backgroundColor = .darkGray
         return view
     }()
     
@@ -84,7 +86,7 @@ class UpdateView: BaseView {
         view.tintColor = .black
         return view
     }()
-    
+
     // 컨텐츠: "어떤 하루였나요?"
     let selectEmotionLabel: UILabel = {
         let view = UILabel()
@@ -120,11 +122,11 @@ class UpdateView: BaseView {
         let view = CustomButtonView()
         view.backgroundColor = UIColor(named: "calendar-background")
         view.layer.cornerRadius = 8
-        view.customButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        view.customButton.setImage(UIImage(systemName: "plus"), for: .normal)
         view.customButton.tintColor = .white
         return view
     }()
-
+    
     // 컨텐츠: "나는 오늘"
     let writeDiaryLabel: UILabel = {
         let view = UILabel()
@@ -150,74 +152,80 @@ class UpdateView: BaseView {
     }()
     
     override func configureUI() {
-        backgroundColor = .black
-        
-        [backgroundImage, dismissView, saveView, titleBackgroundView, leftLineView, centerLineView, rightLineView, titleLabel, selectEmotionLabel, selectEmoticonView, selectImageLabel, selectImageView, writeDiaryLabel, writeDiaryView, emptyView].forEach {
+        [backgroundImage, titleLabel, dismissView, saveView, noteBackgroundView, leftLineView, centerLineView, rightLineView, selectEmotionLabel, selectEmoticonView, selectImageLabel, selectImageView, writeDiaryLabel, writeDiaryView, emptyView].forEach {
             addSubview($0)
         }
+        
     }
     
     override func setConstraint() {
         
+        self.snp.makeConstraints { make in
+            make.bottom.equalTo(writeDiaryView.snp.bottom).offset(200)
+        }
+                
         backgroundImage.snp.makeConstraints { make in
-            make.edges.equalTo(self)
+            make.top.leading.trailing.equalTo(self)
+            make.bottom.equalTo(noteBackgroundView.snp.top)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(self)
+            make.top.equalTo(safeAreaLayoutGuide).offset(12)
+            make.width.equalTo(self).multipliedBy(0.6)
+            make.height.equalTo(40)
         }
         
         dismissView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).offset(12)
-            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.centerY.equalTo(titleLabel)
+            make.leading.equalTo(self).offset(20)
             make.height.equalTo(32)
             make.width.equalTo(dismissView.snp.height)
         }
         
         saveView.snp.makeConstraints { make in
-            make.centerY.equalTo(dismissView)
-            make.trailing.equalTo(safeAreaLayoutGuide).offset(-20)
-            make.height.equalTo(dismissView)
-            make.width.equalTo(saveView.snp.height).multipliedBy(1.5)
+            make.centerY.equalTo(titleLabel)
+            make.trailing.equalTo(self).offset(-20)
+            make.height.equalTo(32)
+            make.width.equalTo(saveView.snp.height)
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(saveView.snp.bottom).offset(12)
-            make.width.equalTo(self).multipliedBy(0.6)
-            make.height.equalTo(40)
-            make.centerX.equalTo(self)
+        noteBackgroundView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(40)
+            make.leading.trailing.equalTo(self)
+            make.bottom.equalTo(writeDiaryView.snp.bottom).offset(200)
         }
         
         centerLineView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom)
+            make.centerY.equalTo(noteBackgroundView.snp.top)
             make.centerX.equalTo(self)
             make.width.equalTo(self).multipliedBy(0.4)
             make.height.equalTo(88)
         }
         
         leftLineView.snp.makeConstraints { make in
-            make.centerY.equalTo(centerLineView)
+            make.centerY.equalTo(noteBackgroundView.snp.top)
             make.leading.equalTo(self).offset(-28)
-            make.width.height.equalTo(centerLineView)
+            make.width.equalTo(self).multipliedBy(0.4)
+            make.height.equalTo(88)
         }
         
         rightLineView.snp.makeConstraints { make in
-            make.centerY.equalTo(centerLineView)
+            make.centerY.equalTo(noteBackgroundView.snp.top)
             make.trailing.equalTo(self).offset(28)
-            make.width.height.equalTo(centerLineView)
-        }
-        
-        titleBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(leftLineView.snp.centerY)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(emptyView.snp.bottom)
+            make.width.equalTo(self).multipliedBy(0.4)
+            make.height.equalTo(88)
         }
         
         selectEmotionLabel.snp.makeConstraints { make in
-            make.top.equalTo(centerLineView.snp.top).offset(56)
+            make.top.equalTo(noteBackgroundView.snp.top).offset(60)
             make.leading.equalTo(selectEmoticonView)
         }
         
         selectEmoticonView.snp.makeConstraints { make in
             make.top.equalTo(selectEmotionLabel.snp.bottom).offset(12)
             make.centerX.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.6)
+            make.width.equalTo(self).multipliedBy(0.65)
             make.height.equalTo(selectEmoticonView.snp.width)
         }
         
@@ -230,7 +238,7 @@ class UpdateView: BaseView {
             make.top.equalTo(selectImageLabel.snp.bottom).offset(12)
             make.centerX.equalTo(self)
             make.width.equalTo(selectEmoticonView)
-            make.height.equalTo(40)
+            make.height.equalTo(60)
         }
         
         writeDiaryLabel.snp.makeConstraints { make in
@@ -244,11 +252,64 @@ class UpdateView: BaseView {
             make.width.equalTo(selectImageView)
             make.height.greaterThanOrEqualTo(120)
         }
-        
-        emptyView.snp.makeConstraints { make in
-            make.top.equalTo(writeDiaryView.snp.bottom).offset(12)
-            make.height.equalTo(300)
-            make.width.equalTo(self).multipliedBy(0.8)
-        }
+//
+//        emptyView.snp.makeConstraints { make in
+//            make.top.equalTo(writeDiaryView.snp.bottom)
+//            make.height.equalTo(80)
+//            make.width.equalTo(self).multipliedBy(0.8)
+//        }
+
     }
 }
+
+
+
+//UI
+
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Setting
+
+
+//
+
+//writeDiaryLabel.snp.makeConstraints { make in
+//    make.top.equalTo(selectImageView.snp.bottom).offset(20)
+//    make.leading.equalTo(selectImageView)
+//}
+//
+//writeDiaryView.snp.makeConstraints { make in
+//    make.top.equalTo(writeDiaryLabel.snp.bottom).offset(12)
+//    make.centerX.equalTo(self)
+//    make.width.equalTo(selectImageView)
+//    make.height.greaterThanOrEqualTo(120)
+//}
+//
+//emptyView.snp.makeConstraints { make in
+//    make.top.equalTo(writeDiaryView.snp.bottom).offset(12)
+//    make.height.equalTo(300)
+//    make.width.equalTo(self).multipliedBy(0.8)
+//}
