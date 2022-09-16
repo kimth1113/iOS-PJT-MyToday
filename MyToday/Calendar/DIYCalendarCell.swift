@@ -18,7 +18,7 @@ class DIYCalendarCell: FSCalendarCell {
         let view = UIImageView()
         view.image = nil
         view.contentMode = .scaleAspectFit
-        view.layer.opacity = 0.5
+        view.layer.opacity = 1
         return view
     }()
     

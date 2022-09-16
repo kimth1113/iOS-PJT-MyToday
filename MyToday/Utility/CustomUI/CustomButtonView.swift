@@ -17,6 +17,7 @@ class CustomButtonView: BaseView {
     
     let customButton: UIButton = {
         let view = UIButton()
+        
         return view
     }()
     

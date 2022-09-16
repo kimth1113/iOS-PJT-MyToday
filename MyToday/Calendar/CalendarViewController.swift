@@ -14,6 +14,8 @@ class CalendarViewController: BaseViewController {
     
     private let mainView = CalendarView()
     
+    private let repository = DiaryRepository()
+    
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     
     private let formatter: DateFormatter = {
@@ -40,7 +42,6 @@ class CalendarViewController: BaseViewController {
         return Date()
     }()
     
-
     override func loadView() {
         super.loadView()
         
@@ -101,18 +102,26 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         
         let cell = mainView.calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position) as! DIYCalendarCell
         
-        switch formatter.string(from: date) {
-        case formatter.string(from: Date()):
-            cell.titleImageView.image = Constants.BaseImage.Emotion.serious
-        case "2022-09-03":
-            cell.titleImageView.image = Constants.BaseImage.Emotion.happy
-        case "2022-09-25":
-            cell.titleImageView.image = Constants.BaseImage.Emotion.happy
-        case "2022-09-20":
-            cell.titleImageView.image = Constants.BaseImage.Emotion.serious
-        default:
-            cell.titleImageView.image = Constants.BaseImage.Emotion.none
+        let emotionImageList = [
+            Constants.BaseImage.Emotion.none,
+            Constants.BaseImage.Emotion.happy,
+            Constants.BaseImage.Emotion.angry,
+            Constants.BaseImage.Emotion.disgusted,
+            Constants.BaseImage.Emotion.fear,
+            Constants.BaseImage.Emotion.kiss,
+            Constants.BaseImage.Emotion.sad,
+            Constants.BaseImage.Emotion.sadness,
+            Constants.BaseImage.Emotion.sleeping,
+            Constants.BaseImage.Emotion.surprised
+        ]
+        
+        let date = formatter.string(from: date)
+        if let diary = repository.getDiary(date: date) {
+            cell.titleImageView.image = emotionImageList[diary.emoticonId]
+        } else {
+            cell.titleImageView.image = emotionImageList[0]
         }
+
         
         return cell
     }

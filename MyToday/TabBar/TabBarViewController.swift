@@ -78,7 +78,7 @@ extension TabBarViewController {
         let fourthVC = tabBarResultController(vc: ViewController(), resultType: .vc, img: Constants.BaseImage.TapMenu.analysis, selectedImg: Constants.BaseImage.TapMenu.analysisFill)
         let fifthVC = tabBarResultController(vc: ViewController(), resultType: .nav, img: Constants.BaseImage.TapMenu.setting, selectedImg: Constants.BaseImage.TapMenu.settingFill)
         
-        let viewControllers = [secondVC, firstVC, thirdVC, fourthVC, fifthVC]
+        let viewControllers = [firstVC, secondVC, thirdVC, fourthVC, fifthVC]
         setViewControllers(viewControllers, animated: false)
     }
     

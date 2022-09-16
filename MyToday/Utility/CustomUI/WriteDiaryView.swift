@@ -10,25 +10,36 @@ import SnapKit
 
 class WriteDiaryView: BaseView {
     
-    let textView: UITextView = {
-        let view = UITextView()
+    let textLabelView: UILabel = {
+        let view = UILabel()
         view.textColor = .white
         view.font = Constants.BaseFont.boxTitle
         view.backgroundColor = .clear
-        
+        view.text = "TESTTESTTETESTTEST\nTEST\nTESTTEST\nTEST"
+        view.numberOfLines = 0
+        return view
+    }()
+    
+    let textLabelButton: UIButton = {
+
+        let view = UIButton()
         return view
     }()
     
     override func configureUI() {
-        addSubview(textView)
+        addSubview(textLabelView)
+        addSubview(textLabelButton)
     }
     
     override func setConstraint() {
-        textView.snp.makeConstraints { make in
-            make.centerX.equalTo(self)
-            make.centerY.equalTo(self)
-            make.top.leading.equalTo(self).offset(12)
-            make.bottom.trailing.equalTo(self).offset(-12)
+        
+        textLabelView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(self).inset(12)
+            make.bottom.lessThanOrEqualTo(self).inset(12)
+        }
+        
+        textLabelButton.snp.makeConstraints { make in
+            make.edges.equalTo(textLabelView)
         }
     }
 }

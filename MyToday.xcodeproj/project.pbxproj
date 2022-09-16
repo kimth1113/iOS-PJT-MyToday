@@ -27,6 +27,13 @@
 		8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */; };
 		8CAE775328D0AF2800A1A799 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */; };
 		8CAE775728D0CD6F00A1A799 /* EmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */; };
+		8CB0649E28D30DC1007EB273 /* UpdateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB0649D28D30DC1007EB273 /* UpdateHeaderView.swift */; };
+		8CB064A128D3A086007EB273 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064A028D3A086007EB273 /* DiaryModel.swift */; };
+		8CB064A428D3A10F007EB273 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB064A328D3A10F007EB273 /* Realm */; };
+		8CB064A628D3A10F007EB273 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB064A528D3A10F007EB273 /* RealmSwift */; };
+		8CB064A828D3A2E4007EB273 /* DairyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064A728D3A2E4007EB273 /* DairyRepository.swift */; };
+		8CB064AB28D3B787007EB273 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB064AA28D3B787007EB273 /* YPImagePicker */; };
+		8CB064AD28D3BED4007EB273 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */; };
 		8CCEC2EC28D1C2AB003F1487 /* TitleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */; };
 		8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */; };
 		8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */; };
@@ -60,6 +67,10 @@
 		8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYCalendarCell.swift; sourceTree = "<group>"; };
 		8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionListView.swift; sourceTree = "<group>"; };
+		8CB0649D28D30DC1007EB273 /* UpdateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHeaderView.swift; sourceTree = "<group>"; };
+		8CB064A028D3A086007EB273 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		8CB064A728D3A2E4007EB273 /* DairyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyRepository.swift; sourceTree = "<group>"; };
+		8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLineView.swift; sourceTree = "<group>"; };
 		8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
 		8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
@@ -77,7 +88,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C9CD80228CF76590064EA0D /* Toast in Frameworks */,
+				8CB064AB28D3B787007EB273 /* YPImagePicker in Frameworks */,
 				8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */,
+				8CB064A428D3A10F007EB273 /* Realm in Frameworks */,
+				8CB064A628D3A10F007EB273 /* RealmSwift in Frameworks */,
 				8CE284AF28CB9C7700AC91EC /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +118,7 @@
 		8C3DF95928C7A79A001E69ED /* MyToday */ = {
 			isa = PBXGroup;
 			children = (
+				8CB0649F28D3A06C007EB273 /* Realm */,
 				8C9CD80328CF7D0B0064EA0D /* Update */,
 				8C3DF98028C7B53B001E69ED /* TabBar */,
 				8C3DF96E28C7A8A0001E69ED /* Calendar */,
@@ -164,6 +179,7 @@
 			children = (
 				8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */,
 				8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */,
+				8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -173,8 +189,18 @@
 			children = (
 				8CCEC2F128D1FA01003F1487 /* UpdateView.swift */,
 				8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */,
+				8CB0649D28D30DC1007EB273 /* UpdateHeaderView.swift */,
 			);
 			path = Update;
+			sourceTree = "<group>";
+		};
+		8CB0649F28D3A06C007EB273 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				8CB064A028D3A086007EB273 /* DiaryModel.swift */,
+				8CB064A728D3A2E4007EB273 /* DairyRepository.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		8CE2849D28CB3BC100AC91EC /* Constants */ = {
@@ -220,6 +246,9 @@
 				8C3DF97A28C7AEB8001E69ED /* SnapKit */,
 				8CE284AE28CB9C7700AC91EC /* FSCalendar */,
 				8C9CD80128CF76590064EA0D /* Toast */,
+				8CB064A328D3A10F007EB273 /* Realm */,
+				8CB064A528D3A10F007EB273 /* RealmSwift */,
+				8CB064AA28D3B787007EB273 /* YPImagePicker */,
 			);
 			productName = MyToday;
 			productReference = 8C3DF95728C7A79A001E69ED /* MyToday.app */;
@@ -253,6 +282,8 @@
 				8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = 8C3DF95828C7A79A001E69ED /* Products */;
 			projectDirPath = "";
@@ -286,10 +317,13 @@
 				8C3DF95F28C7A79A001E69ED /* ViewController.swift in Sources */,
 				8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */,
 				8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */,
+				8CB064AD28D3BED4007EB273 /* FileManager+Extension.swift in Sources */,
 				8CE284AC28CB795F00AC91EC /* CustomTabBar.swift in Sources */,
 				8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */,
 				8C3DF97628C7AA05001E69ED /* CalendarView.swift in Sources */,
 				8CAE775728D0CD6F00A1A799 /* EmotionListView.swift in Sources */,
+				8CB064A128D3A086007EB273 /* DiaryModel.swift in Sources */,
+				8CB064A828D3A2E4007EB273 /* DairyRepository.swift in Sources */,
 				8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */,
 				8C3DF97428C7A938001E69ED /* BaseView.swift in Sources */,
 				8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */,
@@ -298,6 +332,7 @@
 				8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */,
 				8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */,
 				8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */,
+				8CB0649E28D30DC1007EB273 /* UpdateHeaderView.swift in Sources */,
 				8CE284A528CB3C6D00AC91EC /* Font.swift in Sources */,
 				8C3DF95D28C7A79A001E69ED /* SceneDelegate.swift in Sources */,
 				8CE284A328CB3C5100AC91EC /* Image.swift in Sources */,
@@ -542,6 +577,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
+		8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -562,6 +613,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		8CB064A328D3A10F007EB273 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		8CB064A528D3A10F007EB273 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		8CB064AA28D3B787007EB273 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 		8CE284AE28CB9C7700AC91EC /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;

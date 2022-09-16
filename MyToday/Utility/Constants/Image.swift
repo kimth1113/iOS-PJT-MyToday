@@ -31,9 +31,16 @@ extension Constants {
         }
         
         enum Emotion {
-            static let happy = UIImage(named: "smile")
-            static let serious = UIImage(named: "serious")
             static let none = UIImage(named: "square")
+            static let happy = UIImage(named: "happy")
+            static let angry = UIImage(named: "angry")
+            static let disgusted = UIImage(named: "disgusted")
+            static let fear = UIImage(named: "fear")
+            static let kiss = UIImage(named: "kiss")
+            static let sad = UIImage(named: "sad")
+            static let sadness = UIImage(named: "sadness")
+            static let sleeping = UIImage(named: "sleeping")
+            static let surprised = UIImage(named: "surprised")
         }
     }
 }
