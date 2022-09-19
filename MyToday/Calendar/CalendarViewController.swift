@@ -154,6 +154,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         if let diary = self.repository.getDiary(date: date) {
             let vc = ReadViewController()
             vc.diary = diary
+            vc.reloadCalendar = reloadCalendar
             transition(vc, transitionStyle: .present)
         } else {
             let vc = UpdateViewController()

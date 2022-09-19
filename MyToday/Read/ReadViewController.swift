@@ -28,6 +28,21 @@ class ReadViewController: BaseViewController {
     
     var diary: Diary?
     
+    var reloadCalendar: (() -> Void)?
+    
+    lazy var updateReadVC: ((Diary) -> ()) = { diary in
+        self.diary = diary
+        
+        self.contentView.emoticonView.customImageView.image = self.emotionImageList[diary.emoticonId - 1]
+        
+        self.contentView.imageView.customImageView.image = self.loadImageFromDocument(fileName: diary.objectId)
+        if let content = diary.content {
+            self.contentView.contentView.text = content
+        } else {
+            self.contentView.contentView.text = "일기 미작성"
+        }
+    }
+    
     override func loadView() {
         super.loadView()
         
@@ -55,6 +70,11 @@ class ReadViewController: BaseViewController {
         if let diary = diary {
             contentView.emoticonView.customImageView.image = emotionImageList[diary.emoticonId - 1]
             
+            if let date = FormatterRepository.formatter.date(from: diary.objectId) {
+                print(date, 12345)
+                contentView.dateLabel.text = "DATE : " + FormatterRepository.dateLabelFormatter.string(from: date)
+            }
+            
             contentView.imageView.customImageView.image = loadImageFromDocument(fileName: diary.objectId)
             if let content = diary.content {
                 contentView.contentView.text = content
@@ -63,13 +83,13 @@ class ReadViewController: BaseViewController {
             }
         }
         
-//        for family in UIFont.familyNames {
-//            print("=====\(family)====")
-//
-//            for name in UIFont.fontNames(forFamilyName: family) {
-//                print(name)
-//            }
-//        }
+        for family in UIFont.familyNames {
+            print("=====\(family)====")
+
+            for name in UIFont.fontNames(forFamilyName: family) {
+                print(name)
+            }
+        }
         
         setButton()
     }
@@ -98,7 +118,9 @@ extension ReadViewController {
     
     @objc
     private func cancelButtonTapped() {
-        
+        if let reloadCalendar = reloadCalendar {
+            reloadCalendar()
+        }
         dismiss(animated: true)
     }
     
@@ -107,6 +129,7 @@ extension ReadViewController {
         
         let vc = UpdateViewController()
         vc.diary = diary
+        vc.updateReadVC = updateReadVC
         
         transition(vc, transitionStyle: .present)
     }

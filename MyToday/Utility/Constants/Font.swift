@@ -16,8 +16,8 @@ extension Constants {
         static let boxExtra = UIFont(name: "ChosunilboNM", size: 16)
         
         enum Calendar {
-            static let header = UIFont(name: "RIDIBatang", size: 48)
-            static let title = UIFont(name: "RIDIBatang", size: 16)
+            static let header = UIFont(name: "esamanruOTFLight", size: 48)
+            static let title = UIFont(name: "esamanruOTFLight", size: 12)
         }
         
         enum Read {

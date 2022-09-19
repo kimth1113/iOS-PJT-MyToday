@@ -22,6 +22,7 @@ class UpdateViewController: BaseViewController {
     var newContent: String?
     
     var reloadCalendar: (() -> Void)?
+    var updateReadVC: ((Diary) -> Void)?
     
     lazy var saveContentText: (String?) -> Void = { text in
         
@@ -80,6 +81,11 @@ class UpdateViewController: BaseViewController {
         newContent = diary?.content
         if let diary = diary {
             contentView.imageView.customImageView.image = loadImageFromDocument(fileName: diary.objectId)
+            
+            if let date = FormatterRepository.formatter.date(from: diary.objectId) {
+                print(date, 12345)
+                contentView.dateLabel.text = "DATE : " + FormatterRepository.dateLabelFormatter.string(from: date)
+            }
             
             if let content = diary.content {
                 contentView.contentView.textLabelView.text = content
@@ -146,8 +152,14 @@ extension UpdateViewController {
             repository.updateEmoticonId(diary: diary, newEmoticonId: newEmoticonId, newContent: newContent)
         }
         
+        if let updateReadVC = updateReadVC {
+            updateReadVC(diary)
+        }
         
-        reloadCalendar!()
+        if let reloadCalendar = reloadCalendar {
+            reloadCalendar()
+        }
+        
         dismiss(animated: true)
     }
 

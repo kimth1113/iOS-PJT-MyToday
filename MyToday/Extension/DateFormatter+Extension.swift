@@ -25,4 +25,11 @@ class FormatterRepository {
         formatter.dateFormat = "E"
         return formatter
     }()
+    
+    static let dateLabelFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy. MM. dd. (EEEE)"
+        return formatter
+    }()
 }
