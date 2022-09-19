@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>esamanru OTF Bold.otf</string>
+		<string>esamanru OTF Light.otf</string>
+		<string>esamanru OTF Medium.otf</string>
+		<string>ONE Mobile Bold.ttf</string>
+		<string>ONE Mobile Light.ttf</string>
+		<string>ONE Mobile OTF Bold.otf</string>
+		<string>ONE Mobile OTF Light.otf</string>
+		<string>ONE Mobile OTF Regular.otf</string>
+		<string>ONE Mobile Regular.ttf</string>
+		<string>RIDIBatang.otf</string>
+		<string>J송명-Regular.otf</string>
+		<string>ChosunNm.ttf</string>
+		<string>ChosunKm.TTF</string>
+	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>갤러리 접근</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

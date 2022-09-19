@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C3DF95B28C7A79A001E69ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF95A28C7A79A001E69ED /* AppDelegate.swift */; };
+		8C3DF95D28C7A79A001E69ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF95C28C7A79A001E69ED /* SceneDelegate.swift */; };
+		8C3DF95F28C7A79A001E69ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF95E28C7A79A001E69ED /* ViewController.swift */; };
+		8C3DF96228C7A79A001E69ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3DF96028C7A79A001E69ED /* Main.storyboard */; };
+		8C3DF96428C7A79B001E69ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C3DF96328C7A79B001E69ED /* Assets.xcassets */; };
+		8C3DF96728C7A79B001E69ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3DF96528C7A79B001E69ED /* LaunchScreen.storyboard */; };
+		8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97128C7A92A001E69ED /* BaseViewController.swift */; };
+		8C3DF97428C7A938001E69ED /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97328C7A938001E69ED /* BaseView.swift */; };
+		8C3DF97628C7AA05001E69ED /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97528C7AA05001E69ED /* CalendarView.swift */; };
+		8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */; };
+		8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C3DF97A28C7AEB8001E69ED /* SnapKit */; };
+		8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */; };
+		8C6CD3D728D5C34900FAB375 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CD3D628D5C34900FAB375 /* DateFormatter+Extension.swift */; };
+		8C6CD3DA28D5ECB500FAB375 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CD3D928D5ECB500FAB375 /* ContentViewController.swift */; };
+		8C6CD3DC28D5ECBA00FAB375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CD3DB28D5ECBA00FAB375 /* ContentView.swift */; };
+		8C6CD3E928D6399200FAB375 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6CD3E828D6399200FAB375 /* IQKeyboardManagerSwift */; };
+		8C92810728D65ACB0099A3D8 /* PencilAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92810628D65ACB0099A3D8 /* PencilAlertView.swift */; };
+		8C92810928D65AF90099A3D8 /* PencilAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92810828D65AF90099A3D8 /* PencilAlertViewController.swift */; };
+		8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */; };
+		8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FE28CF10650064EA0D /* QuoteView.swift */; };
+		8C9CD80228CF76590064EA0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9CD80128CF76590064EA0D /* Toast */; };
+		8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */; };
+		8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */; };
+		8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */; };
+		8CAE775328D0AF2800A1A799 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */; };
+		8CAE775728D0CD6F00A1A799 /* EmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */; };
+		8CB064A128D3A086007EB273 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064A028D3A086007EB273 /* DiaryModel.swift */; };
+		8CB064A428D3A10F007EB273 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB064A328D3A10F007EB273 /* Realm */; };
+		8CB064A628D3A10F007EB273 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB064A528D3A10F007EB273 /* RealmSwift */; };
+		8CB064A828D3A2E4007EB273 /* DairyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064A728D3A2E4007EB273 /* DairyRepository.swift */; };
+		8CB064AB28D3B787007EB273 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB064AA28D3B787007EB273 /* YPImagePicker */; };
+		8CB064AD28D3BED4007EB273 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */; };
+		8CC556D328D70C3A007EFCFE /* ReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D228D70C3A007EFCFE /* ReadView.swift */; };
+		8CC556D528D70C49007EFCFE /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D428D70C49007EFCFE /* ReadViewController.swift */; };
+		8CC556D728D70DEF007EFCFE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */; };
+		8CC556EF28D72C5D007EFCFE /* RIDIBatang.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556ED28D72C5D007EFCFE /* RIDIBatang.otf */; };
+		8CC556F828D72C8E007EFCFE /* ONE Mobile Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556F228D72C8E007EFCFE /* ONE Mobile Bold.ttf */; };
+		8CC556F928D72C8E007EFCFE /* ONE Mobile Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556F328D72C8E007EFCFE /* ONE Mobile Light.ttf */; };
+		8CC556FA28D72C8E007EFCFE /* ONE Mobile OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556F428D72C8E007EFCFE /* ONE Mobile OTF Light.otf */; };
+		8CC556FB28D72C8E007EFCFE /* ONE Mobile OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556F528D72C8E007EFCFE /* ONE Mobile OTF Bold.otf */; };
+		8CC556FC28D72C8E007EFCFE /* ONE Mobile OTF Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556F628D72C8E007EFCFE /* ONE Mobile OTF Regular.otf */; };
+		8CC556FD28D72C8E007EFCFE /* ONE Mobile Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556F728D72C8E007EFCFE /* ONE Mobile Regular.ttf */; };
+		8CC556FF28D72CA1007EFCFE /* J송명-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC556FE28D72CA1007EFCFE /* J송명-Regular.otf */; };
+		8CC5570428D72CBD007EFCFE /* esamanru OTF Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5570128D72CBD007EFCFE /* esamanru OTF Medium.otf */; };
+		8CC5570528D72CBD007EFCFE /* esamanru OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5570228D72CBD007EFCFE /* esamanru OTF Light.otf */; };
+		8CC5570628D72CBD007EFCFE /* esamanru OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5570328D72CBD007EFCFE /* esamanru OTF Bold.otf */; };
+		8CC5572228D73E47007EFCFE /* ChosunNm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5572128D73E47007EFCFE /* ChosunNm.ttf */; };
+		8CC5572428D7400B007EFCFE /* ChosunKm.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5572328D7400B007EFCFE /* ChosunKm.TTF */; };
+		8CC5572628D7BE07007EFCFE /* DiaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5572528D7BE07007EFCFE /* DiaryHeaderView.swift */; };
+		8CCEC2EC28D1C2AB003F1487 /* TitleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */; };
+		8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */; };
+		8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */; };
+		8CCEC2F228D1FA01003F1487 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2F128D1FA01003F1487 /* UpdateView.swift */; };
+		8CE2849F28CB3BF700AC91EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE2849E28CB3BF700AC91EC /* Constants.swift */; };
+		8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284A028CB3C2B00AC91EC /* Color.swift */; };
+		8CE284A328CB3C5100AC91EC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284A228CB3C5100AC91EC /* Image.swift */; };
+		8CE284A528CB3C6D00AC91EC /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284A428CB3C6D00AC91EC /* Font.swift */; };
+		8CE284AC28CB795F00AC91EC /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284AB28CB795F00AC91EC /* CustomTabBar.swift */; };
+		8CE284AF28CB9C7700AC91EC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 8CE284AE28CB9C7700AC91EC /* FSCalendar */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8C3DF95728C7A79A001E69ED /* MyToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C3DF95A28C7A79A001E69ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C3DF95C28C7A79A001E69ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8C3DF95E28C7A79A001E69ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C3DF96128C7A79A001E69ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C3DF96328C7A79B001E69ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C3DF96628C7A79B001E69ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C3DF96828C7A79B001E69ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C3DF97128C7A92A001E69ED /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8C3DF97328C7A938001E69ED /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8C3DF97528C7AA05001E69ED /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8C6CD3D628D5C34900FAB375 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		8C6CD3D928D5ECB500FAB375 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		8C6CD3DB28D5ECBA00FAB375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8C92810628D65ACB0099A3D8 /* PencilAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilAlertView.swift; sourceTree = "<group>"; };
+		8C92810828D65AF90099A3D8 /* PencilAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilAlertViewController.swift; sourceTree = "<group>"; };
+		8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
+		8C9CD7FE28CF10650064EA0D /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIYCalendarCell.swift; sourceTree = "<group>"; };
+		8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionListView.swift; sourceTree = "<group>"; };
+		8CB064A028D3A086007EB273 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		8CB064A728D3A2E4007EB273 /* DairyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyRepository.swift; sourceTree = "<group>"; };
+		8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		8CC556D228D70C3A007EFCFE /* ReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadView.swift; sourceTree = "<group>"; };
+		8CC556D428D70C49007EFCFE /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8CC556ED28D72C5D007EFCFE /* RIDIBatang.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RIDIBatang.otf; sourceTree = "<group>"; };
+		8CC556F228D72C8E007EFCFE /* ONE Mobile Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ONE Mobile Bold.ttf"; sourceTree = "<group>"; };
+		8CC556F328D72C8E007EFCFE /* ONE Mobile Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ONE Mobile Light.ttf"; sourceTree = "<group>"; };
+		8CC556F428D72C8E007EFCFE /* ONE Mobile OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ONE Mobile OTF Light.otf"; sourceTree = "<group>"; };
+		8CC556F528D72C8E007EFCFE /* ONE Mobile OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ONE Mobile OTF Bold.otf"; sourceTree = "<group>"; };
+		8CC556F628D72C8E007EFCFE /* ONE Mobile OTF Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ONE Mobile OTF Regular.otf"; sourceTree = "<group>"; };
+		8CC556F728D72C8E007EFCFE /* ONE Mobile Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ONE Mobile Regular.ttf"; sourceTree = "<group>"; };
+		8CC556FE28D72CA1007EFCFE /* J송명-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "J송명-Regular.otf"; sourceTree = "<group>"; };
+		8CC5570128D72CBD007EFCFE /* esamanru OTF Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "esamanru OTF Medium.otf"; sourceTree = "<group>"; };
+		8CC5570228D72CBD007EFCFE /* esamanru OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "esamanru OTF Light.otf"; sourceTree = "<group>"; };
+		8CC5570328D72CBD007EFCFE /* esamanru OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "esamanru OTF Bold.otf"; sourceTree = "<group>"; };
+		8CC5572128D73E47007EFCFE /* ChosunNm.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChosunNm.ttf; sourceTree = "<group>"; };
+		8CC5572328D7400B007EFCFE /* ChosunKm.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChosunKm.TTF; sourceTree = "<group>"; };
+		8CC5572528D7BE07007EFCFE /* DiaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryHeaderView.swift; sourceTree = "<group>"; };
+		8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLineView.swift; sourceTree = "<group>"; };
+		8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
+		8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
+		8CCEC2F128D1FA01003F1487 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		8CE2849E28CB3BF700AC91EC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8CE284A028CB3C2B00AC91EC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		8CE284A228CB3C5100AC91EC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		8CE284A428CB3C6D00AC91EC /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		8CE284AB28CB795F00AC91EC /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C3DF95428C7A79A001E69ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C6CD3E928D6399200FAB375 /* IQKeyboardManagerSwift in Frameworks */,
+				8C9CD80228CF76590064EA0D /* Toast in Frameworks */,
+				8CB064AB28D3B787007EB273 /* YPImagePicker in Frameworks */,
+				8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */,
+				8CB064A428D3A10F007EB273 /* Realm in Frameworks */,
+				8CB064A628D3A10F007EB273 /* RealmSwift in Frameworks */,
+				8CE284AF28CB9C7700AC91EC /* FSCalendar in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C3DF94E28C7A79A001E69ED = {
+			isa = PBXGroup;
+			children = (
+				8C3DF95928C7A79A001E69ED /* MyToday */,
+				8C3DF95828C7A79A001E69ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C3DF95828C7A79A001E69ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C3DF95728C7A79A001E69ED /* MyToday.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C3DF95928C7A79A001E69ED /* MyToday */ = {
+			isa = PBXGroup;
+			children = (
+				8CB0649F28D3A06C007EB273 /* Realm */,
+				8C3DF98028C7B53B001E69ED /* TabBar */,
+				8C3DF96E28C7A8A0001E69ED /* Calendar */,
+				8C9CD80328CF7D0B0064EA0D /* Update */,
+				8CC556D128D70C05007EFCFE /* Read */,
+				8C92810528D65AB90099A3D8 /* CalendarAlert */,
+				8C92810428D65AA40099A3D8 /* PencilAlert */,
+				8C3DF96F28C7A903001E69ED /* Utility */,
+				8C9CD7FB28CEF0DE0064EA0D /* Extension */,
+				8CC556D828D72BA8007EFCFE /* Resource */,
+				8C3DF96028C7A79A001E69ED /* Main.storyboard */,
+				8C3DF96328C7A79B001E69ED /* Assets.xcassets */,
+				8C3DF96528C7A79B001E69ED /* LaunchScreen.storyboard */,
+				8C3DF95A28C7A79A001E69ED /* AppDelegate.swift */,
+				8C3DF95C28C7A79A001E69ED /* SceneDelegate.swift */,
+				8C3DF95E28C7A79A001E69ED /* ViewController.swift */,
+				8C3DF96828C7A79B001E69ED /* Info.plist */,
+			);
+			path = MyToday;
+			sourceTree = "<group>";
+		};
+		8C3DF96E28C7A8A0001E69ED /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				8C3DF97528C7AA05001E69ED /* CalendarView.swift */,
+				8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */,
+				8CAE2E7028CDABCE00BA79E0 /* DIYCalendarCell.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		8C3DF96F28C7A903001E69ED /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8CE284A628CB3CC700AC91EC /* CustomUI */,
+				8CE2849D28CB3BC100AC91EC /* Constants */,
+				8C3DF97028C7A912001E69ED /* BaseView */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		8C3DF97028C7A912001E69ED /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				8C3DF97128C7A92A001E69ED /* BaseViewController.swift */,
+				8C3DF97328C7A938001E69ED /* BaseView.swift */,
+				8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		8C3DF98028C7B53B001E69ED /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */,
+				8CE284AB28CB795F00AC91EC /* CustomTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8C6CD3D828D5EC6A00FAB375 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				8C6CD3D928D5ECB500FAB375 /* ContentViewController.swift */,
+				8C6CD3DB28D5ECBA00FAB375 /* ContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		8C92810428D65AA40099A3D8 /* PencilAlert */ = {
+			isa = PBXGroup;
+			children = (
+				8C92810628D65ACB0099A3D8 /* PencilAlertView.swift */,
+				8C92810828D65AF90099A3D8 /* PencilAlertViewController.swift */,
+			);
+			path = PencilAlert;
+			sourceTree = "<group>";
+		};
+		8C92810528D65AB90099A3D8 /* CalendarAlert */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CalendarAlert;
+			sourceTree = "<group>";
+		};
+		8C9CD7FB28CEF0DE0064EA0D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */,
+				8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */,
+				8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */,
+				8C6CD3D628D5C34900FAB375 /* DateFormatter+Extension.swift */,
+				8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8C9CD80328CF7D0B0064EA0D /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				8C6CD3D828D5EC6A00FAB375 /* Content */,
+				8CCEC2F128D1FA01003F1487 /* UpdateView.swift */,
+				8C9CD80628CF7D3D0064EA0D /* UpdateViewController.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		8CB0649F28D3A06C007EB273 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				8CB064A028D3A086007EB273 /* DiaryModel.swift */,
+				8CB064A728D3A2E4007EB273 /* DairyRepository.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		8CC556D128D70C05007EFCFE /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				8CC556D228D70C3A007EFCFE /* ReadView.swift */,
+				8CC556D428D70C49007EFCFE /* ReadViewController.swift */,
+			);
+			path = Read;
+			sourceTree = "<group>";
+		};
+		8CC556D828D72BA8007EFCFE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8CC5572328D7400B007EFCFE /* ChosunKm.TTF */,
+				8CC5572128D73E47007EFCFE /* ChosunNm.ttf */,
+				8CC5570028D72CAE007EFCFE /* esamanru */,
+				8CC556FE28D72CA1007EFCFE /* J송명-Regular.otf */,
+				8CC556F128D72C66007EFCFE /* OneMobile */,
+				8CC556EC28D72C49007EFCFE /* RIDIBatang */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8CC556EC28D72C49007EFCFE /* RIDIBatang */ = {
+			isa = PBXGroup;
+			children = (
+				8CC556ED28D72C5D007EFCFE /* RIDIBatang.otf */,
+			);
+			path = RIDIBatang;
+			sourceTree = "<group>";
+		};
+		8CC556F128D72C66007EFCFE /* OneMobile */ = {
+			isa = PBXGroup;
+			children = (
+				8CC556F228D72C8E007EFCFE /* ONE Mobile Bold.ttf */,
+				8CC556F328D72C8E007EFCFE /* ONE Mobile Light.ttf */,
+				8CC556F528D72C8E007EFCFE /* ONE Mobile OTF Bold.otf */,
+				8CC556F428D72C8E007EFCFE /* ONE Mobile OTF Light.otf */,
+				8CC556F628D72C8E007EFCFE /* ONE Mobile OTF Regular.otf */,
+				8CC556F728D72C8E007EFCFE /* ONE Mobile Regular.ttf */,
+			);
+			path = OneMobile;
+			sourceTree = "<group>";
+		};
+		8CC5570028D72CAE007EFCFE /* esamanru */ = {
+			isa = PBXGroup;
+			children = (
+				8CC5570328D72CBD007EFCFE /* esamanru OTF Bold.otf */,
+				8CC5570228D72CBD007EFCFE /* esamanru OTF Light.otf */,
+				8CC5570128D72CBD007EFCFE /* esamanru OTF Medium.otf */,
+			);
+			path = esamanru;
+			sourceTree = "<group>";
+		};
+		8CE2849D28CB3BC100AC91EC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8CE2849E28CB3BF700AC91EC /* Constants.swift */,
+				8CE284A028CB3C2B00AC91EC /* Color.swift */,
+				8CE284A228CB3C5100AC91EC /* Image.swift */,
+				8CE284A428CB3C6D00AC91EC /* Font.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8CE284A628CB3CC700AC91EC /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				8CC5572528D7BE07007EFCFE /* DiaryHeaderView.swift */,
+				8C9CD7FE28CF10650064EA0D /* QuoteView.swift */,
+				8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */,
+				8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */,
+				8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */,
+				8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C3DF95628C7A79A001E69ED /* MyToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C3DF96B28C7A79B001E69ED /* Build configuration list for PBXNativeTarget "MyToday" */;
+			buildPhases = (
+				8C3DF95328C7A79A001E69ED /* Sources */,
+				8C3DF95428C7A79A001E69ED /* Frameworks */,
+				8C3DF95528C7A79A001E69ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyToday;
+			packageProductDependencies = (
+				8C3DF97A28C7AEB8001E69ED /* SnapKit */,
+				8CE284AE28CB9C7700AC91EC /* FSCalendar */,
+				8C9CD80128CF76590064EA0D /* Toast */,
+				8CB064A328D3A10F007EB273 /* Realm */,
+				8CB064A528D3A10F007EB273 /* RealmSwift */,
+				8CB064AA28D3B787007EB273 /* YPImagePicker */,
+				8C6CD3E828D6399200FAB375 /* IQKeyboardManagerSwift */,
+			);
+			productName = MyToday;
+			productReference = 8C3DF95728C7A79A001E69ED /* MyToday.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C3DF94F28C7A79A001E69ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					8C3DF95628C7A79A001E69ED = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 8C3DF95228C7A79A001E69ED /* Build configuration list for PBXProject "MyToday" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C3DF94E28C7A79A001E69ED;
+			packageReferences = (
+				8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				8C6CD3E728D6399200FAB375 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
+			productRefGroup = 8C3DF95828C7A79A001E69ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C3DF95628C7A79A001E69ED /* MyToday */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C3DF95528C7A79A001E69ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CC556FB28D72C8E007EFCFE /* ONE Mobile OTF Bold.otf in Resources */,
+				8CC5570428D72CBD007EFCFE /* esamanru OTF Medium.otf in Resources */,
+				8CC556F928D72C8E007EFCFE /* ONE Mobile Light.ttf in Resources */,
+				8CC556EF28D72C5D007EFCFE /* RIDIBatang.otf in Resources */,
+				8CC5572228D73E47007EFCFE /* ChosunNm.ttf in Resources */,
+				8CC556FA28D72C8E007EFCFE /* ONE Mobile OTF Light.otf in Resources */,
+				8CC5570628D72CBD007EFCFE /* esamanru OTF Bold.otf in Resources */,
+				8C3DF96728C7A79B001E69ED /* LaunchScreen.storyboard in Resources */,
+				8C3DF96428C7A79B001E69ED /* Assets.xcassets in Resources */,
+				8C3DF96228C7A79A001E69ED /* Main.storyboard in Resources */,
+				8CC556FF28D72CA1007EFCFE /* J송명-Regular.otf in Resources */,
+				8CC556F828D72C8E007EFCFE /* ONE Mobile Bold.ttf in Resources */,
+				8CC5570528D72CBD007EFCFE /* esamanru OTF Light.otf in Resources */,
+				8CC5572428D7400B007EFCFE /* ChosunKm.TTF in Resources */,
+				8CC556FC28D72C8E007EFCFE /* ONE Mobile OTF Regular.otf in Resources */,
+				8CC556FD28D72C8E007EFCFE /* ONE Mobile Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C3DF95328C7A79A001E69ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */,
+				8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */,
+				8C3DF95F28C7A79A001E69ED /* ViewController.swift in Sources */,
+				8CC556D728D70DEF007EFCFE /* UIColor+Extension.swift in Sources */,
+				8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */,
+				8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */,
+				8CB064AD28D3BED4007EB273 /* FileManager+Extension.swift in Sources */,
+				8CE284AC28CB795F00AC91EC /* CustomTabBar.swift in Sources */,
+				8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */,
+				8C3DF97628C7AA05001E69ED /* CalendarView.swift in Sources */,
+				8CAE775728D0CD6F00A1A799 /* EmotionListView.swift in Sources */,
+				8C6CD3DA28D5ECB500FAB375 /* ContentViewController.swift in Sources */,
+				8C6CD3DC28D5ECBA00FAB375 /* ContentView.swift in Sources */,
+				8CB064A128D3A086007EB273 /* DiaryModel.swift in Sources */,
+				8CB064A828D3A2E4007EB273 /* DairyRepository.swift in Sources */,
+				8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */,
+				8C3DF97428C7A938001E69ED /* BaseView.swift in Sources */,
+				8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */,
+				8CCEC2EC28D1C2AB003F1487 /* TitleLineView.swift in Sources */,
+				8C3DF95B28C7A79A001E69ED /* AppDelegate.swift in Sources */,
+				8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */,
+				8CC5572628D7BE07007EFCFE /* DiaryHeaderView.swift in Sources */,
+				8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */,
+				8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */,
+				8C6CD3D728D5C34900FAB375 /* DateFormatter+Extension.swift in Sources */,
+				8CC556D528D70C49007EFCFE /* ReadViewController.swift in Sources */,
+				8CE284A528CB3C6D00AC91EC /* Font.swift in Sources */,
+				8C3DF95D28C7A79A001E69ED /* SceneDelegate.swift in Sources */,
+				8C92810728D65ACB0099A3D8 /* PencilAlertView.swift in Sources */,
+				8CE284A328CB3C5100AC91EC /* Image.swift in Sources */,
+				8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */,
+				8C92810928D65AF90099A3D8 /* PencilAlertViewController.swift in Sources */,
+				8CAE775328D0AF2800A1A799 /* CustomButtonView.swift in Sources */,
+				8CCEC2F228D1FA01003F1487 /* UpdateView.swift in Sources */,
+				8CC556D328D70C3A007EFCFE /* ReadView.swift in Sources */,
+				8CE2849F28CB3BF700AC91EC /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C3DF96028C7A79A001E69ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C3DF96128C7A79A001E69ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C3DF96528C7A79B001E69ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C3DF96628C7A79B001E69ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C3DF96928C7A79B001E69ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C3DF96A28C7A79B001E69ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C3DF96C28C7A79B001E69ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZV9V5LY2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyToday/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tason.MyToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C3DF96D28C7A79B001E69ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZV9V5LY2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyToday/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tason.MyToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C3DF95228C7A79A001E69ED /* Build configuration list for PBXProject "MyToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C3DF96928C7A79B001E69ED /* Debug */,
+				8C3DF96A28C7A79B001E69ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C3DF96B28C7A79B001E69ED /* Build configuration list for PBXNativeTarget "MyToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C3DF96C28C7A79B001E69ED /* Debug */,
+				8C3DF96D28C7A79B001E69ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		8C6CD3E728D6399200FAB375 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+		8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
+		8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C3DF97A28C7AEB8001E69ED /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		8C6CD3E828D6399200FAB375 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C6CD3E728D6399200FAB375 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		8C9CD80128CF76590064EA0D /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		8CB064A328D3A10F007EB273 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		8CB064A528D3A10F007EB273 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		8CB064AA28D3B787007EB273 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
+		8CE284AE28CB9C7700AC91EC /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8C3DF94F28C7A79A001E69ED /* Project object */;
+}
