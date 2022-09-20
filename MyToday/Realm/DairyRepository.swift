@@ -36,4 +36,8 @@ class DiaryRepository {
     func getDiary(date: String) -> Diary? {
         return localRealm.object(ofType: Diary.self, forPrimaryKey: date)
     }
+    
+    func getDiaryList() -> Results<Diary> {
+        return localRealm.objects(Diary.self).sorted(byKeyPath: "objectId", ascending: false)
+    }
 }

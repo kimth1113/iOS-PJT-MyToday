@@ -20,6 +20,7 @@ class TabBarViewController: UITabBarController {
     }()
     
     let CalendarVC = CalendarViewController()
+    let DiaryListVC = DiaryListViewController()
     
     lazy var moveToWriteVC: ((UpdateViewController, Date) -> Void) = { vc, date in
         // 오늘 일기
@@ -42,8 +43,18 @@ class TabBarViewController: UITabBarController {
         }
     }
     
+    lazy var moveToReadVC: ((ReadViewController, Diary) -> Void) = { vc, diary in
+        let vc = ReadViewController()
+        vc.diary = diary
+//        vc.reloadCalendar = reloadCalendar
+        self.transition(vc, transitionStyle: .present)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DiaryListVC.moveToReadVC = moveToReadVC
+        
         configure()
     }
     
@@ -98,12 +109,12 @@ extension TabBarViewController {
     private func configureTabBar() {
         
         let firstVC = tabBarResultController(vc: CalendarVC, resultType: .vc, img: Constants.BaseImage.TapMenu.calendar, selectedImg: Constants.BaseImage.TapMenu.calendarFill)
-        let secondVC = tabBarResultController(vc: UpdateViewController(), resultType: .vc, img: Constants.BaseImage.TapMenu.diaryList, selectedImg: Constants.BaseImage.TapMenu.diaryListFill)
+        let secondVC = tabBarResultController(vc: DiaryListVC, resultType: .vc, img: Constants.BaseImage.TapMenu.diaryList, selectedImg: Constants.BaseImage.TapMenu.diaryListFill)
         let thirdVC = tabBarResultController(vc: ViewController(), resultType: .vc, img: nil, selectedImg: nil)
         let fourthVC = tabBarResultController(vc: ReadViewController(), resultType: .vc, img: Constants.BaseImage.TapMenu.analysis, selectedImg: Constants.BaseImage.TapMenu.analysisFill)
         let fifthVC = tabBarResultController(vc: PencilAlertViewController(), resultType: .vc, img: Constants.BaseImage.TapMenu.setting, selectedImg: Constants.BaseImage.TapMenu.settingFill)
         
-        let viewControllers = [firstVC, secondVC, thirdVC, fourthVC, fifthVC]
+        let viewControllers = [secondVC, firstVC, thirdVC, fourthVC, fifthVC]
         setViewControllers(viewControllers, animated: false)
     }
     

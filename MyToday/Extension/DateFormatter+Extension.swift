@@ -32,4 +32,11 @@ class FormatterRepository {
         formatter.dateFormat = "yyyy. MM. dd. (EEEE)"
         return formatter
     }()
+    
+    static let diaryListFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "M월 dd일\nEEEE"
+        return formatter
+    }()
 }

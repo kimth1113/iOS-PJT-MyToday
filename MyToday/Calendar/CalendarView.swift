@@ -14,8 +14,6 @@ class CalendarView: BaseView {
     let backgroundImage: UIImageView = {
         let view = UIImageView()
         view.image = Constants.BaseImage.background
-//        view.backgroundColor = .black
-//        view.layer.opacity = 1
         view.contentMode = .scaleAspectFill
         return view
     }()

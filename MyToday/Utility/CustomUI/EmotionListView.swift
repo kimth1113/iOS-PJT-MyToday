@@ -13,7 +13,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.happy
+        view.customImageView.image = Constants.BaseImage.emotion[1]
         view.layer.cornerRadius = 5
         view.customButton.tag = 1
         return view
@@ -22,7 +22,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView2: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.angry
+        view.customImageView.image = Constants.BaseImage.emotion[2]
         view.layer.cornerRadius = 5
         view.customButton.tag = 2
         return view
@@ -31,7 +31,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView3: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.disgusted
+        view.customImageView.image = Constants.BaseImage.emotion[3]
         view.layer.cornerRadius = 5
         view.customButton.tag = 3
         return view
@@ -40,7 +40,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView4: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.fear
+        view.customImageView.image = Constants.BaseImage.emotion[4]
         view.layer.cornerRadius = 5
         view.customButton.tag = 4
         return view
@@ -49,7 +49,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView5: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.kiss
+        view.customImageView.image = Constants.BaseImage.emotion[5]
         view.layer.cornerRadius = 5
         view.customButton.tag = 5
         return view
@@ -58,7 +58,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView6: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.sad
+        view.customImageView.image = Constants.BaseImage.emotion[6]
         view.layer.cornerRadius = 5
         view.customButton.tag = 6
         return view
@@ -67,7 +67,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView7: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.sadness
+        view.customImageView.image = Constants.BaseImage.emotion[7]
         view.layer.cornerRadius = 5
         view.customButton.tag = 7
         return view
@@ -76,7 +76,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView8: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.sleeping
+        view.customImageView.image = Constants.BaseImage.emotion[8]
         view.layer.cornerRadius = 5
         view.customButton.tag = 8
         return view
@@ -85,7 +85,7 @@ class EmotionListView: BaseView {
     let emoticonButtonView9: CustomButtonView = {
         let view = CustomButtonView()
         view.backgroundColor = .systemYellow
-        view.customImageView.image = Constants.BaseImage.Emotion.surprised
+        view.customImageView.image = Constants.BaseImage.emotion[9]
         view.layer.cornerRadius = 5
         view.customButton.tag = 9
         view.customImageView.tintColor = .black

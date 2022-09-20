@@ -14,18 +14,6 @@ class ReadViewController: BaseViewController {
     private let scrollView = UIScrollView()
     private let contentView = ReadView()
     
-    let emotionImageList = [
-        Constants.BaseImage.Emotion.happy,
-        Constants.BaseImage.Emotion.angry,
-        Constants.BaseImage.Emotion.disgusted,
-        Constants.BaseImage.Emotion.fear,
-        Constants.BaseImage.Emotion.kiss,
-        Constants.BaseImage.Emotion.sad,
-        Constants.BaseImage.Emotion.sadness,
-        Constants.BaseImage.Emotion.sleeping,
-        Constants.BaseImage.Emotion.surprised
-    ]
-    
     var diary: Diary?
     
     var reloadCalendar: (() -> Void)?
@@ -33,7 +21,7 @@ class ReadViewController: BaseViewController {
     lazy var updateReadVC: ((Diary) -> ()) = { diary in
         self.diary = diary
         
-        self.contentView.emoticonView.customImageView.image = self.emotionImageList[diary.emoticonId - 1]
+        self.contentView.emoticonView.customImageView.image = Constants.BaseImage.emotion[diary.emoticonId]
         
         self.contentView.imageView.customImageView.image = self.loadImageFromDocument(fileName: diary.objectId)
         if let content = diary.content {
@@ -68,7 +56,7 @@ class ReadViewController: BaseViewController {
         }
         
         if let diary = diary {
-            contentView.emoticonView.customImageView.image = emotionImageList[diary.emoticonId - 1]
+            contentView.emoticonView.customImageView.image = Constants.BaseImage.emotion[diary.emoticonId]
             
             if let date = FormatterRepository.formatter.date(from: diary.objectId) {
                 print(date, 12345)

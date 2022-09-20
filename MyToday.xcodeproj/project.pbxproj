@@ -19,6 +19,11 @@
 		8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */; };
 		8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C3DF97A28C7AEB8001E69ED /* SnapKit */; };
 		8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */; };
+		8C4CB9C428D9793600825D00 /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9C328D9793600825D00 /* DiaryListView.swift */; };
+		8C4CB9C828D9797200825D00 /* DiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9C728D9797200825D00 /* DiaryListViewController.swift */; };
+		8C4CB9CC28D984AB00825D00 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9CB28D984AB00825D00 /* BaseCollectionViewCell.swift */; };
+		8C4CB9CE28D9854B00825D00 /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9CD28D9854B00825D00 /* EmotionCollectionViewCell.swift */; };
+		8C4CB9D028D9861500825D00 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9CF28D9861500825D00 /* ReusableProtocol.swift */; };
 		8C6CD3D728D5C34900FAB375 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CD3D628D5C34900FAB375 /* DateFormatter+Extension.swift */; };
 		8C6CD3DA28D5ECB500FAB375 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CD3D928D5ECB500FAB375 /* ContentViewController.swift */; };
 		8C6CD3DC28D5ECBA00FAB375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CD3DB28D5ECBA00FAB375 /* ContentView.swift */; };
@@ -39,6 +44,8 @@
 		8CB064A828D3A2E4007EB273 /* DairyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064A728D3A2E4007EB273 /* DairyRepository.swift */; };
 		8CB064AB28D3B787007EB273 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB064AA28D3B787007EB273 /* YPImagePicker */; };
 		8CB064AD28D3BED4007EB273 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */; };
+		8CB89CF828D9BB5C005A28A2 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB89CF728D9BB5C005A28A2 /* BaseTableViewCell.swift */; };
+		8CB89CFA28D9BC0B005A28A2 /* DiaryTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB89CF928D9BC0B005A28A2 /* DiaryTabelViewCell.swift */; };
 		8CC556D328D70C3A007EFCFE /* ReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D228D70C3A007EFCFE /* ReadView.swift */; };
 		8CC556D528D70C49007EFCFE /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D428D70C49007EFCFE /* ReadViewController.swift */; };
 		8CC556D728D70DEF007EFCFE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */; };
@@ -56,7 +63,6 @@
 		8CC5572228D73E47007EFCFE /* ChosunNm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5572128D73E47007EFCFE /* ChosunNm.ttf */; };
 		8CC5572428D7400B007EFCFE /* ChosunKm.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5572328D7400B007EFCFE /* ChosunKm.TTF */; };
 		8CC5572628D7BE07007EFCFE /* DiaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5572528D7BE07007EFCFE /* DiaryHeaderView.swift */; };
-		8CCEC2EC28D1C2AB003F1487 /* TitleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */; };
 		8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */; };
 		8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */; };
 		8CCEC2F228D1FA01003F1487 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2F128D1FA01003F1487 /* UpdateView.swift */; };
@@ -82,6 +88,11 @@
 		8C3DF97528C7AA05001E69ED /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8C4CB9C328D9793600825D00 /* DiaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListView.swift; sourceTree = "<group>"; };
+		8C4CB9C728D9797200825D00 /* DiaryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewController.swift; sourceTree = "<group>"; };
+		8C4CB9CB28D984AB00825D00 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		8C4CB9CD28D9854B00825D00 /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		8C4CB9CF28D9861500825D00 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		8C6CD3D628D5C34900FAB375 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		8C6CD3D928D5ECB500FAB375 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		8C6CD3DB28D5ECBA00FAB375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +108,8 @@
 		8CB064A028D3A086007EB273 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		8CB064A728D3A2E4007EB273 /* DairyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyRepository.swift; sourceTree = "<group>"; };
 		8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		8CB89CF728D9BB5C005A28A2 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		8CB89CF928D9BC0B005A28A2 /* DiaryTabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTabelViewCell.swift; sourceTree = "<group>"; };
 		8CC556D228D70C3A007EFCFE /* ReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadView.swift; sourceTree = "<group>"; };
 		8CC556D428D70C49007EFCFE /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -114,7 +127,6 @@
 		8CC5572128D73E47007EFCFE /* ChosunNm.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChosunNm.ttf; sourceTree = "<group>"; };
 		8CC5572328D7400B007EFCFE /* ChosunKm.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChosunKm.TTF; sourceTree = "<group>"; };
 		8CC5572528D7BE07007EFCFE /* DiaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryHeaderView.swift; sourceTree = "<group>"; };
-		8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLineView.swift; sourceTree = "<group>"; };
 		8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
 		8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
 		8CCEC2F128D1FA01003F1487 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
@@ -165,6 +177,7 @@
 				8CB0649F28D3A06C007EB273 /* Realm */,
 				8C3DF98028C7B53B001E69ED /* TabBar */,
 				8C3DF96E28C7A8A0001E69ED /* Calendar */,
+				8C4CB9C228D9791300825D00 /* DiaryList */,
 				8C9CD80328CF7D0B0064EA0D /* Update */,
 				8CC556D128D70C05007EFCFE /* Read */,
 				8C92810528D65AB90099A3D8 /* CalendarAlert */,
@@ -199,6 +212,7 @@
 				8CE284A628CB3CC700AC91EC /* CustomUI */,
 				8CE2849D28CB3BC100AC91EC /* Constants */,
 				8C3DF97028C7A912001E69ED /* BaseView */,
+				8C4CB9CF28D9861500825D00 /* ReusableProtocol.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -209,6 +223,8 @@
 				8C3DF97128C7A92A001E69ED /* BaseViewController.swift */,
 				8C3DF97328C7A938001E69ED /* BaseView.swift */,
 				8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */,
+				8C4CB9CB28D984AB00825D00 /* BaseCollectionViewCell.swift */,
+				8CB89CF728D9BB5C005A28A2 /* BaseTableViewCell.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -220,6 +236,17 @@
 				8CE284AB28CB795F00AC91EC /* CustomTabBar.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8C4CB9C228D9791300825D00 /* DiaryList */ = {
+			isa = PBXGroup;
+			children = (
+				8C4CB9C328D9793600825D00 /* DiaryListView.swift */,
+				8CB89CF928D9BC0B005A28A2 /* DiaryTabelViewCell.swift */,
+				8C4CB9C728D9797200825D00 /* DiaryListViewController.swift */,
+				8C4CB9CD28D9854B00825D00 /* EmotionCollectionViewCell.swift */,
+			);
+			path = DiaryList;
 			sourceTree = "<group>";
 		};
 		8C6CD3D828D5EC6A00FAB375 /* Content */ = {
@@ -349,7 +376,6 @@
 				8C9CD7FE28CF10650064EA0D /* QuoteView.swift */,
 				8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */,
 				8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */,
-				8CCEC2EB28D1C2AB003F1487 /* TitleLineView.swift */,
 				8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */,
 			);
 			path = CustomUI;
@@ -459,6 +485,9 @@
 				8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */,
 				8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */,
 				8C3DF95F28C7A79A001E69ED /* ViewController.swift in Sources */,
+				8C4CB9C428D9793600825D00 /* DiaryListView.swift in Sources */,
+				8CB89CF828D9BB5C005A28A2 /* BaseTableViewCell.swift in Sources */,
+				8C4CB9CE28D9854B00825D00 /* EmotionCollectionViewCell.swift in Sources */,
 				8CC556D728D70DEF007EFCFE /* UIColor+Extension.swift in Sources */,
 				8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */,
 				8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */,
@@ -466,6 +495,7 @@
 				8CE284AC28CB795F00AC91EC /* CustomTabBar.swift in Sources */,
 				8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */,
 				8C3DF97628C7AA05001E69ED /* CalendarView.swift in Sources */,
+				8C4CB9CC28D984AB00825D00 /* BaseCollectionViewCell.swift in Sources */,
 				8CAE775728D0CD6F00A1A799 /* EmotionListView.swift in Sources */,
 				8C6CD3DA28D5ECB500FAB375 /* ContentViewController.swift in Sources */,
 				8C6CD3DC28D5ECBA00FAB375 /* ContentView.swift in Sources */,
@@ -474,9 +504,9 @@
 				8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */,
 				8C3DF97428C7A938001E69ED /* BaseView.swift in Sources */,
 				8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */,
-				8CCEC2EC28D1C2AB003F1487 /* TitleLineView.swift in Sources */,
 				8C3DF95B28C7A79A001E69ED /* AppDelegate.swift in Sources */,
 				8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */,
+				8CB89CFA28D9BC0B005A28A2 /* DiaryTabelViewCell.swift in Sources */,
 				8CC5572628D7BE07007EFCFE /* DiaryHeaderView.swift in Sources */,
 				8C9CD80728CF7D3D0064EA0D /* UpdateViewController.swift in Sources */,
 				8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */,
@@ -485,12 +515,14 @@
 				8CE284A528CB3C6D00AC91EC /* Font.swift in Sources */,
 				8C3DF95D28C7A79A001E69ED /* SceneDelegate.swift in Sources */,
 				8C92810728D65ACB0099A3D8 /* PencilAlertView.swift in Sources */,
+				8C4CB9C828D9797200825D00 /* DiaryListViewController.swift in Sources */,
 				8CE284A328CB3C5100AC91EC /* Image.swift in Sources */,
 				8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */,
 				8C92810928D65AF90099A3D8 /* PencilAlertViewController.swift in Sources */,
 				8CAE775328D0AF2800A1A799 /* CustomButtonView.swift in Sources */,
 				8CCEC2F228D1FA01003F1487 /* UpdateView.swift in Sources */,
 				8CC556D328D70C3A007EFCFE /* ReadView.swift in Sources */,
+				8C4CB9D028D9861500825D00 /* ReusableProtocol.swift in Sources */,
 				8CE2849F28CB3BF700AC91EC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

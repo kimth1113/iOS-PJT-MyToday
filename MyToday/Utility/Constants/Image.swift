@@ -30,17 +30,27 @@ extension Constants {
             static let settingFill = UIImage(systemName: "gearshape.fill")
         }
         
-        enum Emotion {
-            static let none = UIImage(named: "square(3)")
-            static let happy = UIImage(named: "happy")
-            static let angry = UIImage(named: "angry")
-            static let disgusted = UIImage(named: "disgusted")
-            static let fear = UIImage(named: "fear")
-            static let kiss = UIImage(named: "kiss")
-            static let sad = UIImage(named: "sad")
-            static let sadness = UIImage(named: "sadness")
-            static let sleeping = UIImage(named: "sleeping")
-            static let surprised = UIImage(named: "surprised")
-        }
+        static let emotion = [
+            // none
+            UIImage(named: "square(3)"),
+            // happy
+            UIImage(named: "happy"),
+            // angry
+            UIImage(named: "angry"),
+            // disgusted
+            UIImage(named: "disgusted"),
+            // fear
+            UIImage(named: "fear"),
+            // kiss
+            UIImage(named: "kiss"),
+            // sad
+            UIImage(named: "sad"),
+            // sadness
+            UIImage(named: "sadness"),
+            // sleeping
+            UIImage(named: "sleeping"),
+            // surprised
+            UIImage(named: "surprised"),
+        ]
     }
 }

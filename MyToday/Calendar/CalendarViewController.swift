@@ -95,24 +95,11 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         
         let cell = mainView.calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position) as! DIYCalendarCell
         
-        let emotionImageList = [
-            Constants.BaseImage.Emotion.none,
-            Constants.BaseImage.Emotion.happy,
-            Constants.BaseImage.Emotion.angry,
-            Constants.BaseImage.Emotion.disgusted,
-            Constants.BaseImage.Emotion.fear,
-            Constants.BaseImage.Emotion.kiss,
-            Constants.BaseImage.Emotion.sad,
-            Constants.BaseImage.Emotion.sadness,
-            Constants.BaseImage.Emotion.sleeping,
-            Constants.BaseImage.Emotion.surprised
-        ]
-        
         let date = FormatterRepository.formatter.string(from: date)
         if let diary = repository.getDiary(date: date) {
-            cell.titleImageView.image = emotionImageList[diary.emoticonId]
+            cell.titleImageView.image = Constants.BaseImage.emotion[diary.emoticonId]
         } else {
-            cell.titleImageView.image = emotionImageList[0]
+            cell.titleImageView.image = Constants.BaseImage.emotion[0]
             cell.titleImageView.layer.opacity = 0.7
         }
         
