@@ -18,6 +18,13 @@ class CalendarView: BaseView {
         return view
     }()
     
+    let comeBackButton: UIButton = {
+        let view = UIButton()
+        view.setImage(UIImage(systemName: "arrow.2.squarepath"), for: .normal)
+        view.tintColor = .black
+        return view
+    }()
+    
     let calendar: FSCalendar = {
         let view = FSCalendar()
 
@@ -36,7 +43,7 @@ class CalendarView: BaseView {
         //MARK: -캘린더(날짜 부분) 관련
 //        view.appearance.selectionColor = .none //선택 된 날의 동그라미 색
 //        view.appearance.titleDefaultColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) //기본 날짜 색
-//        view.appearance.titleSelectionColor = .systemGray
+        view.appearance.titleSelectionColor = .none
         
         
         //MARK: -오늘 날짜(Today) 관련
@@ -65,7 +72,8 @@ class CalendarView: BaseView {
 //        view.numberOfLines = 2
 //        view.textAlignment = .center
         view.titleLabel?.font = Constants.BaseFont.Calendar.header
-        view.titleLabel?.textColor = Constants.BaseColor.white
+        view.setTitleColor(.black, for: .normal)
+        view.layer.opacity = 0.6
         view.titleLabel?.lineBreakMode = .byCharWrapping
         view.titleLabel?.textAlignment = .center
         return view
@@ -74,29 +82,21 @@ class CalendarView: BaseView {
     let leftButton: UIButton = {
         let view = UIButton()
         view.setImage(Constants.BaseImage.leftArrow, for: .normal)
-        view.tintColor = Constants.BaseColor.white
-        view.layer.opacity = 0.5
+        view.tintColor = .black
+        view.layer.opacity = 0.4
         return view
     }()
     
     let rightButton: UIButton = {
         let view = UIButton()
         view.setImage(Constants.BaseImage.rightArrow, for: .normal)
-        view.tintColor = Constants.BaseColor.white
-        view.layer.opacity = 0.5
-        return view
-    }()
-    
-    let quoteView: QuoteView = {
-        let view = QuoteView()
-        view.backgroundColor = Constants.BaseColor.white
-        view.layer.cornerRadius = 8
-        view.layer.opacity = 0.2
+        view.tintColor = .black
+        view.layer.opacity = 0.4
         return view
     }()
     
     override func configureUI() {
-        [backgroundImage, calendar, headerButton, leftButton, rightButton, quoteView].forEach {
+        [backgroundImage, comeBackButton, calendar, headerButton, leftButton, rightButton].forEach {
             addSubview($0)
         }
     }
@@ -109,13 +109,19 @@ class CalendarView: BaseView {
             make.edges.equalTo(self)
         }
         
+        comeBackButton.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide)
+            make.trailing.equalTo(self).offset(-20)
+//            make.height.width.equalTo(40)
+        }
+        
         headerButton.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
             make.centerX.equalTo(self)
         }
         
         calendar.snp.makeConstraints { make in
-            make.top.equalTo(headerButton.snp.bottom).offset(8)
+            make.top.equalTo(headerButton.snp.bottom)
             make.width.equalTo(self).multipliedBy(0.9)
             make.height.equalTo(calendar.snp.width).multipliedBy(0.9)
             make.centerX.equalTo(self)
@@ -131,14 +137,6 @@ class CalendarView: BaseView {
             make.width.height.equalTo(60)
             make.centerY.equalTo(headerButton)
             make.leading.equalTo(headerButton.snp.trailing).offset(20)
-        }
-        
-        quoteView.snp.makeConstraints { make in
-            make.top.equalTo(calendar.snp.bottom).offset(8)
-            make.centerX.equalTo(self)
-            make.width.equalTo(calendar)
-//            make.height.equalTo(calendar).multipliedBy(0.5)
-            
         }
     }
 }

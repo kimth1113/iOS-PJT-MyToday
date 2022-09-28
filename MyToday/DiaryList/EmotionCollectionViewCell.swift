@@ -10,26 +10,27 @@ import SnapKit
 
 class EmotionCollectionViewCell: BaseCollectionViewCell {
     
-    let emoticonButtonView: CustomButtonView = {
-        let view = CustomButtonView()
-        view.backgroundColor = .systemYellow
-        view.layer.cornerRadius = 30
+    let emotionLabel: UILabel = {
+        let view = UILabel()
+        view.backgroundColor = UIColor(red: 34/255, green: 166/255, blue: 179/255, alpha: 0.5)
+        view.textAlignment = .center
+        view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
         return view
     }()
     
     override func configureUI() {
-        addSubview(emoticonButtonView)
+        addSubview(emotionLabel)
     }
     
     override func setConstraint() {
-        emoticonButtonView.snp.makeConstraints { make in
+        emotionLabel.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
     }
     
-    func setCellDate(indexPath: IndexPath) {
-        emoticonButtonView.customImageView.image = Constants.BaseImage.emotion[indexPath.row + 1]
+    func setCellDate(emotionLabel: String) {
+        self.emotionLabel.text = emotionLabel
     }
 }
 

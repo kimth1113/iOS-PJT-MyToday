@@ -15,6 +15,8 @@ class ContentViewController: BaseViewController {
     
     var content: String?
     
+    var bindingContent: ((String?) -> Void)?
+    
     var saveContentText: ((String?) -> Void)?
     
     override func loadView() {
@@ -54,9 +56,9 @@ extension ContentViewController {
         guard let content = mainView.textView.text else { return }
         
         if content.trimmingCharacters(in: .whitespaces) == "" {
-            saveContentText!(nil)
+            bindingContent!(nil)
         } else {
-            saveContentText!(mainView.textView.text)
+            bindingContent!(mainView.textView.text)
         }
         
         dismiss(animated: true)

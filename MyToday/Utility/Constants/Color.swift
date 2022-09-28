@@ -23,11 +23,16 @@ extension Constants {
         enum Calendar {
             static let saturday = UIColor.blue
             static let sunday = UIColor.red
-            static let weekday = UIColor.white
+            static let weekday = UIColor.black
         }
         
         enum PencilAlert {
             static let background = UIColor(named: "alert-background")
+        }
+        
+        enum ListCell {
+            static let background = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.4)
+            static let contentBackground = UIColor(named: "alert-background")
         }
     }
 }

@@ -10,13 +10,34 @@ import SnapKit
 
 class ReadView: BaseView {
     
+    let backgroundImage: UIImageView = {
+        let view = UIImageView()
+        view.image = Constants.BaseImage.scrollBackground
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    
+    let backButtonView: CustomButtonView = {
+        let view = CustomButtonView()
+        view.customImageView.image = UIImage(systemName: "arrow.backward")
+        view.tintColor = .black
+        return view
+    }()
+    
+    let saveButtonView: CustomButtonView = {
+        let view = CustomButtonView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
     let logoLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
         view.font = Constants.BaseFont.Read.header
-        view.text = "나는오늘!"
+        view.text = "나의 소중했던.."
         view.numberOfLines = 2
         view.textAlignment = .center
+        view.layer.opacity = 0.7
         return view
     }()
     
@@ -24,46 +45,37 @@ class ReadView: BaseView {
         let view = UILabel()
         view.textColor = .black
         view.font = Constants.BaseFont.Read.date
-        view.text = "DATE : 2022. 09. 18. (일요일)"
         view.numberOfLines = 2
         view.textAlignment = .center
-        view.layer.cornerRadius = 4
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 1
+        view.layer.opacity = 0.7
         return view
     }()
     
-    let emotionLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .black
-        view.font = Constants.BaseFont.Read.label
-        view.text = "오늘의 감정"
-        view.numberOfLines = 2
-        view.textAlignment = .center
-        view.layer.cornerRadius = 4
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 1
+    let underline: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.opacity = 0.7
+        view.layer.cornerRadius = 2
         return view
     }()
     
     let emoticonView: CustomButtonView = {
         let view = CustomButtonView()
+        view.backgroundColor = .white
+        view.layer.opacity = 0.3
         view.layer.cornerRadius = 4
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 1
         return view
     }()
     
-    let imageLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .black
-        view.font = Constants.BaseFont.Read.label
-        view.text = "오늘의 사진"
-        view.numberOfLines = 2
-        view.textAlignment = .center
+    let emoticonChangeButton: UIButton = {
+        let view = UIButton()
+        view.setTitle("감정 등록", for: .normal)
+        view.setTitleColor(.white, for: .normal)
+        view.backgroundColor = UIColor(rgb: 0x0984e3)
+//        view.layer.borderWidth = 4
         view.layer.cornerRadius = 4
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 1
+        view.layer.opacity = 0.7
+        view.layer.masksToBounds = true
         return view
     }()
     
@@ -71,111 +83,96 @@ class ReadView: BaseView {
         let view = CustomButtonView()
         view.layer.cornerRadius = 4
         view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 1
+//        view.layer.borderWidth = 1
+        view.backgroundColor = .black
         return view
     }()
-
-    let contentLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .black
-        view.font = Constants.BaseFont.Read.label
-        view.text = "오늘의 일기"
-        view.numberOfLines = 2
-        view.textAlignment = .center
-        view.layer.cornerRadius = 4
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 1
-        return view
-    }()
+    
     
     let contentBackgroundView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 4
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 1
+        view.backgroundColor = .white
+        view.layer.opacity = 0.5
         return view
     }()
     
-    let contentView: UILabel = {
-        let view = UILabel()
-        view.numberOfLines = 0
+    let contentView: UITextView = {
+        let view = UITextView()
         view.font = Constants.BaseFont.Read.content
+        view.backgroundColor = .clear
         return view
     }()
     
     override func configureUI() {
-        backgroundColor = UIColor(rgb: 0xfaf4e4)
-        
-        [logoLabel, dateLabel, emotionLabel, emoticonView, imageLabel, imageView, contentLabel, contentBackgroundView, contentView].forEach {
+        [backgroundImage, backButtonView, saveButtonView, logoLabel, dateLabel, underline, emoticonView, emoticonChangeButton, imageView, contentBackgroundView, contentView].forEach {
             addSubview($0)
         }
     }
     
     override func setConstraint() {
         
-        self.snp.makeConstraints { make in
-            make.bottom.equalTo(contentView.snp.bottom).offset(60)
+        backgroundImage.snp.makeConstraints { make in
+            make.edges.equalTo(self)
         }
-                
+        
+        backButtonView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(12)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.width.height.equalTo(32)
+        }
+        
+        saveButtonView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(12)
+            make.trailing.equalTo(safeAreaLayoutGuide).inset(20)
+            make.width.height.equalTo(32)
+        }
+        
         logoLabel.snp.makeConstraints { make in
             make.centerX.equalTo(self)
-            make.top.equalTo(self).offset(40)
+            make.top.equalTo(safeAreaLayoutGuide).offset(44)
         }
         
         dateLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoLabel.snp.bottom).offset(20)
+            make.top.equalTo(logoLabel.snp.bottom).offset(8)
             make.centerX.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.8)
-            make.height.equalTo(36)
-        }
-            
-        emotionLabel.snp.makeConstraints { make in
-            make.top.equalTo(dateLabel.snp.bottom).offset(20)
-            make.leading.equalTo(dateLabel.snp.leading)
-            make.width.equalTo(imageLabel)
-            make.trailing.equalTo(imageLabel.snp.leading).offset(-20)
-            make.height.equalTo(24)
         }
         
-        imageLabel.snp.makeConstraints { make in
+        underline.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(20)
-            make.trailing.equalTo(dateLabel.snp.trailing)
-            make.width.equalTo(emotionLabel)
-            make.height.equalTo(24)
+            make.leading.trailing.equalTo(self).inset(20)
+            make.height.equalTo(4)
+        }
+            
+        emoticonChangeButton.snp.makeConstraints { make in
+            make.bottom.equalTo(imageView)
+            make.leading.equalTo(self).offset(20)
+            make.width.equalTo(108)
+            make.top.equalTo(emoticonView.snp.bottom).offset(4)
         }
         
         emoticonView.snp.makeConstraints { make in
-            make.top.equalTo(emotionLabel.snp.bottom).offset(12)
-            make.leading.equalTo(emotionLabel.snp.leading)
-            make.width.equalTo(imageView)
-            make.trailing.equalTo(imageView.snp.leading).offset(-20)
-            make.height.equalTo(emoticonView.snp.width)
+            make.top.equalTo(imageView)
+            make.leading.equalTo(self).offset(20)
+            make.width.equalTo(108)
+            make.height.equalTo(emoticonView.snp.width).multipliedBy(0.75)
         }
-        
+            
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(imageLabel.snp.bottom).offset(12)
-            make.trailing.equalTo(imageLabel.snp.trailing)
-            make.width.equalTo(emoticonView)
-            make.height.equalTo(imageView.snp.width)
-        }
-        
-        contentLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(20)
-            make.centerX.equalTo(self)
-            make.width.equalTo(self).multipliedBy(0.8)
-            make.height.equalTo(28)
+            make.top.equalTo(underline.snp.bottom).offset(12)
+            make.trailing.equalTo(self).inset(20)
+            make.height.equalTo(108)
+            make.width.equalTo(imageView.snp.height)
         }
         
         contentBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(contentLabel.snp.bottom).offset(12)
-            make.leading.trailing.equalTo(dateLabel)
-            make.bottom.equalTo(contentView.snp.bottom).offset(12)
-            make.height.greaterThanOrEqualTo(40)
+            make.top.equalTo(imageView.snp.bottom).offset(12)
+            make.leading.equalTo(emoticonView)
+            make.trailing.equalTo(imageView)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(20)
         }
-        
+
         contentView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(contentBackgroundView).inset(12)
-//            make.height.greaterThanOrEqualTo(20)
+            make.top.bottom.leading.trailing.equalTo(contentBackgroundView).inset(4)
         }
     }
 }

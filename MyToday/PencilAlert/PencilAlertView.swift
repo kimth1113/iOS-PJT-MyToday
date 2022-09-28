@@ -76,10 +76,6 @@ class PencilAlertView: BaseView {
     
     let datePicker: UIDatePicker = {
         let view = UIDatePicker()
-        if #available(iOS 13.4, *) {
-           // [iOS 13.0 버전 이상 인 경우 분기 처리 내용]
-            view.preferredDatePickerStyle = .wheels
-        }
         view.datePickerMode = .date
         view.locale = Locale(identifier: "ko-KR")
         view.timeZone = .autoupdatingCurrent

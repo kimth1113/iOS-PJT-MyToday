@@ -38,28 +38,15 @@ class PencilAlertViewController: BaseViewController {
 extension PencilAlertViewController {
     
     private func setButton() {
-        mainView.cancelButtonView.customButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         
-        mainView.todayButtonView.customButton.addTarget(self, action: #selector(dayButtonTapped), for: .touchUpInside)
+        
         mainView.yesterdayButtonView.customButton.addTarget(self, action: #selector(yesterdayButtonTapped), for: .touchUpInside)
         
         mainView.specialButtonView.customButton.addTarget(self, action: #selector(specialButtonTapped), for: .touchUpInside)
         
         mainView.doneButtonView.customButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
     }
-    
-    @objc
-    private func cancelButtonTapped() {
         
-        dismiss(animated: false)
-    }
-    
-    @objc
-    private func dayButtonTapped(_ sender: UIButton) {
-        let vc = UpdateViewController()
-        dismiss(animated: false)
-        moveToWriteVC!(vc, Date())
-    }
     
     @objc
     private func yesterdayButtonTapped(_ sender: UIButton) {

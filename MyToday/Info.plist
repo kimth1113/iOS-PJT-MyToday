@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사진을 불러오기 위하여 갤러리 접근 권한이 필요합니다.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>사진촬영을 위하여 카메라 접근 권한이 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>esamanru OTF Bold.otf</string>
@@ -17,13 +21,15 @@
 		<string>J송명-Regular.otf</string>
 		<string>ChosunNm.ttf</string>
 		<string>ChosunKm.TTF</string>
+		<string>나눔손글씨 고딕 아니고 고딩.ttf</string>
+		<string>KOTRA_SONGEULSSI.otf</string>
+		<string>MapoFlowerIsland.otf</string>
+		<string>MapoGoldenPier.otf</string>
+		<string>NanumBarunpenB.ttf</string>
+		<string>NanumBarunpenR.ttf</string>
+		<string>NanumBarunpenR.otf</string>
+		<string>NanumBarunpenB.otf</string>
 	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>갤러리 접근</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -43,5 +49,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

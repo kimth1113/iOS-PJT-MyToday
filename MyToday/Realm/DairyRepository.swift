@@ -22,7 +22,7 @@ class DiaryRepository {
         }
     }
     
-    func updateEmoticonId(diary: Diary, newEmoticonId: Int, newContent: String?) {
+    func updateDiary(diary: Diary, newEmoticonId: Int, newContent: String?) {
         do {
             try localRealm.write {
                 diary.emoticonId = newEmoticonId
@@ -37,7 +37,15 @@ class DiaryRepository {
         return localRealm.object(ofType: Diary.self, forPrimaryKey: date)
     }
     
-    func getDiaryList() -> Results<Diary> {
+    func getDiaryList(emoticonId: Int?) -> Results<Diary> {
+        
+        if let emoticonId = emoticonId {
+            return localRealm.objects(Diary.self).filter("emoticonId=\(emoticonId)").sorted(byKeyPath: "objectId", ascending: false)
+        }
         return localRealm.objects(Diary.self).sorted(byKeyPath: "objectId", ascending: false)
+    }
+    
+    func search(text: String) -> Results<Diary> {
+        return localRealm.objects(Diary.self).filter("content CONTAINS[c] '\(text)'").sorted(byKeyPath: "objectId", ascending: false)
     }
 }

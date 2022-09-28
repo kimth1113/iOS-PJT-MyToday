@@ -58,14 +58,13 @@ class UpdateViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(diary)
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first)
+        print("????ddlskdfjlsdj???", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first)
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
 
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(headerView.cancelButtonView.snp.bottom).offset(20)
+            make.top.equalTo(headerView.leftButtonView.snp.bottom).offset(20)
             make.leading.bottom.trailing.equalToSuperview()
         }
 
@@ -84,7 +83,7 @@ class UpdateViewController: BaseViewController {
             
             if let date = FormatterRepository.formatter.date(from: diary.objectId) {
                 print(date, 12345)
-                contentView.dateLabel.text = "DATE : " + FormatterRepository.dateLabelFormatter.string(from: date)
+                contentView.dateLabel.text = FormatterRepository.dateLabelFormatter.string(from: date)
             }
             
             if let content = diary.content {
@@ -149,7 +148,7 @@ extension UpdateViewController {
         
         // 생성 및 수정 시점 : 기존 EmoticonId -> newEmoticonId 바꾸기
         if let newEmoticonId = newEmoticonId {
-            repository.updateEmoticonId(diary: diary, newEmoticonId: newEmoticonId, newContent: newContent)
+//            repository.updateEmoticonId(diary: diary, newEmoticonId: newEmoticonId, newContent: newContent)
         }
         
         if let updateReadVC = updateReadVC {
@@ -166,8 +165,8 @@ extension UpdateViewController {
     // 버튼등록
     private func setButton() {
         // 취소버튼
-        headerView.cancelButtonView.customButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
-        headerView.updateButtonView.customButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        headerView.leftButtonView.customButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+        headerView.rightButtonView.customButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         // 이모티콘 버튼
         for i in 0 ..< emoticonButtonViewList.count {
             emoticonButtonViewList[i].customButton.addTarget(self, action: #selector(emoticonButtonTapped), for: .touchUpInside)

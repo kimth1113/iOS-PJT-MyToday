@@ -12,7 +12,8 @@ extension Constants {
     
     enum BaseImage {
         
-        static let background = UIImage(named: "eugene-chystiakov-wcMysLw5ROM-unsplash")
+        static let background = UIImage(named: "aboodi-vesakaran-bnlJM6zwTjQ-unsplash")
+        static let scrollBackground = UIImage(named: "aboodi-vesakaran-bnlJM6zwTjQ-unsplash")
         
         static let pencel = UIImage(named: "pencils")
         
@@ -32,13 +33,14 @@ extension Constants {
         
         static let emotion = [
             // none
-            UIImage(named: "square(3)"),
+//            UIImage(named: "square(3)"),
+            UIImage(named: ""),
             // happy
             UIImage(named: "happy"),
             // angry
             UIImage(named: "angry"),
             // disgusted
-            UIImage(named: "disgusted"),
+            UIImage(named: "sleeping"),
             // fear
             UIImage(named: "fear"),
             // kiss
@@ -48,9 +50,33 @@ extension Constants {
             // sadness
             UIImage(named: "sadness"),
             // sleeping
-            UIImage(named: "sleeping"),
+            UIImage(named: "boring"),
             // surprised
             UIImage(named: "surprised"),
+        ]
+        
+        static let emotion2 = [
+            // none
+//            UIImage(named: "square(3)"),
+            UIImage(named: ""),
+            // happy
+            UIImage(named: "happy"),
+            // angry
+            UIImage(named: "angry2"),
+            // disgusted
+            UIImage(named: "sleeping2"),
+            // fear
+            UIImage(named: "fear2"),
+            // kiss
+            UIImage(named: "kiss2"),
+            // sad
+            UIImage(named: "sad2"),
+            // sadness
+            UIImage(named: "sadness2"),
+            // sleeping
+            UIImage(named: "boring2"),
+            // surprised
+            UIImage(named: "surprised2"),
         ]
     }
 }

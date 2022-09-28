@@ -12,10 +12,9 @@ class WriteDiaryView: BaseView {
     
     let textLabelView: UILabel = {
         let view = UILabel()
-        view.textColor = .white
+        view.textColor = .black
         view.font = Constants.BaseFont.boxTitle
         view.backgroundColor = .clear
-        view.text = "TESTTESTTETESTTEST\nTEST\nTESTTEST\nTEST"
         view.numberOfLines = 0
         return view
     }()

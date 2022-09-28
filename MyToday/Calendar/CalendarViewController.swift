@@ -12,7 +12,7 @@ import Toast
 
 class CalendarViewController: BaseViewController {
     
-    private let mainView = CalendarView()
+    let mainView = CalendarView()
     
     private let repository = DiaryRepository()
     
@@ -28,6 +28,10 @@ class CalendarViewController: BaseViewController {
         self.mainView.calendar.reloadData()
     }
     
+    lazy var goThisMonth: ((Date) -> Void)? = { date in
+        self.mainView.calendar.select(date)
+    }
+    
     override func loadView() {
         super.loadView()
         
@@ -37,29 +41,28 @@ class CalendarViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         mainView.leftButton.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
         mainView.rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         mainView.headerButton.addTarget(self, action: #selector(headerButtonTapped), for: .touchUpInside)
-        
+        mainView.comeBackButton.addTarget(self, action: #selector(comeBackButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(#function)
         mainView.calendar.scope = .month
-        mainView.headerButton.setTitle(FormatterRepository.monthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        print(#function)
+        mainView.headerButton.setTitle(FormatterRepository.calendarMonthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
     }
     
     override func configure() {
         mainView.calendar.delegate = self
         mainView.calendar.dataSource = self
+    }
+    
+    @objc
+    private func comeBackButtonTapped(_ sender: UIButton) {
+        mainView.calendar.select(Date())
     }
     
     @objc
@@ -74,7 +77,9 @@ class CalendarViewController: BaseViewController {
     
     @objc
     private func headerButtonTapped() {
-        print("캘린더 월 버튼 탭")
+        let vc = CalendarAlertViewController()
+        vc.goThisMonth = goThisMonth
+        transition(vc, transitionStyle: .present)
     }
     
     private func scrollCurrentPage(isPrev: Bool) {
@@ -82,7 +87,7 @@ class CalendarViewController: BaseViewController {
         var dateComponents = DateComponents()
         dateComponents.month = isPrev ? -1 : 1
             
-        self.currentPage = cal.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
+        currentPage = cal.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         mainView.calendar.setCurrentPage(self.currentPage!, animated: true)
     }
     
@@ -94,6 +99,14 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         
         let cell = mainView.calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position) as! DIYCalendarCell
+        
+        if FormatterRepository.formatter.string(from: Date()) == FormatterRepository.formatter.string(from: date) {
+            cell.titleLabel.layer.opacity = 1
+        } else if Date() < date {
+            cell.titleLabel.layer.opacity = 0.3
+        } else {
+            cell.titleLabel.layer.opacity = 0.6
+        }
         
         let date = FormatterRepository.formatter.string(from: date)
         if let diary = repository.getDiary(date: date) {
@@ -108,11 +121,11 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     
     // Title 색상 반환
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-        switch FormatterRepository.dayFormatter.string(from: date) {
-        case "Sat":
-            return Constants.BaseColor.Calendar.saturday
-        case "Sun":
-            return Constants.BaseColor.Calendar.sunday
+        switch FormatterRepository.eDateFormatter.string(from: date) {
+        case "토":
+            return UIColor(rgb: 0x40407a)
+        case "일":
+            return .systemPink
         default:
             return Constants.BaseColor.Calendar.weekday
         }
@@ -121,35 +134,35 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         
         self.currentPage = calendar.currentPage
-        mainView.headerButton.setTitle(FormatterRepository.monthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
+        mainView.headerButton.setTitle(FormatterRepository.calendarMonthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
     }
     
     // didSelect
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did select date \(FormatterRepository.formatter.string(from: date))")
 //        self.configureVisibleCells()
+        
+        guard FormatterRepository.monthFormatter.string(from: calendar.currentPage) == FormatterRepository.monthFormatter.string(from: date) else {
+            return
+        }
         
         if date > Date() {
             return
         }
         
-        self.view.makeToast(FormatterRepository.dayFormatter.string(from: date), duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
+        self.view.makeToast(FormatterRepository.eDateFormatter.string(from: date), duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
         }
         
-        
+        let vc = ReadViewController()
         let date = FormatterRepository.formatter.string(from: date)
-        if let diary = self.repository.getDiary(date: date) {
-            let vc = ReadViewController()
+        
+        if let diary = repository.getDiary(date: date) {
             vc.diary = diary
-            vc.reloadCalendar = reloadCalendar
-            transition(vc, transitionStyle: .present)
         } else {
-            let vc = UpdateViewController()
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
-            vc.reloadCalendar = reloadCalendar
-            transition(vc, transitionStyle: .present)
         }
         
+        vc.reloadCalendar = reloadCalendar
+        transition(vc, transitionStyle: .present)
     }
     
 //    func calendar(_ calendar: FSCalendar, didDeselect date: Date) {
