@@ -122,20 +122,18 @@ extension DiaryListViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row, "선택")
         
         if indexPath.row == 0 {
             diaryList = repository.getDiaryList(emoticonId: nil)
         } else {
             diaryList = repository.getDiaryList(emoticonId: indexPath.row)
         }
-        
+
         currentEmotion = indexPath.row
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print(indexPath.row, "미선택")
+        
     }
 }
 
@@ -248,12 +246,10 @@ extension DiaryListViewController: UISearchBarDelegate {
         
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         mainView.searchBar.resignFirstResponder()
-        print("검색 버튼 클릭")
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         mainView.searchBar.resignFirstResponder()
-        print("편집 끝")
     }
 }
 

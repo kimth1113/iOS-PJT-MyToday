@@ -69,8 +69,6 @@ extension ContentViewController: UITextViewDelegate {
     
     // 키보드 나타날 때
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("끝2")
-        
         let height = UIScreen.main.bounds.size.height
         
         mainView.backgroundView.snp.makeConstraints { make in
@@ -79,9 +77,7 @@ extension ContentViewController: UITextViewDelegate {
     }
     
     // 키보드 없어질 때
-    func textViewDidEndEditing(_ textView: UITextView) {
-        print("시작2")
-        
+    func textViewDidEndEditing(_ textView: UITextView) {        
         mainView.backgroundView.snp.makeConstraints { make in
             make.bottom.equalTo(mainView)
         }

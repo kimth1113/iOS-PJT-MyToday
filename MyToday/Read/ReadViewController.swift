@@ -7,6 +7,8 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Alamofire
+import SwiftyJSON
 
 class ReadViewController: BaseViewController {
     
@@ -167,72 +169,42 @@ extension ReadViewController {
     private func saveButtonTapped(_ sender: UIButton) {
         guard let diary = diary else { return }
         
-        guard originalEmoticonId != 0 || newEmoticonId != nil else {
-            let alert = UIAlertController(title: nil, message: "감정등록 버튼을 눌러 오늘의 감정을 선택해주세요.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .default)
-            alert.addAction(ok)
-            present(alert, animated: true)
-            return
-        }
-        
-        if newEmoticonId == nil && newContent == nil && newImage == nil {
-            let alert = UIAlertController(title: nil, message: "수정된 내용이 없습니다.\n나가시겠습니까?", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
-                self.dismiss(animated: true)
-            }
-            alert.addAction(cancel)
-            alert.addAction(ok)
-            present(alert, animated: true)
-            return
-        }
-        
-        if let _ = repository.getDiary(date: diary.objectId) {
-            // 기존에 있다면
-            let alert = UIAlertController(title: nil, message: "수정하시겠습니까?", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
-                self.repository.updateDiary(diary: diary, newEmoticonId: self.newEmoticonId ?? diary.emoticonId, newContent: self.newContent ?? diary.content)
-                
-                if let reloadCalendar = self.reloadCalendar {
-                    reloadCalendar()
-                } else {
-                    self.reloadDiaryList!()
-                }
-                
-                if let image = self.mainView.imageView.customImageView.image {
-                    self.saveImageToDocument(fileName: diary.objectId, image: image)
-                }
+        let json: [String: Any] = [
+            "access_key": "24c8a380-8811-47dd-a0e4-6e132655f3fb",
+                "argument": [
+                "analysis_code": "ner",
+                "text": "의존 구문분석을 위한 한국어 의존관계 가이드라인"
+            ]
+        ]
 
-                self.dismiss(animated: true)
-            }
-            alert.addAction(cancel)
-            alert.addAction(ok)
-            present(alert, animated: true)
-        } else {
-            // 기존에 없다면
-            let alert = UIAlertController(title: nil, message: "저장하시겠습니까?", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
-                self.repository.create(diary: Diary(objectId: diary.objectId, emotionId: self.newEmoticonId!, content: self.newContent))
-                
-                if let reloadCalendar = self.reloadCalendar {
-                    reloadCalendar()
-                } else {
-                    self.reloadDiaryList!()
-                }
-                
-                if let image = self.mainView.imageView.customImageView.image {
-                    self.saveImageToDocument(fileName: diary.objectId, image: image)
-                }
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
-                self.dismiss(animated: true)
+        // create post request
+        let url = URL(string: "http://aiopen.etri.re.kr:8000/WiseNLU")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        // insert json data to the request
+        request.httpBody = jsonData
+//        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
             }
-            alert.addAction(cancel)
-            alert.addAction(ok)
-            present(alert, animated: true)
-        }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
                 
+                DispatchQueue.main.async {
+                    self.mainView.contentView.text += String(responseJSON["result"] as! Int)
+                    
+                }
+            }
+        }
+
+        task.resume()
     }
     
     @objc
@@ -252,7 +224,7 @@ extension ReadViewController {
         if mainView.imageView.customImageView.image == nil {
             
             guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-                print("사용불가 + 사용자에게 토스트/얼럿")
+//                print("사용불가 + 사용자에게 토스트/얼럿")
                 return
             }
             
@@ -309,7 +281,7 @@ extension ReadViewController {
             }
         }
         
-        print(wordCount)
+//        print(wordCount)
     }
 }
 

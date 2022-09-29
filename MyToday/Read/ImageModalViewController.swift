@@ -94,7 +94,7 @@ class ImageModalViewContoller: UIViewController {
     @objc
     private func albumButtonTapped(_ sender: UIButton) {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-            print("사용불가 + 사용자에게 토스트/얼럿")
+//            print("사용불가 + 사용자에게 토스트/얼럿")
             return
         }
         

@@ -50,7 +50,7 @@ class CalendarViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(#function)
+        
         mainView.calendar.scope = .month
         mainView.headerButton.setTitle(FormatterRepository.calendarMonthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
     }
@@ -170,8 +170,9 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
 //        self.configureVisibleCells()
 //    }
     
+    // didDeselect
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did deselect date \(FormatterRepository.formatter.string(from: date))")
+        
     }
     
 //    private func configureVisibleCells() {

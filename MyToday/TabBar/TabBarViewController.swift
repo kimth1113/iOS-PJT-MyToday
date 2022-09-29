@@ -101,7 +101,7 @@ class TabBarViewController: UITabBarController {
         var tabFrame = tabBar.frame
         let height = UIScreen.main.bounds.size.height
         
-        print(height)
+//        print(height)
         // 기기별 탭바 UI 설정
         switch height {
         case 667.0: //iphone 6, 6s, 7, 8 => 4.7 inch
