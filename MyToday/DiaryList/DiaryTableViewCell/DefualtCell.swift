@@ -12,8 +12,10 @@ class DefaultCell: BaseTableViewCell {
     
     let cellBackgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = Constants.BaseColor.ListCell.background
-        view.layer.cornerRadius = 8
+        view.backgroundColor = .white
+        view.layer.opacity = 0.4
+        view.layer.cornerRadius = 4
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -34,11 +36,12 @@ class DefaultCell: BaseTableViewCell {
     override func setConstraint() {
         
         cellBackgroundView.snp.makeConstraints { make in
-            make.edges.equalTo(self).inset(8)
+            make.top.bottom.equalTo(self).inset(8)
+            make.leading.trailing.equalTo(self).inset(16)
         }
         
         cellDefaultView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(cellBackgroundView).inset(8)
+            make.edges.equalTo(cellBackgroundView)
         }
     }
 }

@@ -18,10 +18,21 @@ class CalendarView: BaseView {
         return view
     }()
     
+    let subBackground: UIImageView = {
+        let view = UIImageView()
+        view.image = Constants.BaseImage.topBackground
+        view.contentMode = .scaleToFill
+        view.layer.opacity = 0.5
+        return view
+    }()
+    
     let comeBackButton: UIButton = {
         let view = UIButton()
-        view.setImage(UIImage(systemName: "arrow.2.squarepath"), for: .normal)
-        view.tintColor = .black
+        view.setImage(UIImage(systemName: "arrow.right.arrow.left.square.fill"), for: .normal)
+        view.tintColor = .white
+        view.layer.opacity = 0.5
+        view.setPreferredSymbolConfiguration(.init(pointSize: 28), forImageIn: .normal)
+        view.isHidden = true
         return view
     }()
     
@@ -49,7 +60,7 @@ class CalendarView: BaseView {
         //MARK: -오늘 날짜(Today) 관련
 //        view.appearance.titleTodayColor = .green //Today에 표시되는 특정 글자색
 //        view.appearance.todayColor = .none //Today에 표시되는 선택 전 동그라미 색
-//        view.appearance.todaySelectionColor = .none  //Today에 표시되는 선택 후 동그라미 색
+//        view.appearance.todaySelectionColor = .green  //Today에 표시되는 선택 후 동그라미 색
         
         // Month 폰트 설정
 //        view.appearance.headerTitleFont = .boldSystemFont(ofSize: 28)
@@ -96,7 +107,7 @@ class CalendarView: BaseView {
     }()
     
     override func configureUI() {
-        [backgroundImage, comeBackButton, calendar, headerButton, leftButton, rightButton].forEach {
+        [backgroundImage, subBackground, comeBackButton, calendar, headerButton, leftButton, rightButton].forEach {
             addSubview($0)
         }
     }
@@ -109,10 +120,14 @@ class CalendarView: BaseView {
             make.edges.equalTo(self)
         }
         
+//        subBackground.snp.makeConstraints { make in
+//            make.edges.equalTo(self)
+//        }
+        
         comeBackButton.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide)
-            make.trailing.equalTo(self).offset(-20)
-//            make.height.width.equalTo(40)
+            make.trailing.equalTo(self).offset(-12)
+            make.width.height.equalTo(40)
         }
         
         headerButton.snp.makeConstraints { make in

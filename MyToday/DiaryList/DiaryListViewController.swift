@@ -23,7 +23,7 @@ class DiaryListViewController: BaseViewController {
         self.mainView.diaryTableView.reloadData()
     }
     
-    let emotionList = ["전체", "행복", "화남", "아픔", "절망", "사랑", "긴장", "슬픔", "피곤", "당황"]
+    let emotionList = ["전체", "행복", "설렘", "보통", "화남", "슬픔", "당황", "아픔", "지루", "피곤"]
     
     private var diaryList: Results<Diary>! {
         didSet {
@@ -59,8 +59,6 @@ class DiaryListViewController: BaseViewController {
         mainView.diaryTableView.delegate = self
         mainView.diaryTableView.dataSource = self
         mainView.diaryTableView.register(DefaultCell.self, forCellReuseIdentifier: DefaultCell.reuseIdentifier)
-        mainView.diaryTableView.register(ImageCell.self, forCellReuseIdentifier: ImageCell.reuseIdentifier)
-        mainView.diaryTableView.register(ContentCell.self, forCellReuseIdentifier: ContentCell.reuseIdentifier)
         mainView.diaryTableView.register(FullCell.self, forCellReuseIdentifier: FullCell.reuseIdentifier)
 //        mainView.diaryTableView.rowHeight = UITableView.automaticDimension
 //        mainView.diaryTableView.estimatedRowHeight = UITableView.automaticDimension
@@ -86,7 +84,7 @@ extension DiaryListViewController {
     func setLineSpacing(lbl: UILabel) -> Void {
         let attrString = NSMutableAttributedString(string: lbl.text!)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
+        paragraphStyle.lineSpacing = 4
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
         lbl.attributedText = attrString
     }
@@ -113,7 +111,7 @@ extension DiaryListViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.setCellDate(emotionLabel: emotionList[indexPath.row])
         
         if indexPath.row == currentEmotion {
-            cell.emotionLabel.backgroundColor = .systemBlue
+            cell.emotionLabel.backgroundColor = #colorLiteral(red: 0, green: 0.4800075889, blue: 1, alpha: 0.5)
         } else {
             cell.emotionLabel.backgroundColor = UIColor(red: 34/255, green: 166/255, blue: 179/255, alpha: 0.5)
         }
@@ -148,12 +146,6 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
         guard let defaultCell = tableView.dequeueReusableCell(withIdentifier: DefaultCell.reuseIdentifier) as? DefaultCell else {
             return UITableViewCell()
         }
-        guard let imageCell = tableView.dequeueReusableCell(withIdentifier: ImageCell.reuseIdentifier) as? ImageCell else {
-            return UITableViewCell()
-        }
-        guard let contentCell = tableView.dequeueReusableCell(withIdentifier: ContentCell.reuseIdentifier) as? ContentCell else {
-            return UITableViewCell()
-        }
         guard let fullCell = tableView.dequeueReusableCell(withIdentifier: FullCell.reuseIdentifier) as? FullCell else {
             return UITableViewCell()
         }
@@ -168,30 +160,37 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
         let eDate = FormatterRepository.eDateFormatter.string(from: diaryDate)
         
         if let diaryImage = loadImageFromDocument(fileName: diaryList[indexPath.row].objectId), let diaryContent = diary.content, diary.content != "" {
+            // 둘다
             fullCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
-            fullCell.cellImageView.diaryImageView.image = diaryImage
-            fullCell.cellContentView.diaryContentlabel.text = diaryContent
-            setLineSpacing(lbl: fullCell.cellContentView.diaryContentlabel)
+            fullCell.cellFullView.diaryImageView.image = diaryImage
+            fullCell.cellFullView.diaryContentlabel.text = diaryContent
+            setLineSpacing(lbl: fullCell.cellFullView.diaryContentlabel)
             fullCell.cellDefaultView.yearLabel.text = year
             fullCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
             fullCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
             return fullCell
         } else if let diaryImage = loadImageFromDocument(fileName: diaryList[indexPath.row].objectId) {
-            imageCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
-            imageCell.cellImageView.diaryImageView.image = diaryImage
-            imageCell.cellDefaultView.yearLabel.text = year
-            imageCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
-            imageCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
-            return imageCell
+            // 이미지만
+            fullCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
+            fullCell.cellFullView.diaryImageView.image = diaryImage
+            fullCell.cellDefaultView.yearLabel.text = year
+            fullCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
+            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
+            fullCell.cellFullView.noContentLabel.text = "일기 미작성"
+            return fullCell
         } else if let diaryContent = diary.content {
-            contentCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
-            contentCell.cellContentView.diaryContentlabel.text = diaryContent
-            setLineSpacing(lbl: contentCell.cellContentView.diaryContentlabel)
-            contentCell.cellDefaultView.yearLabel.text = year
-            contentCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
-            contentCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
-            return contentCell
+            // 글만
+            fullCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
+            fullCell.cellFullView.diaryContentlabel.text = diaryContent
+            setLineSpacing(lbl: fullCell.cellFullView.diaryContentlabel)
+            fullCell.cellDefaultView.yearLabel.text = year
+            fullCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
+            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
+            fullCell.cellFullView.diaryImageView.image = nil
+            fullCell.cellFullView.diaryImageView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.2)
+            return fullCell
         } else {
+            // 기본
             defaultCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
             defaultCell.cellDefaultView.yearLabel.text = year
             defaultCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
@@ -210,21 +209,59 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
         transition(vc, transitionStyle: .present)
     }
     
+    // 오른쪽 스와이프
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let diary = diaryList[indexPath.row]
+        
+        return swipeConfiguration() {
+            self.removeImageFromDocument(fileName: diary.objectId)
+            self.repository.delete(diary: self.repository.localRealm.object(ofType: Diary.self, forPrimaryKey: diary.objectId)!)
+            
+            self.mainView.diaryTableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let diary = diaryList[indexPath.row]
         
         if let _ = loadImageFromDocument(fileName: diaryList[indexPath.row].objectId), let _ = diary.content, diary.content != "" {
-            return 384
+            return 248
         } else if let _ = loadImageFromDocument(fileName: diaryList[indexPath.row].objectId) {
-            return 284
+            return 248
         } else if let _ = diary.content {
-            return 184
+            return 248
         } else {
             return 80
         }
     }
     
-    
+    func swipeConfiguration(completion: @escaping () -> Void) -> UISwipeActionsConfiguration {
+        
+        var action: UIContextualAction?
+       
+        let bin = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            
+            completion()
+        }
+        
+        bin.image = UIImage(systemName: "trash.fill")
+        bin.backgroundColor = .systemPink
+        
+        action = bin
+
+        guard let action = action else {
+            return UISwipeActionsConfiguration()
+        }
+
+        let pinConfiguration: UISwipeActionsConfiguration = {
+            
+            let configuration = UISwipeActionsConfiguration(actions: [action])
+            return configuration
+        }()
+        
+        return pinConfiguration
+    }
 }
 
 extension DiaryListViewController: UISearchBarDelegate {

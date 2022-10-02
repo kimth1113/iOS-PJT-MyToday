@@ -14,8 +14,9 @@ extension Constants {
         
         static let background = UIImage(named: "aboodi-vesakaran-bnlJM6zwTjQ-unsplash")
         static let scrollBackground = UIImage(named: "aboodi-vesakaran-bnlJM6zwTjQ-unsplash")
+        static let topBackground = UIImage(named: "nordwood-themes-R53t-Tg6J4c-unsplash")
         
-        static let pencel = UIImage(named: "pencils")
+        static let pencel = UIImage(named: "pencils (1)")
         
         static let leftArrow = UIImage(systemName: "chevron.left.circle.fill")
         static let rightArrow = UIImage(systemName: "chevron.right.circle.fill")
@@ -31,52 +32,34 @@ extension Constants {
             static let settingFill = UIImage(systemName: "gearshape.fill")
         }
         
+        enum Analysis {
+            static let background = UIImage(named: "eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash")
+        }
+        
         static let emotion = [
-            // none
-//            UIImage(named: "square(3)"),
             UIImage(named: ""),
-            // happy
             UIImage(named: "happy"),
-            // angry
-            UIImage(named: "angry"),
-            // disgusted
-            UIImage(named: "sleeping"),
-            // fear
-            UIImage(named: "fear"),
-            // kiss
             UIImage(named: "kiss"),
-            // sad
+            UIImage(named: "normal"),
+            UIImage(named: "angry"),
             UIImage(named: "sad"),
-            // sadness
-            UIImage(named: "sadness"),
-            // sleeping
+            UIImage(named: "fear"),
+            UIImage(named: "sick"),
             UIImage(named: "boring"),
-            // surprised
-            UIImage(named: "surprised"),
+            UIImage(named: "sleeping"),
         ]
         
         static let emotion2 = [
-            // none
-//            UIImage(named: "square(3)"),
             UIImage(named: ""),
-            // happy
-            UIImage(named: "happy"),
-            // angry
-            UIImage(named: "angry2"),
-            // disgusted
-            UIImage(named: "sleeping2"),
-            // fear
-            UIImage(named: "fear2"),
-            // kiss
+            UIImage(named: "happy2"),
             UIImage(named: "kiss2"),
-            // sad
+            UIImage(named: "normal2"),
+            UIImage(named: "angry2"),
             UIImage(named: "sad2"),
-            // sadness
-            UIImage(named: "sadness2"),
-            // sleeping
+            UIImage(named: "fear2"),
+            UIImage(named: "sick2"),
             UIImage(named: "boring2"),
-            // surprised
-            UIImage(named: "surprised2"),
+            UIImage(named: "sleeping2"),
         ]
     }
 }

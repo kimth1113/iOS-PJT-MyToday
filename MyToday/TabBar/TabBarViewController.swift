@@ -15,21 +15,9 @@ class TabBarViewController: UITabBarController {
     let CalendarVC = CalendarViewController()
     let DiaryListVC = DiaryListViewController()
     let AnalysisVC = AnalysisViewController()
+    let SettingVC = SettingViewController()
     
     var otherday: Date = Date()
-    
-    lazy var moveToWriteVC: ((UpdateViewController, Date) -> Void) = { vc, date in
-        // 오늘 일기
-        let date = FormatterRepository.formatter.string(from: date)
-        if let diary = self.repository.getDiary(date: date) {
-            vc.diary = diary
-        } else {
-            vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
-        }
-
-        vc.reloadCalendar = self.CalendarVC.reloadCalendar
-        self.transition(vc, transitionStyle: .present)
-    }
     
     lazy var moveToReadVC: ((ReadViewController, Diary) -> Void) = { vc, diary in
         vc.diary = diary
@@ -40,7 +28,6 @@ class TabBarViewController: UITabBarController {
     let pencilButton: UIButton = {
         let view = UIButton()
         view.setImage(Constants.BaseImage.pencel, for: .normal)
-        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -56,30 +43,33 @@ class TabBarViewController: UITabBarController {
         view.locale = Locale(identifier: "ko-KR")
         view.preferredDatePickerStyle = .wheels
 //        view.timeZone = .autoupdatingCurrent
-        view.backgroundColor = UIColor(red: 112/255, green: 162/255, blue: 255/255, alpha: 0.8)
-        view.layer.cornerRadius = 8
-        view.layer.masksToBounds = false
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
+        view.layer.cornerRadius = 4
+        view.layer.masksToBounds = true
 //
         view.isHidden = true
-//        view.layer.opacity = 0
-//
-//        let maximumDate = Calendar.current.date(byAdding: .day, value: -2, to: Date())
-//        view.maximumDate = maximumDate
+
+        let maximumDate = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+        view.maximumDate = maximumDate
         
         return view
     }()
     
     let dateSelectButton: UIButton = {
         let view = UIButton()
-        view.setTitle("선택", for: .normal)
+        view.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
         view.isHidden = true
+        view.tintColor = #colorLiteral(red: 0.1964718935, green: 0.7384423325, blue: 0, alpha: 1)
+        view.setPreferredSymbolConfiguration(.init(pointSize: 28), forImageIn: .normal)
         return view
     }()
     
     let dateCancelButton: UIButton = {
         let view = UIButton()
-        view.setTitle("취소", for: .normal)
+        view.setImage(UIImage(systemName: "xmark.app.fill"), for: .normal)
         view.isHidden = true
+        view.tintColor = .systemPink
+        view.setPreferredSymbolConfiguration(.init(pointSize: 28), forImageIn: .normal)
         return view
     }()
     
@@ -147,8 +137,8 @@ extension TabBarViewController {
         configureFloatButtonViewUI()
         configureDatePickerUI()
         
-        tabBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        tabBar.tintColor = .systemPink
+        tabBar.backgroundColor = #colorLiteral(red: 0.459092021, green: 0.6204947829, blue: 0.6681040525, alpha: 1)
+        tabBar.tintColor = #colorLiteral(red: 0.9757557511, green: 0.2905896008, blue: 0.2755800486, alpha: 1)
         tabBar.unselectedItemTintColor = Constants.BaseColor.TabBar.unselectedItem
         tabBar.layer.cornerRadius = Constants.BaseDesign.tabBarRadius
         tabBar.isHidden = false
@@ -169,7 +159,7 @@ extension TabBarViewController {
         let secondVC = tabBarResultController(vc: DiaryListVC, resultType: .vc, img: Constants.BaseImage.TapMenu.diaryList, selectedImg: Constants.BaseImage.TapMenu.diaryListFill)
         let thirdVC = tabBarResultController(vc: ViewController(), resultType: .vc, img: nil, selectedImg: nil)
         let fourthVC = tabBarResultController(vc: AnalysisVC, resultType: .vc, img: Constants.BaseImage.TapMenu.analysis, selectedImg: Constants.BaseImage.TapMenu.analysisFill)
-        let fifthVC = tabBarResultController(vc: PencilAlertViewController(), resultType: .vc, img: Constants.BaseImage.TapMenu.setting, selectedImg: Constants.BaseImage.TapMenu.settingFill)
+        let fifthVC = tabBarResultController(vc: SettingVC, resultType: .vc, img: Constants.BaseImage.TapMenu.setting, selectedImg: Constants.BaseImage.TapMenu.settingFill)
         
         let viewControllers = [firstVC, secondVC, thirdVC, fourthVC, fifthVC]
         setViewControllers(viewControllers, animated: false)
@@ -193,7 +183,8 @@ extension TabBarViewController {
     
     private func configureFloatButtonViewUI() {
         floatButtonView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view).inset(20)
+            make.centerX.equalTo(view)
+            make.width.equalTo(view).multipliedBy(0.4)
             make.bottom.equalTo(pencilButton.snp.top).offset(-20)
         }
     }
@@ -207,17 +198,23 @@ extension TabBarViewController {
         
         dateCancelButton.snp.makeConstraints { make in
             make.trailing.equalTo(datePicker)
-            make.bottom.equalTo(datePicker.snp.top).inset(8)
+            make.bottom.equalTo(datePicker.snp.top).offset(-8)
+            make.width.equalTo(32)
         }
         
         dateSelectButton.snp.makeConstraints { make in
-            make.trailing.equalTo(dateCancelButton.snp.leading).offset(-20)
-            make.bottom.equalTo(datePicker.snp.top).inset(8)
+            make.trailing.equalTo(dateCancelButton.snp.leading)
+            make.bottom.equalTo(datePicker.snp.top).offset(-8)
+            make.width.equalTo(32)
         }
     }
 
     @objc
     private func pencilButtonTapped(_ sender: UIButton) {
+        datePicker.isHidden = true
+        dateSelectButton.isHidden = true
+        dateCancelButton.isHidden = true
+        
         UIView.animate(withDuration: 0.8) {
             let rotate = CGAffineTransform(rotationAngle: .pi)
             self.pencilButton.transform = rotate

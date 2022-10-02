@@ -45,7 +45,23 @@ class DiaryRepository {
         return localRealm.objects(Diary.self).sorted(byKeyPath: "objectId", ascending: false)
     }
     
+    func getAnalysisDiaryList(date: Date) -> Results<Diary> {
+        let monthId = FormatterRepository.dateMonthIdFormatter.string(from: date)
+        
+        return localRealm.objects(Diary.self).filter("objectId CONTAINS[c] '\(monthId)'")
+    }
+    
     func search(text: String) -> Results<Diary> {
         return localRealm.objects(Diary.self).filter("content CONTAINS[c] '\(text)'").sorted(byKeyPath: "objectId", ascending: false)
+    }
+    
+    func delete(diary: Diary) {
+        do {
+            try localRealm.write {
+                localRealm.delete(diary)
+            }
+        } catch let error {
+            print(error)
+        }
     }
 }

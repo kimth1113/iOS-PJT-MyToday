@@ -12,8 +12,10 @@ class FullCell: BaseTableViewCell {
     
     let cellBackgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = Constants.BaseColor.ListCell.background
-        view.layer.cornerRadius = 8
+        view.backgroundColor = .white
+        view.layer.opacity = 0.4
+        view.layer.cornerRadius = 4
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -22,13 +24,16 @@ class FullCell: BaseTableViewCell {
         return view
     }()
     
-    let cellImageView: CellImageView = {
-        let view = CellImageView()
+    let underline: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.opacity = 0.5
+        view.layer.cornerRadius = 1
         return view
     }()
     
-    let cellContentView: CellContentView = {
-        let view = CellContentView()
+    let cellFullView: CellFullView = {
+        let view = CellFullView()
         return view
     }()
     
@@ -36,10 +41,7 @@ class FullCell: BaseTableViewCell {
         backgroundColor = .clear
         selectionStyle = .none
         
-        addSubview(cellBackgroundView)
-        addSubview(cellDefaultView)
-        
-        [cellImageView, cellContentView].forEach {
+        [cellBackgroundView, cellDefaultView, underline, cellFullView].forEach {
             addSubview($0)
         }
     }
@@ -47,23 +49,25 @@ class FullCell: BaseTableViewCell {
     override func setConstraint() {
         
         cellBackgroundView.snp.makeConstraints { make in
-            make.edges.equalTo(self).inset(8)
+            make.top.bottom.equalTo(self).inset(8)
+            make.leading.trailing.equalTo(self).inset(16)
         }
         
         cellDefaultView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(cellBackgroundView).inset(8)
+            make.top.leading.trailing.equalTo(cellBackgroundView)
+            make.height.equalTo(64)
         }
         
-        cellImageView.snp.makeConstraints { make in
-            make.top.equalTo(cellDefaultView.snp.bottom)
-            make.leading.trailing.equalTo(cellBackgroundView).inset(8)
-            make.height.equalTo(200)
+        underline.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.leading.equalTo(cellFullView.diaryImageView.snp.leading)
+            make.trailing.equalTo(cellFullView.diaryContentView.snp.trailing)
+            make.top.equalTo(cellDefaultView.snp.bottom).offset(-4)
         }
         
-        cellContentView.snp.makeConstraints { make in
-            make.top.equalTo(cellImageView.snp.bottom)
-            make.leading.trailing.equalTo(cellBackgroundView).inset(8)
-            make.height.equalTo(100)
+        cellFullView.snp.makeConstraints { make in
+            make.top.equalTo(underline.snp.bottom).offset(8)
+            make.leading.bottom.trailing.equalTo(cellBackgroundView)
         }
     }
 }

@@ -16,6 +16,7 @@ class EmotionCollectionViewCell: BaseCollectionViewCell {
         view.textAlignment = .center
         view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
+        view.font = Constants.BaseFont.DiaryList.emotion
         return view
     }()
     

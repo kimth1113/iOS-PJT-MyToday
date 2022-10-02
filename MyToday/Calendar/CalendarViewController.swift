@@ -18,7 +18,15 @@ class CalendarViewController: BaseViewController {
     
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     
-    private var currentPage: Date?
+    private var currentPage: Date? {
+        didSet {
+            if FormatterRepository.calendarMonthFormatter.string(from: currentPage!) == FormatterRepository.calendarMonthFormatter.string(from: Date()) {
+                mainView.comeBackButton.isHidden = true
+            } else {
+                mainView.comeBackButton.isHidden = false
+            }
+        }
+    }
     
     private lazy var today: Date = {
         return Date()
@@ -63,6 +71,7 @@ class CalendarViewController: BaseViewController {
     @objc
     private func comeBackButtonTapped(_ sender: UIButton) {
         mainView.calendar.select(Date())
+        mainView.calendar.appearance.titleSelectionColor = .white
     }
     
     @objc
@@ -77,7 +86,7 @@ class CalendarViewController: BaseViewController {
     
     @objc
     private func headerButtonTapped() {
-        let vc = CalendarAlertViewController()
+        let vc = DateAlertViewController()
         vc.goThisMonth = goThisMonth
         transition(vc, transitionStyle: .present)
     }
@@ -103,9 +112,9 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         if FormatterRepository.formatter.string(from: Date()) == FormatterRepository.formatter.string(from: date) {
             cell.titleLabel.layer.opacity = 1
         } else if Date() < date {
-            cell.titleLabel.layer.opacity = 0.3
+            cell.titleLabel.layer.opacity = 0.4
         } else {
-            cell.titleLabel.layer.opacity = 0.6
+            cell.titleLabel.layer.opacity = 0.7
         }
         
         let date = FormatterRepository.formatter.string(from: date)
@@ -116,30 +125,46 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
             cell.titleImageView.layer.opacity = 0.7
         }
         
+        
         return cell
     }
     
     // Title 색상 반환
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        if FormatterRepository.formatter.string(from: date) == FormatterRepository.formatter.string(from: Date()) {
+            return .white
+        }
+        
         switch FormatterRepository.eDateFormatter.string(from: date) {
         case "토":
-            return UIColor(rgb: 0x40407a)
+            return UIColor(rgb: 0x3742fa)
         case "일":
-            return .systemPink
+            return .red
         default:
             return Constants.BaseColor.Calendar.weekday
         }
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        
+        mainView.calendar.appearance.titleSelectionColor = .none
         self.currentPage = calendar.currentPage
         mainView.headerButton.setTitle(FormatterRepository.calendarMonthFormatter.string(from: mainView.calendar.currentPage), for: .normal)
     }
     
     // didSelect
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        self.configureVisibleCells()
+        switch FormatterRepository.eDateFormatter.string(from: date) {
+        case "토":
+            calendar.appearance.titleSelectionColor = UIColor(rgb: 0x3742fa)
+        case "일":
+            calendar.appearance.titleSelectionColor = .red
+        default:
+            calendar.appearance.titleSelectionColor = Constants.BaseColor.Calendar.weekday
+        }
+        
+        if FormatterRepository.formatter.string(from: date) == FormatterRepository.formatter.string(from: Date()) {
+            calendar.appearance.titleSelectionColor = .white
+        }
         
         guard FormatterRepository.monthFormatter.string(from: calendar.currentPage) == FormatterRepository.monthFormatter.string(from: date) else {
             return

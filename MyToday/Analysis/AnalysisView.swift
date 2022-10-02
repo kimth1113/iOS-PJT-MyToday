@@ -10,12 +10,20 @@ import SnapKit
 
 class AnalysisView: BaseView {
     
-    let headerButton: UIButton = {
+    let backgroundImage: UIImageView = {
+        let view = UIImageView()
+        view.image = Constants.BaseImage.Analysis.background
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    
+    let dateButton: UIButton = {
         let view = UIButton()
-        view.setTitle("2022 09", for: .normal)
-        view.titleLabel?.font = Constants.BaseFont.Calendar.header
-        view.titleLabel?.textColor = Constants.BaseColor.white
-        view.titleLabel?.lineBreakMode = .byCharWrapping
+        
+        view.setTitle(FormatterRepository.analysisMonthFormatter.string(from: Date()), for: .normal)
+        view.titleLabel?.font = Constants.BaseFont.Analysis.header
+        view.setTitleColor(.black, for: .normal)
+        view.layer.opacity = 0.6
         view.titleLabel?.textAlignment = .center
         return view
     }()
@@ -23,7 +31,7 @@ class AnalysisView: BaseView {
     let leftButton: UIButton = {
         let view = UIButton()
         view.setImage(Constants.BaseImage.leftArrow, for: .normal)
-        view.tintColor = Constants.BaseColor.white
+        view.tintColor = .black
         view.layer.opacity = 0.5
         return view
     }()
@@ -31,21 +39,21 @@ class AnalysisView: BaseView {
     let rightButton: UIButton = {
         let view = UIButton()
         view.setImage(Constants.BaseImage.rightArrow, for: .normal)
-        view.tintColor = Constants.BaseColor.white
+        view.tintColor = .black
         view.layer.opacity = 0.5
         return view
     }()
     
     let analysisMonthView: AnalysisMonthView = {
         let view = AnalysisMonthView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.8)
         view.layer.cornerRadius = 8
         return view
     }()
     
     let analysisRandomView: AnalysisRandomView = {
         let view = AnalysisRandomView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.2)
         view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
         return view
@@ -53,46 +61,62 @@ class AnalysisView: BaseView {
     
     let analysisEmoticonView: AnalysisEmoticonView = {
         let view = AnalysisEmoticonView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
         view.layer.cornerRadius = 8
         return view
     }()
     
     let analysisRankView: AnalysisRankView = {
         let view = AnalysisRankView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
         view.layer.cornerRadius = 8
         return view
     }()
     
+    let authorizeLabel: UILabel = {
+        let view = UILabel()
+        view.text = "본 분석은 한국전자통신연구원의 언어 처리 API에서 지원받았습니다."
+        view.textAlignment = .center
+        view.font = Constants.BaseFont.Analysis.label
+        view.textColor = .black
+        view.layer.opacity = 0.5
+        view.adjustsFontSizeToFitWidth = true
+        view.minimumScaleFactor = 0.5
+        return view
+    }()
+    
     override func configureUI() {
-        backgroundColor = .systemOrange
         
-        [headerButton, leftButton, rightButton, analysisMonthView, analysisRandomView, analysisEmoticonView, analysisRankView].forEach {
+        [backgroundImage, dateButton, leftButton, rightButton, analysisMonthView, analysisRandomView, analysisEmoticonView, analysisRankView, authorizeLabel].forEach {
             addSubview($0)
         }
     }
     
     override func setConstraint() {
-        headerButton.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
+        
+        backgroundImage.snp.makeConstraints { make in
+            make.edges.equalTo(self)
+        }
+        
+        dateButton.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide)
             make.centerX.equalTo(self)
         }
         
         leftButton.snp.makeConstraints { make in
             make.width.height.equalTo(60)
-            make.centerY.equalTo(headerButton)
-            make.trailing.equalTo(headerButton.snp.leading).offset(-20)
+            make.centerY.equalTo(dateButton)
+            make.trailing.equalTo(dateButton.snp.leading).offset(-20)
         }
         
         rightButton.snp.makeConstraints { make in
             make.width.height.equalTo(60)
-            make.centerY.equalTo(headerButton)
-            make.leading.equalTo(headerButton.snp.trailing).offset(20)
+            make.centerY.equalTo(dateButton)
+            make.leading.equalTo(dateButton.snp.trailing).offset(20)
         }
         
         analysisMonthView.snp.makeConstraints { make in
-            make.top.equalTo(headerButton.snp.bottom).offset(20)
+            make.top.equalTo(dateButton.snp.bottom).offset(20)
             make.leading.equalTo(self).offset(12)
             make.trailing.equalTo(analysisEmoticonView.snp.leading).offset(-12)
             make.width.equalTo(analysisMonthView.snp.height)
@@ -106,7 +130,7 @@ class AnalysisView: BaseView {
         }
         
         analysisEmoticonView.snp.makeConstraints { make in
-            make.top.equalTo(headerButton.snp.bottom).offset(20)
+            make.top.equalTo(dateButton.snp.bottom).offset(20)
             make.trailing.equalTo(self).inset(12)
             make.bottom.equalTo(analysisRandomView)
             make.width.equalTo(self).multipliedBy(0.55)
@@ -116,6 +140,11 @@ class AnalysisView: BaseView {
             make.top.equalTo(analysisEmoticonView.snp.bottom).offset(12)
             make.leading.trailing.equalTo(self).inset(12)
             make.height.equalTo(analysisRankView.snp.width).multipliedBy(0.5)
+        }
+        
+        authorizeLabel.snp.makeConstraints { make in
+            make.top.equalTo(analysisRankView.snp.bottom).offset(8)
+            make.leading.trailing.equalTo(analysisRankView)
         }
     }
 }

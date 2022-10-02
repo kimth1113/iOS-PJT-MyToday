@@ -14,8 +14,8 @@ class AnalysisRankView: BaseView {
         let view = UILabel()
         view.text = "자주 쓰는 단어"
         view.textAlignment = .center
-        view.font = Constants.BaseFont.Calendar.title
-        view.backgroundColor = .systemPink
+        view.font = Constants.BaseFont.Analysis.title
+        view.backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.5)
         view.layer.cornerRadius = 4
         view.layer.masksToBounds = true
         return view
@@ -52,18 +52,6 @@ class AnalysisRankView: BaseView {
     }()
     
     let rankInfoView6: RankInfoView = {
-        let view = RankInfoView()
-        
-        return view
-    }()
-    
-    let rankInfoView7: RankInfoView = {
-        let view = RankInfoView()
-        
-        return view
-    }()
-    
-    let rankInfoView8: RankInfoView = {
         let view = RankInfoView()
         
         return view
@@ -107,7 +95,7 @@ class AnalysisRankView: BaseView {
         rankLabel.snp.makeConstraints { make in
             make.top.equalTo(self).offset(8)
             make.leading.trailing.equalTo(self).inset(8)
-            make.height.equalTo(20)
+            make.height.equalTo(28)
         }
         
         verticalStackView.snp.makeConstraints { make in
@@ -120,20 +108,15 @@ class AnalysisRankView: BaseView {
 
 class RankInfoView: BaseView {
     
-    let rankImageView: UIImageView = {
-        let view = UIImageView()
-        view.image = Constants.BaseImage.leftArrow
-        view.contentMode = .scaleAspectFill
-        view.layer.masksToBounds = true
-        return view
-    }()
-    
     let textLabel: UILabel = {
         let view = UILabel()
-        view.text = "\"손흥민손민민민\""
+        view.text = "..."
         view.textAlignment = .center
         view.numberOfLines = 1
-        view.font = .boldSystemFont(ofSize: 12)
+        view.font = Constants.BaseFont.Analysis.title
+        view.adjustsFontSizeToFitWidth = true
+        view.minimumScaleFactor = 0.5
+        view.textColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 1)
         return view
     }()
     
@@ -141,35 +124,30 @@ class RankInfoView: BaseView {
         let view = UILabel()
         view.text = "5번"
         view.textAlignment = .right
-        view.font = .boldSystemFont(ofSize: 16)
+        view.font = Constants.BaseFont.Analysis.label
+        view.textColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.5)
         return view
     }()
     
     override func configureUI() {
-        backgroundColor = .systemYellow
-        layer.cornerRadius = 8
+        backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.2)
+        layer.cornerRadius = 4
         
-        [rankImageView, textLabel, countLabel].forEach {
+        [textLabel, countLabel].forEach {
             addSubview($0)
         }
     }
     
     override func setConstraint() {
         
-        rankImageView.snp.makeConstraints { make in
-            make.top.leading.equalTo(self).offset(4)
-            make.height.equalTo(20)
-            make.width.equalTo(rankImageView.snp.height)
-        }
-        
         textLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(self).offset(-12)
-            make.leading.trailing.equalTo(self).inset(8)
+            make.top.equalTo(self).offset(4)
+            make.leading.trailing.equalTo(self).inset(4)
         }
         
         countLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(self).inset(12)
-            make.top.equalTo(self).offset(8)
+            make.bottom.equalTo(self).inset(4)
+            make.centerX.equalTo(self)
         }
     }
 }

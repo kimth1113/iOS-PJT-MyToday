@@ -12,6 +12,7 @@ class CustomButtonView: BaseView {
     
     let customImageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
         return view
     }()
     
@@ -21,19 +22,29 @@ class CustomButtonView: BaseView {
         return view
     }()
     
+    let emoticonImageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    
     override func configureUI() {
-        addSubview(customImageView)
         addSubview(customButton)
+        addSubview(customImageView)
+        addSubview(emoticonImageView)
     }
     
     override func setConstraint() {
         customImageView.snp.makeConstraints { make in
-            make.top.leading.equalTo(4)
-            make.bottom.trailing.equalTo(-4)
+            make.edges.equalTo(self)
         }
         
         customButton.snp.makeConstraints { make in
             make.edges.equalTo(self)
+        }
+        
+        emoticonImageView.snp.makeConstraints { make in
+            make.edges.equalTo(self).inset(12)
         }
     }
 }

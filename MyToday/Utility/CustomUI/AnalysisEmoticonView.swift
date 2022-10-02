@@ -12,55 +12,55 @@ class AnalysisEmoticonView: BaseView {
     
     let emotionCountView: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[1]
         return view
     }()
     
     let emotionCountView2: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[2]
         return view
     }()
     
     let emotionCountView3: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[3]
         return view
     }()
     
     let emotionCountView4: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[4]
         return view
     }()
     
     let emotionCountView5: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[5]
         return view
     }()
     
     let emotionCountView6: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[6]
         return view
     }()
     
     let emotionCountView7: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[7]
         return view
     }()
     
     let emotionCountView8: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[8]
         return view
     }()
     
     let emotionCountView9: EmoticonCountView = {
         let view = EmoticonCountView()
-
+        view.emoticonImageView.image = Constants.BaseImage.emotion2[9]
         return view
     }()
     
@@ -69,7 +69,7 @@ class AnalysisEmoticonView: BaseView {
         view.axis = .horizontal
         view.alignment = .fill
         view.distribution = .fillEqually
-        view.spacing = 8
+        view.spacing = 4
         return view
     }()
     
@@ -78,7 +78,7 @@ class AnalysisEmoticonView: BaseView {
         view.axis = .horizontal
         view.alignment = .fill
         view.distribution = .fillEqually
-        view.spacing = 8
+        view.spacing = 4
         return view
     }()
     
@@ -87,7 +87,7 @@ class AnalysisEmoticonView: BaseView {
         view.axis = .horizontal
         view.alignment = .fill
         view.distribution = .fillEqually
-        view.spacing = 8
+        view.spacing = 4
         return view
     }()
     
@@ -118,41 +118,39 @@ class EmoticonCountView: BaseView {
     
     let emoticonImageView: UIImageView = {
         let view = UIImageView()
-        view.image = Constants.BaseImage.emotion[1]
         return view
     }()
     
     let countLabel: UILabel = {
         let view = UILabel()
-        view.text = "3일"
+        view.text = "없음"
+        view.textColor = .white
         view.textAlignment = .center
-        view.font = .systemFont(ofSize: 16)
-        view.backgroundColor = .systemOrange
+        view.font = Constants.BaseFont.Analysis.count
+        view.backgroundColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.5)
         view.layer.cornerRadius = 4
+        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.7).cgColor
         view.layer.masksToBounds = true
         return view
     }()
     
     override func configureUI() {
-        backgroundColor = .systemYellow
-        layer.cornerRadius = 8
-        
-        [emoticonImageView, countLabel].forEach {
+        [countLabel, emoticonImageView].forEach {
             addSubview($0)
         }
     }
     
     override func setConstraint() {
-            
-        countLabel.snp.makeConstraints { make in
-            make.top.trailing.leading.equalTo(self).inset(4)
-            make.height.equalTo(28)
-        }
-        
+                    
         emoticonImageView.snp.makeConstraints { make in
-            make.bottom.leading.trailing.equalTo(self)
-            make.top.equalTo(countLabel.snp.bottom)
+            make.top.trailing.leading.equalTo(self)
+            make.height.equalTo(emoticonImageView.snp.width)
         }
         
+        countLabel.snp.makeConstraints { make in
+            make.top.equalTo(emoticonImageView.snp.bottom).offset(-8)
+            make.bottom.trailing.leading.equalTo(self).inset(4)
+        }
     }
 }

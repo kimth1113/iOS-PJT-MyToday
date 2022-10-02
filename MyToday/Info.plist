@@ -12,12 +12,6 @@
 			<dict>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
-				<key>NSExceptionMinimumTLSVersion</key>
-				<string>TLSv1.0</string>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
 			</dict>
 		</dict>
 	</dict>
@@ -27,27 +21,8 @@
 	<string>사진촬영을 위하여 카메라 접근 권한이 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>esamanru OTF Bold.otf</string>
-		<string>esamanru OTF Light.otf</string>
-		<string>esamanru OTF Medium.otf</string>
-		<string>ONE Mobile Bold.ttf</string>
-		<string>ONE Mobile Light.ttf</string>
-		<string>ONE Mobile OTF Bold.otf</string>
-		<string>ONE Mobile OTF Light.otf</string>
-		<string>ONE Mobile OTF Regular.otf</string>
-		<string>ONE Mobile Regular.ttf</string>
-		<string>RIDIBatang.otf</string>
-		<string>J송명-Regular.otf</string>
-		<string>ChosunNm.ttf</string>
-		<string>ChosunKm.TTF</string>
-		<string>나눔손글씨 고딕 아니고 고딩.ttf</string>
-		<string>KOTRA_SONGEULSSI.otf</string>
-		<string>MapoFlowerIsland.otf</string>
-		<string>MapoGoldenPier.otf</string>
 		<string>NanumBarunpenB.ttf</string>
 		<string>NanumBarunpenR.ttf</string>
-		<string>NanumBarunpenR.otf</string>
-		<string>NanumBarunpenB.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

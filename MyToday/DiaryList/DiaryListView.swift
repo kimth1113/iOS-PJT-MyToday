@@ -16,16 +16,32 @@ class DiaryListView: BaseView {
         return view
     }()
     
+    let subBackground: UIImageView = {
+        let view = UIImageView()
+        view.image = Constants.BaseImage.topBackground
+        view.contentMode = .scaleToFill
+        view.layer.opacity = 0.5
+        return view
+    }()
+    
+    let underline: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.opacity = 0.3
+        return view
+    }()
+    
     let searchButton: UIButton = {
         let view = UIButton()
-        view.setTitle("검색", for: .normal)
-        view.setTitleColor(.black, for: .normal)
+        view.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        view.tintColor = .black
+//        view.layer.opacity = 0.6
         return view
     }()
     
     let headerLabel: UILabel = {
         let view = UILabel()
-        view.text = "일기리스트"
+        view.text = "일기모음"
         view.font = Constants.BaseFont.DiaryList.header
         view.textColor = .black
         view.layer.opacity = 0.6
@@ -60,7 +76,7 @@ class DiaryListView: BaseView {
     }()
     
     override func configureUI() {
-        [backgroundImage, searchButton, headerLabel, emoticonCollectionView, diaryTableView, searchBar, searchButton].forEach {
+        [backgroundImage, subBackground, searchButton, headerLabel, emoticonCollectionView, underline, diaryTableView, searchBar].forEach {
             addSubview($0)
         }
     }
@@ -71,10 +87,13 @@ class DiaryListView: BaseView {
             make.edges.equalTo(self)
         }
         
+        subBackground.snp.makeConstraints { make in
+            make.edges.equalTo(self)
+        }
+        
         searchButton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide)
-            make.trailing.equalTo(self).offset(-20)
-            make.height.width.equalTo(40)
+            make.centerY.equalTo(headerLabel)
+            make.trailing.equalTo(self).inset(16)
         }
         
         headerLabel.snp.makeConstraints { make in
@@ -92,8 +111,14 @@ class DiaryListView: BaseView {
             make.height.equalTo(48)
         }
         
-        diaryTableView.snp.makeConstraints { make in
+        underline.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(self)
             make.top.equalTo(emoticonCollectionView.snp.bottom)
+            make.height.equalTo(1)
+        }
+        
+        diaryTableView.snp.makeConstraints { make in
+            make.top.equalTo(underline.snp.bottom)
             make.leading.trailing.bottom.equalTo(self)
         }
         

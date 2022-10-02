@@ -10,6 +10,15 @@ import SnapKit
 
 class AnalysisRandomView: BaseView {
     
+    let randomLabel: UILabel = {
+        let view = UILabel()
+        view.text = "랜덤사진"
+        view.font = Constants.BaseFont.Analysis.label
+        view.textColor = .white
+        view.layer.opacity = 0.3
+        return view
+    }()
+    
     let randomImageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
@@ -23,7 +32,7 @@ class AnalysisRandomView: BaseView {
     }()
     
     override func configureUI() {
-        [randomImageView, button].forEach {
+        [randomImageView, button, randomLabel].forEach {
             addSubview($0)
         }
     }
@@ -35,6 +44,11 @@ class AnalysisRandomView: BaseView {
         
         button.snp.makeConstraints { make in
             make.edges.equalTo(self)
+        }
+        
+        randomLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(self)
+            make.centerY.equalTo(self)
         }
     }
 }

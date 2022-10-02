@@ -15,6 +15,13 @@ class EmoticonModalViewContoller: UIViewController {
         return view
     }()
     
+    let subBackground: UIImageView = {
+        let view = UIImageView()
+        view.image = Constants.BaseImage.topBackground
+        view.contentMode = .scaleToFill
+        return view
+    }()
+    
     var bindingEmoticonImage: ((Int) -> Void)?
     
     lazy var emoticonButtonViewList = [
@@ -32,12 +39,15 @@ class EmoticonModalViewContoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPink
-        
+        view.addSubview(subBackground)
         view.addSubview(emoticonListView)
         
         emoticonListView.snp.makeConstraints { make in
             make.edges.equalTo(view).inset(20)
+        }
+        
+        subBackground.snp.makeConstraints { make in
+            make.edges.equalTo(view)
         }
 
         if let sheet = sheetPresentationController {

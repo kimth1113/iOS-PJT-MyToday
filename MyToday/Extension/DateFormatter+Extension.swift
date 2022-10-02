@@ -22,6 +22,21 @@ class FormatterRepository {
         return formatter
     }()
     
+    static let analysisMonthFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM"
+        formatter.locale = Locale(identifier: "ko_KR")
+        return formatter
+    }()
+    
+    static let dateMonthIdFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM"
+        formatter.locale = Locale(identifier: "ko_KR")
+        return formatter
+    }()
+
+    
     static let yearFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
