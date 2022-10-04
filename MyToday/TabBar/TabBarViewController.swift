@@ -42,16 +42,10 @@ class TabBarViewController: UITabBarController {
         view.datePickerMode = .date
         view.locale = Locale(identifier: "ko-KR")
         view.preferredDatePickerStyle = .wheels
-//        view.timeZone = .autoupdatingCurrent
         view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
         view.layer.cornerRadius = 4
         view.layer.masksToBounds = true
-//
         view.isHidden = true
-
-        let maximumDate = Calendar.current.date(byAdding: .day, value: -2, to: Date())
-        view.maximumDate = maximumDate
-        
         return view
     }()
     
@@ -239,6 +233,8 @@ extension TabBarViewController {
         }
         
         vc.reloadCalendar = CalendarVC.reloadCalendar
+        vc.reloadDiaryList = DiaryListVC.reloadDiaryList
+        vc.reloadAnalysis = AnalysisVC.reloadAnalysis
         
         floatButtonView.isHidden = true
         transition(vc, transitionStyle: .present)
@@ -259,6 +255,8 @@ extension TabBarViewController {
         }
         
         vc.reloadCalendar = CalendarVC.reloadCalendar
+        vc.reloadDiaryList = DiaryListVC.reloadDiaryList
+        vc.reloadAnalysis = AnalysisVC.reloadAnalysis
         
         floatButtonView.isHidden = true
         transition(vc, transitionStyle: .present)
@@ -295,6 +293,8 @@ extension TabBarViewController {
         }
         
         vc.reloadCalendar = CalendarVC.reloadCalendar
+        vc.reloadDiaryList = DiaryListVC.reloadDiaryList
+        vc.reloadAnalysis = AnalysisVC.reloadAnalysis
         
         floatButtonView.isHidden = true
         datePicker.isHidden = true
@@ -322,5 +322,6 @@ extension TabBarViewController {
         
         CalendarVC.reloadCalendar()
         DiaryListVC.reloadDiaryList()
+        AnalysisVC.reloadAnalysis()
     }
 }

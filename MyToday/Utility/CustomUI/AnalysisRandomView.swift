@@ -15,14 +15,13 @@ class AnalysisRandomView: BaseView {
         view.text = "랜덤사진"
         view.font = Constants.BaseFont.Analysis.label
         view.textColor = .white
-        view.layer.opacity = 0.3
+        view.layer.opacity = 0.5
         return view
     }()
     
     let randomImageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.image = Constants.BaseImage.background
         return view
     }()
     

@@ -31,13 +31,13 @@ class DiaryListView: BaseView {
         return view
     }()
     
-    let searchButton: UIButton = {
-        let view = UIButton()
-        view.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        view.tintColor = .black
-//        view.layer.opacity = 0.6
-        return view
-    }()
+//    let searchButton: UIButton = {
+//        let view = UIButton()
+//        view.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+//        view.tintColor = .black
+////        view.layer.opacity = 0.6
+//        return view
+//    }()
     
     let headerLabel: UILabel = {
         let view = UILabel()
@@ -76,7 +76,7 @@ class DiaryListView: BaseView {
     }()
     
     override func configureUI() {
-        [backgroundImage, subBackground, searchButton, headerLabel, emoticonCollectionView, underline, diaryTableView, searchBar].forEach {
+        [backgroundImage, subBackground, headerLabel, emoticonCollectionView, underline, diaryTableView, searchBar].forEach {
             addSubview($0)
         }
     }
@@ -91,10 +91,10 @@ class DiaryListView: BaseView {
             make.edges.equalTo(self)
         }
         
-        searchButton.snp.makeConstraints { make in
-            make.centerY.equalTo(headerLabel)
-            make.trailing.equalTo(self).inset(16)
-        }
+//        searchButton.snp.makeConstraints { make in
+//            make.centerY.equalTo(headerLabel)
+//            make.trailing.equalTo(self).inset(16)
+//        }
         
         headerLabel.snp.makeConstraints { make in
             make.centerX.equalTo(self)

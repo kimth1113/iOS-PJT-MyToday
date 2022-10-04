@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		8C063CC528EA056200D17C70 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C063CC428EA056200D17C70 /* SettingView.swift */; };
 		8C063CC728EA058B00D17C70 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C063CC628EA058B00D17C70 /* SettingViewController.swift */; };
-		8C235DAB28DF21CD00CA71F3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8C235DAA28DF21CD00CA71F3 /* Alamofire */; };
-		8C235DAE28DF21DC00CA71F3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8C235DAD28DF21DC00CA71F3 /* SwiftyJSON */; };
 		8C235DB128DF252100CA71F3 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C235DB028DF252100CA71F3 /* AnalysisView.swift */; };
 		8C235DB328DF275200CA71F3 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C235DB228DF275200CA71F3 /* AnalysisViewController.swift */; };
 		8C3402F928DAC3A600A9E000 /* CellDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3402F828DAC3A600A9E000 /* CellDefaultView.swift */; };
@@ -37,7 +35,6 @@
 		8C7B46B928E4122C006344B0 /* DateAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B46B828E4122C006344B0 /* DateAlertViewController.swift */; };
 		8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */; };
 		8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FE28CF10650064EA0D /* QuoteView.swift */; };
-		8C9CD80228CF76590064EA0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C9CD80128CF76590064EA0D /* Toast */; };
 		8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */; };
 		8CAD1AAC28E1F8C5002F1BA3 /* FloatButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD1AAB28E1F8C5002F1BA3 /* FloatButtonView.swift */; };
 		8CAD1AAE28E20DA3002F1BA3 /* EmoticonModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD1AAD28E20DA3002F1BA3 /* EmoticonModalViewController.swift */; };
@@ -66,6 +63,10 @@
 		8CC630C828DB082300370D70 /* FullCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC630C728DB082300370D70 /* FullCell.swift */; };
 		8CCEC2EE28D1F334003F1487 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */; };
 		8CCEC2F028D1F68D003F1487 /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */; };
+		8CD39BAF28EAB9E20038B1FA /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD39BAE28EAB9E20038B1FA /* AppInfoView.swift */; };
+		8CD39BB228EAC5910038B1FA /* AcknowList in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD39BB128EAC5910038B1FA /* AcknowList */; };
+		8CD39BB728EACE000038B1FA /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 8CD39BB628EACE000038B1FA /* Package.resolved */; };
+		8CD39BBA28EB049F0038B1FA /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD39BB928EB049F0038B1FA /* Toast */; };
 		8CD4E30928E75923000FA06F /* StopWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD4E30828E75923000FA06F /* StopWord.swift */; };
 		8CE2849F28CB3BF700AC91EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE2849E28CB3BF700AC91EC /* Constants.swift */; };
 		8CE284A128CB3C2B00AC91EC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE284A028CB3C2B00AC91EC /* Color.swift */; };
@@ -129,6 +130,8 @@
 		8CC630C728DB082300370D70 /* FullCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCell.swift; sourceTree = "<group>"; };
 		8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
 		8CCEC2EF28D1F68D003F1487 /* BaseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
+		8CD39BAE28EAB9E20038B1FA /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
+		8CD39BB628EACE000038B1FA /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Package.resolved; path = MyToday.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
 		8CD4E30828E75923000FA06F /* StopWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWord.swift; sourceTree = "<group>"; };
 		8CE2849E28CB3BF700AC91EC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8CE284A028CB3C2B00AC91EC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -142,10 +145,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C235DAE28DF21DC00CA71F3 /* SwiftyJSON in Frameworks */,
+				8CD39BBA28EB049F0038B1FA /* Toast in Frameworks */,
 				8C6CD3E928D6399200FAB375 /* IQKeyboardManagerSwift in Frameworks */,
-				8C235DAB28DF21CD00CA71F3 /* Alamofire in Frameworks */,
-				8C9CD80228CF76590064EA0D /* Toast in Frameworks */,
+				8CD39BB228EAC5910038B1FA /* AcknowList in Frameworks */,
 				8CB064AB28D3B787007EB273 /* YPImagePicker in Frameworks */,
 				8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */,
 				8CB064A428D3A10F007EB273 /* Realm in Frameworks */,
@@ -178,6 +180,7 @@
 		8C3DF94E28C7A79A001E69ED = {
 			isa = PBXGroup;
 			children = (
+				8CD39BB628EACE000038B1FA /* Package.resolved */,
 				8C3DF95928C7A79A001E69ED /* MyToday */,
 				8C3DF95828C7A79A001E69ED /* Products */,
 			);
@@ -354,6 +357,7 @@
 				8CB0903228E010AB00A4FFF7 /* AnalysisEmoticonView.swift */,
 				8CB0903628E01E2D00A4FFF7 /* AnalysisRankView.swift */,
 				8C36804D28E886AB00D15DDB /* CellFullView.swift */,
+				8CD39BAE28EAB9E20038B1FA /* AppInfoView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -377,13 +381,12 @@
 			packageProductDependencies = (
 				8C3DF97A28C7AEB8001E69ED /* SnapKit */,
 				8CE284AE28CB9C7700AC91EC /* FSCalendar */,
-				8C9CD80128CF76590064EA0D /* Toast */,
 				8CB064A328D3A10F007EB273 /* Realm */,
 				8CB064A528D3A10F007EB273 /* RealmSwift */,
 				8CB064AA28D3B787007EB273 /* YPImagePicker */,
 				8C6CD3E828D6399200FAB375 /* IQKeyboardManagerSwift */,
-				8C235DAA28DF21CD00CA71F3 /* Alamofire */,
-				8C235DAD28DF21DC00CA71F3 /* SwiftyJSON */,
+				8CD39BB128EAC5910038B1FA /* AcknowList */,
+				8CD39BB928EB049F0038B1FA /* Toast */,
 			);
 			productName = MyToday;
 			productReference = 8C3DF95728C7A79A001E69ED /* MyToday.app */;
@@ -416,12 +419,11 @@
 			packageReferences = (
 				8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */,
-				8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				8C6CD3E728D6399200FAB375 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				8C235DA928DF21CD00CA71F3 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				8C235DAC28DF21DC00CA71F3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				8CD39BB028EAC5910038B1FA /* XCRemoteSwiftPackageReference "AcknowList" */,
+				8CD39BB828EB049F0038B1FA /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 8C3DF95828C7A79A001E69ED /* Products */;
 			projectDirPath = "";
@@ -441,6 +443,7 @@
 				8CB0904528E0B3D100A4FFF7 /* NanumBarunpenR.ttf in Resources */,
 				8C3DF96428C7A79B001E69ED /* Assets.xcassets in Resources */,
 				8C3DF96228C7A79A001E69ED /* Main.storyboard in Resources */,
+				8CD39BB728EACE000038B1FA /* Package.resolved in Resources */,
 				8CB0904428E0B3D100A4FFF7 /* NanumBarunpenB.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +463,7 @@
 				8C4CB9C428D9793600825D00 /* DiaryListView.swift in Sources */,
 				8CB89CF828D9BB5C005A28A2 /* BaseTableViewCell.swift in Sources */,
 				8C4CB9CE28D9854B00825D00 /* EmotionCollectionViewCell.swift in Sources */,
+				8CD39BAF28EAB9E20038B1FA /* AppInfoView.swift in Sources */,
 				8CC556D728D70DEF007EFCFE /* UIColor+Extension.swift in Sources */,
 				8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */,
 				8C063CC528EA056200D17C70 /* SettingView.swift in Sources */,
@@ -739,22 +743,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8C235DA928DF21CD00CA71F3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		8C235DAC28DF21DC00CA71F3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -769,14 +757,6 @@
 			requirement = {
 				kind = exactVersion;
 				version = 6.5.0;
-			};
-		};
-		8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
 			};
 		};
 		8CB064A228D3A10F007EB273 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
@@ -795,6 +775,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8CD39BB028EAC5910038B1FA /* XCRemoteSwiftPackageReference "AcknowList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vtourraine/AcknowList.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		8CD39BB828EB049F0038B1FA /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8CE284AD28CB9C7700AC91EC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -806,16 +802,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8C235DAA28DF21CD00CA71F3 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C235DA928DF21CD00CA71F3 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		8C235DAD28DF21DC00CA71F3 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C235DAC28DF21DC00CA71F3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
 		8C3DF97A28C7AEB8001E69ED /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -825,11 +811,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C6CD3E728D6399200FAB375 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
-		};
-		8C9CD80128CF76590064EA0D /* Toast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C9CD80028CF76590064EA0D /* XCRemoteSwiftPackageReference "Toast-Swift" */;
-			productName = Toast;
 		};
 		8CB064A328D3A10F007EB273 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -845,6 +826,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8CB064A928D3B787007EB273 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
 			productName = YPImagePicker;
+		};
+		8CD39BB128EAC5910038B1FA /* AcknowList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CD39BB028EAC5910038B1FA /* XCRemoteSwiftPackageReference "AcknowList" */;
+			productName = AcknowList;
+		};
+		8CD39BB928EB049F0038B1FA /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CD39BB828EB049F0038B1FA /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		8CE284AE28CB9C7700AC91EC /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;

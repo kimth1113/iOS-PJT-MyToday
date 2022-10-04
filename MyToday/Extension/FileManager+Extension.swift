@@ -20,8 +20,6 @@ extension UIViewController {
         } catch {
             print("file save error", error)
         }
-        
-        print(documentDirectory)
     }
     
     func loadImageFromDocument(fileName: String) -> UIImage? {

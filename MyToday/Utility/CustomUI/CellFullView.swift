@@ -77,7 +77,7 @@ class CellFullView: BaseView {
             make.top.equalTo(self)
             make.leading.equalTo(self).inset(8)
             make.trailing.equalTo(sidebar.snp.leading).offset(-8)
-            make.height.equalTo(diaryImageView.snp.width)
+            make.bottom.equalTo(self).offset(-8)
         }
         
         sidebar.snp.makeConstraints { make in
@@ -91,7 +91,7 @@ class CellFullView: BaseView {
             make.top.equalTo(self)
             make.trailing.equalTo(self).inset(8)
             make.leading.equalTo(sidebar.snp.trailing).offset(8)
-            make.height.equalTo(diaryContentView.snp.width)
+            make.bottom.equalTo(self).offset(-8)
         }
         
         diaryContentlabel.snp.makeConstraints { make in

@@ -69,7 +69,7 @@ class AnalysisEmoticonView: BaseView {
         view.axis = .horizontal
         view.alignment = .fill
         view.distribution = .fillEqually
-        view.spacing = 4
+        view.spacing = 8
         return view
     }()
     
@@ -78,7 +78,7 @@ class AnalysisEmoticonView: BaseView {
         view.axis = .horizontal
         view.alignment = .fill
         view.distribution = .fillEqually
-        view.spacing = 4
+        view.spacing = 8
         return view
     }()
     
@@ -87,7 +87,7 @@ class AnalysisEmoticonView: BaseView {
         view.axis = .horizontal
         view.alignment = .fill
         view.distribution = .fillEqually
-        view.spacing = 4
+        view.spacing = 8
         return view
     }()
     
@@ -108,8 +108,7 @@ class AnalysisEmoticonView: BaseView {
     
     override func setConstraint() {
         verticalStackView.snp.makeConstraints { make in
-            make.trailing.leading.equalTo(self).inset(8)
-            make.top.bottom.equalTo(self).inset(8)
+            make.edges.equalTo(self).inset(16)
         }
     }
 }
@@ -118,6 +117,7 @@ class EmoticonCountView: BaseView {
     
     let emoticonImageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -127,10 +127,10 @@ class EmoticonCountView: BaseView {
         view.textColor = .white
         view.textAlignment = .center
         view.font = Constants.BaseFont.Analysis.count
-        view.backgroundColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.5)
+        view.backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.5)
         view.layer.cornerRadius = 4
         view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.7).cgColor
+        view.layer.borderColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.2).cgColor
         view.layer.masksToBounds = true
         return view
     }()
@@ -145,12 +145,13 @@ class EmoticonCountView: BaseView {
                     
         emoticonImageView.snp.makeConstraints { make in
             make.top.trailing.leading.equalTo(self)
-            make.height.equalTo(emoticonImageView.snp.width)
+            make.height.equalTo(self).multipliedBy(0.8)
         }
         
         countLabel.snp.makeConstraints { make in
             make.top.equalTo(emoticonImageView.snp.bottom).offset(-8)
-            make.bottom.trailing.leading.equalTo(self).inset(4)
+            make.bottom.equalTo(self)
+            make.trailing.leading.equalTo(self).inset(20)
         }
     }
 }

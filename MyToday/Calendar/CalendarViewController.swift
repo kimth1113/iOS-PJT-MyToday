@@ -119,9 +119,9 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         
         let date = FormatterRepository.formatter.string(from: date)
         if let diary = repository.getDiary(date: date) {
-            cell.titleImageView.image = Constants.BaseImage.emotion[diary.emoticonId]
+            cell.titleImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
         } else {
-            cell.titleImageView.image = Constants.BaseImage.emotion[0]
+            cell.titleImageView.image = Constants.BaseImage.emotion2[0]
             cell.titleImageView.layer.opacity = 0.7
         }
         
@@ -171,10 +171,9 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         }
         
         if date > Date() {
+            self.view.makeToast("일기를 미리 작성할 수 없어요", duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
+            }
             return
-        }
-        
-        self.view.makeToast(FormatterRepository.eDateFormatter.string(from: date), duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
         }
         
         let vc = ReadViewController()

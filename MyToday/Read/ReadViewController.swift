@@ -7,12 +7,10 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import Alamofire
-import SwiftyJSON
 
 class ReadViewController: BaseViewController {
     
-    private let mainView = ReadView()
+    let mainView = ReadView()
     
     private let repository = DiaryRepository()
     
@@ -28,6 +26,7 @@ class ReadViewController: BaseViewController {
     // 클로져 모음
     var reloadCalendar: (() -> Void)?
     var reloadDiaryList: (() -> Void)?
+    var reloadAnalysis: (() -> Void)?
     lazy var bindingEmoticonImage: ((Int) -> Void) = { emoticonId in
         
         self.mainView.emoticonView.emoticonImageView.image = Constants.BaseImage.emotion2[emoticonId]
@@ -66,7 +65,7 @@ class ReadViewController: BaseViewController {
 //        tapTerm.delegate = self
 //        mainView.contentView.addGestureRecognizer(tapTerm)
 
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first)
+//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first)
     }
     
     override func configure() {
@@ -84,14 +83,13 @@ class ReadViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         UIView.animateKeyframes(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse]) {
-            
             self.mainView.emoticonView.emoticonImageView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        
         } completion: { _ in
             
         }
-
+        
     }
+    
 }
 
 extension ReadViewController {
@@ -99,11 +97,12 @@ extension ReadViewController {
     private func bindingData() {
         // 화면초기 바인딩하는 시점
         guard let diary = diary else { return }
+        
         // 날짜 라벨 표시
         guard let date = FormatterRepository.formatter.date(from: diary.objectId) else { return }
         mainView.dateLabel.text = FormatterRepository.dateLabelFormatter.string(from: date)
         // 이모티콘 바인딩
-        mainView.emoticonView.emoticonImageView.image = Constants.BaseImage.emotion[diary.emoticonId]
+        mainView.emoticonView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
         originalEmoticonId = diary.emoticonId
         // 이미지 바인딩
         mainView.imageView.customImageView.image = loadImageFromDocument(fileName: diary.objectId)
@@ -124,13 +123,7 @@ extension ReadViewController {
         
     @objc
     private func backButtonTapped(_ sender: UIButton) {
-        guard let diary = diary else { return }
         
-        if let reloadCalendar = reloadCalendar {
-            reloadCalendar()
-        }
-        
-        let diaryImage = loadImageFromDocument(fileName: diary.objectId)
         // 아무것도 작성하지 않았을 때 (처음 들어온 경우)
         if originalEmoticonId == 0 && newEmoticonId == nil && newContent == nil && newImage == nil {
             let alert = UIAlertController(title: nil, message: "작성된 정보가 없으므로 해당 일기는 삭제됩니다.", preferredStyle: .alert)
@@ -171,8 +164,12 @@ extension ReadViewController {
                 
                 if let reloadCalendar = self.reloadCalendar {
                     reloadCalendar()
-                } else {
-                    self.reloadDiaryList!()
+                }
+                if let reloadDiaryList = self.reloadDiaryList {
+                    reloadDiaryList()
+                }
+                if let reloadAnalysis = self.reloadAnalysis {
+                    reloadAnalysis()
                 }
             }
             
@@ -217,8 +214,12 @@ extension ReadViewController {
                 
                 if let reloadCalendar = self.reloadCalendar {
                     reloadCalendar()
-                } else {
-                    self.reloadDiaryList!()
+                }
+                if let reloadDiaryList = self.reloadDiaryList {
+                    reloadDiaryList()
+                }
+                if let reloadAnalysis = self.reloadAnalysis {
+                    reloadAnalysis()
                 }
                 
                 if let image = self.mainView.imageView.customImageView.image {
@@ -239,8 +240,12 @@ extension ReadViewController {
                 
                 if let reloadCalendar = self.reloadCalendar {
                     reloadCalendar()
-                } else {
-                    self.reloadDiaryList!()
+                }
+                if let reloadDiaryList = self.reloadDiaryList {
+                    reloadDiaryList()
+                }
+                if let reloadAnalysis = self.reloadAnalysis {
+                    reloadAnalysis()
                 }
                 
                 if let image = self.mainView.imageView.customImageView.image {
@@ -285,6 +290,8 @@ extension ReadViewController {
             
             vc.imageView.image = mainView.imageView.customImageView.image!
             vc.bindingImage = bindingImage
+            vc.objectId = diary?.objectId
+            vc.ReadVC = self
             
             present(vc, animated: true)
         }

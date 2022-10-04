@@ -8,8 +8,6 @@
 import UIKit
 import RealmSwift
 import SnapKit
-import Alamofire
-import SwiftyJSON
 
 class DiaryListViewController: BaseViewController {
     
@@ -50,7 +48,7 @@ class DiaryListViewController: BaseViewController {
 //        tapTerm.delegate = self
 //        mainView.addGestureRecognizer(tapTerm)
         
-        mainView.searchBar.delegate = self
+//        mainView.searchBar.delegate = self
         
         mainView.emoticonCollectionView.delegate = self
         mainView.emoticonCollectionView.dataSource = self
@@ -69,7 +67,7 @@ class DiaryListViewController: BaseViewController {
         diaryList = repository.getDiaryList(emoticonId: nil)
         
         // 버튼 등록
-        mainView.searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+//        mainView.searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     
     override func configure() {
@@ -89,12 +87,12 @@ extension DiaryListViewController {
         lbl.attributedText = attrString
     }
     
-    @objc
-    private func searchButtonTapped(_ sender: UIButton) {
-        mainView.searchBar.isHidden = false
-        diaryList = repository.getDiaryList(emoticonId: nil)
-        mainView.searchBar.searchTextField.becomeFirstResponder()
-    }
+//    @objc
+//    private func searchButtonTapped(_ sender: UIButton) {
+//        mainView.searchBar.isHidden = false
+//        diaryList = repository.getDiaryList(emoticonId: nil)
+//        mainView.searchBar.searchTextField.becomeFirstResponder()
+//    }
 }
 
 extension DiaryListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -264,29 +262,29 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension DiaryListViewController: UISearchBarDelegate {
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = true
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let text = searchBar.text else { return }
-        
-        diaryList = repository.search(text: text)
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        mainView.searchBar.resignFirstResponder()
-        mainView.searchBar.isHidden = true
-    }
-        
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        mainView.searchBar.resignFirstResponder()
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        mainView.searchBar.resignFirstResponder()
-    }
-}
+//extension DiaryListViewController: UISearchBarDelegate {
+//
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        searchBar.showsCancelButton = true
+//    }
+//
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        guard let text = searchBar.text else { return }
+//
+//        diaryList = repository.search(text: text)
+//    }
+//
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        mainView.searchBar.resignFirstResponder()
+//        mainView.searchBar.isHidden = true
+//    }
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        mainView.searchBar.resignFirstResponder()
+//    }
+//
+//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        mainView.searchBar.resignFirstResponder()
+//    }
+//}
 
