@@ -1,0 +1,125 @@
+/* 
+  Localizable.strings
+  MyToday
+
+  Created by 김태현 on 2022/10/05.
+  
+*/
+
+"font_normal" = "NanumBarunpen";
+
+"font_bold" = "NanumBarunpen-Bold";
+
+"locale_identifier" = "ko_KR";
+
+"year" = "년";
+
+"month" = "월";
+
+"day" = "일";
+
+"eday" = "요일";
+
+"today" = "오늘";
+
+"yesterday" = "어제";
+
+"otherday" = "다른날";
+
+"cancel" = "취소";
+
+"ok" = "확인";
+
+"save" = "저장";
+
+"noimage" = "사진 미등록";
+
+"album" = "앨범";
+
+"delete" = "삭제";
+
+"zero" = "0";
+
+"jan" = "1월";
+
+"feb" = "2월";
+
+"mar" = "3월";
+
+"apr" = "4월";
+
+"may" = "5월";
+
+"jun" = "6월";
+
+"jul" = "7월";
+
+"aug" = "8월";
+
+"sep" = "9월";
+
+"oct" = "10월";
+
+"nov" = "11월";
+
+"dec" = "12월";
+
+"all" = "전체";
+
+"happy" = "행복";
+
+"kiss" = "설렘";
+
+"normal" = "보통";
+
+"angry" = "화남";
+
+"sad" = "슬픔";
+
+"fear" = "당황";
+
+"sick" = "아픔";
+
+"boring" = "지루";
+
+"sleeping" = "피곤";
+
+"toast_unwritable" = "일기를 미리 작성할 수 없어요";
+
+"alert_quit" = "정말 작성을 멈추고 나가시겠어요?";
+
+"alert_quit_delete" = "작성된 정보가 없으므로 해당 일기는 삭제됩니다.";
+
+"alert_delete" = "정말 일기를 삭제하시겠어요?";
+
+"alert_emoticon" = "감정등록 버튼을 눌러 오늘의 감정을 선택해주세요.";
+
+"alert_quit_noedit" = "수정된 내용이 없습니다.\n나가시겠습니까?";
+
+"alert_edit" = "수정하시겠습니까?";
+
+"alert_save" = "저장하시겠습니까?";
+
+"read_emoticon" = "감정 선택[필수]";
+
+"read_image" = "사진 등록";
+
+"read_placeholder" = "아직 일기를 작성하지 않았어요.";
+
+"list_header" = "일기모음";
+
+"analysis_count" = "일기 작성 횟수";
+
+"analysis_random" = "랜덤사진";
+
+"setting_header" = "정보";
+
+"setting_review" = "리뷰쓰기";
+
+"setting_license" = "오픈소스\n라이센스";
+
+"setting_mail" = "개발자\n메일문의";
+
+"setting_mail_subject" = "[문의] 나는오늘 : ";
+
+"alert_nomail" = "아이폰의 메일 APP에 이메일이 미등록 상태입니다.";

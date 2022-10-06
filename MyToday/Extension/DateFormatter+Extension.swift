@@ -11,28 +11,24 @@ class FormatterRepository {
     static let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        formatter.locale = Locale(identifier: "ko_KR")
         return formatter
     }()
     
     static let calendarMonthFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy\nMM"
-        formatter.locale = Locale(identifier: "ko_KR")
         return formatter
     }()
     
     static let analysisMonthFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM"
-        formatter.locale = Locale(identifier: "ko_KR")
         return formatter
     }()
     
     static let dateMonthIdFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM"
-        formatter.locale = Locale(identifier: "ko_KR")
         return formatter
     }()
 
@@ -40,21 +36,18 @@ class FormatterRepository {
     static let yearFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
-        formatter.locale = Locale(identifier: "ko_KR")
         return formatter
     }()
     
     static let monthFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "M"
-        formatter.locale = Locale(identifier: "ko_KR")
         return formatter
     }()
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "d"
-        formatter.locale = Locale(identifier: "ko_KR")
         return formatter
     }()
     
@@ -65,17 +58,24 @@ class FormatterRepository {
         return formatter
     }()
     
+    static let wordEDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E"
+        formatter.locale = Locale(identifier: "locale_identifier".localized)
+        return formatter
+    }()
+    
     static let dateLabelFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy. MM. dd. (E)"
-        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.locale = Locale(identifier: "locale_identifier".localized)
         return formatter
     }()
     
     static let diaryListFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "M월 dd일\nEEEE"
-        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "formatter_md".localized
+        formatter.locale = Locale(identifier: "locale_identifier".localized)
         return formatter
     }()
 }

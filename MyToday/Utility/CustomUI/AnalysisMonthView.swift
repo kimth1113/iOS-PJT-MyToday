@@ -12,7 +12,7 @@ class AnalysisMonthView: BaseView {
     
     let monthLabel: UILabel = {
         let view = UILabel()
-        view.text = "12"
+        view.text = "0"
         view.font = Constants.BaseFont.Analysis.diaryCount
         view.textAlignment = .center
         return view
@@ -22,7 +22,7 @@ class AnalysisMonthView: BaseView {
         let view = UILabel()
         view.textAlignment = .center
         view.font = Constants.BaseFont.Analysis.title
-        view.text = "일기 작성 횟수"
+        view.text = "analysis_count".localized
         view.backgroundColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.5)
         view.layer.cornerRadius = 4
         view.layer.masksToBounds = true

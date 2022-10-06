@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAnalytics
 
 class TabBarViewController: UITabBarController {
     
@@ -40,12 +41,13 @@ class TabBarViewController: UITabBarController {
     let datePicker: UIDatePicker = {
         let view = UIDatePicker()
         view.datePickerMode = .date
-        view.locale = Locale(identifier: "ko-KR")
+        view.locale = Locale(identifier: "locale_identifier".localized)
         view.preferredDatePickerStyle = .wheels
         view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
         view.layer.cornerRadius = 4
         view.layer.masksToBounds = true
         view.isHidden = true
+        view.maximumDate = Date()
         return view
     }()
     
@@ -178,7 +180,6 @@ extension TabBarViewController {
     private func configureFloatButtonViewUI() {
         floatButtonView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.width.equalTo(view).multipliedBy(0.4)
             make.bottom.equalTo(pencilButton.snp.top).offset(-20)
         }
     }
@@ -205,6 +206,7 @@ extension TabBarViewController {
 
     @objc
     private func pencilButtonTapped(_ sender: UIButton) {
+        
         datePicker.isHidden = true
         dateSelectButton.isHidden = true
         dateCancelButton.isHidden = true
@@ -228,8 +230,20 @@ extension TabBarViewController {
         let date = FormatterRepository.formatter.string(from: Date())
         if let diary = self.repository.getDiary(date: date) {
             vc.diary = diary
+            
+            Analytics.logEvent("연필 버튼 탭", parameters: [
+                "날짜종류": "오늘",
+                "날짜정보": "\(date)",
+                "일기유무": "있음(수정)"
+            ])
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
+            
+            Analytics.logEvent("연필 버튼 탭", parameters: [
+                "날짜종류": "오늘",
+                "날짜정보": "\(date)",
+                "일기유무": "없음(신규)"
+            ])
         }
         
         vc.reloadCalendar = CalendarVC.reloadCalendar
@@ -250,8 +264,20 @@ extension TabBarViewController {
         let date = FormatterRepository.formatter.string(from: yesterday)
         if let diary = self.repository.getDiary(date: date) {
             vc.diary = diary
+            
+            Analytics.logEvent("연필 버튼 탭", parameters: [
+                "날짜종류": "어제",
+                "날짜정보": "\(date)",
+                "일기유무": "있음(수정)"
+            ])
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
+            
+            Analytics.logEvent("연필 버튼 탭", parameters: [
+                "날짜종류": "어제",
+                "날짜정보": "\(date)",
+                "일기유무": "없음(신규)"
+            ])
         }
         
         vc.reloadCalendar = CalendarVC.reloadCalendar
@@ -288,8 +314,20 @@ extension TabBarViewController {
         let date = FormatterRepository.formatter.string(from: otherday)
         if let diary = self.repository.getDiary(date: date) {
             vc.diary = diary
+            
+            Analytics.logEvent("연필 버튼 탭", parameters: [
+                "날짜종류": "다른날",
+                "날짜정보": "\(date)",
+                "일기유무": "있음(수정)"
+            ])
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
+            
+            Analytics.logEvent("연필 버튼 탭", parameters: [
+                "날짜종류": "다른날",
+                "날짜정보": "\(date)",
+                "일기유무": "없음(신규)"
+            ])
         }
         
         vc.reloadCalendar = CalendarVC.reloadCalendar

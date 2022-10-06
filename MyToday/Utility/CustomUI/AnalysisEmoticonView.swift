@@ -123,7 +123,7 @@ class EmoticonCountView: BaseView {
     
     let countLabel: UILabel = {
         let view = UILabel()
-        view.text = "없음"
+        view.text = "zero".localized
         view.textColor = .white
         view.textAlignment = .center
         view.font = Constants.BaseFont.Analysis.count

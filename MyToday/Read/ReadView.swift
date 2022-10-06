@@ -63,10 +63,12 @@ class ReadView: BaseView {
         let view = UILabel()
         view.textColor = .black
         view.font = Constants.BaseFont.Read.date
-        view.numberOfLines = 2
+        view.numberOfLines = 1
         view.textAlignment = .center
 //        view.layer.opacity = 0.5
+        view.adjustsFontSizeToFitWidth = true
         view.sizeToFit()
+        view.minimumScaleFactor = 0.5
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return view
     }()
@@ -83,7 +85,9 @@ class ReadView: BaseView {
         let view = CustomButtonView()
         view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         view.layer.cornerRadius = 4
-        view.customButton.setTitle("감정 선택[필수]", for: .normal)
+        view.customButton.setTitle("read_emoticon".localized, for: .normal)
+        view.customButton.titleLabel?.lineBreakMode = .byWordWrapping
+        view.customButton.titleLabel?.textAlignment = .center
         view.customButton.titleLabel?.font = Constants.BaseFont.Read.label
         view.customButton.setTitleColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5), for: .normal)
         return view
@@ -101,7 +105,7 @@ class ReadView: BaseView {
         view.layer.cornerRadius = 4
         view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         view.layer.masksToBounds = true
-        view.customButton.setTitle("사진 등록", for: .normal)
+        view.customButton.setTitle("read_image".localized, for: .normal)
         view.customButton.titleLabel?.font = Constants.BaseFont.Read.label
         view.customButton.setTitleColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5), for: .normal)
         return view
@@ -124,7 +128,7 @@ class ReadView: BaseView {
         let view = UITextView()
         view.font = Constants.BaseFont.Read.content
         view.backgroundColor = .clear
-        view.text = "아직 일기를 작성하지 않았어요."
+        view.text = "read_placeholder".localized
         view.textColor = .placeholderText
         return view
     }()

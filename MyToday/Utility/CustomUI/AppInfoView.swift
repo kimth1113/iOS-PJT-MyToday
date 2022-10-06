@@ -21,10 +21,14 @@ class AppInfoView: BaseView {
     
     let versionLabel: UILabel = {
         let view = UILabel()
-        view.text = "v1.0 [Beta]"
+        view.text = "v1.0.1 [Beta]"
         view.font = Constants.BaseFont.DiaryList.header
         view.textColor = .white
+        view.textAlignment = .center
         view.layer.opacity = 0.8
+        view.adjustsFontSizeToFitWidth = true
+        view.sizeToFit()
+        view.minimumScaleFactor = 0.5
         return view
     }()
     
@@ -54,6 +58,7 @@ class AppInfoView: BaseView {
         versionLabel.snp.makeConstraints { make in
             make.centerX.equalTo(self)
             make.centerY.equalTo(self)
+            make.leading.trailing.equalTo(self).inset(20)
         }
         
         authorLabel.snp.makeConstraints { make in

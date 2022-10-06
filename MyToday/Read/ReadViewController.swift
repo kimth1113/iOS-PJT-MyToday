@@ -7,6 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import FirebaseAnalytics
 
 class ReadViewController: BaseViewController {
     
@@ -58,7 +59,11 @@ class ReadViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        for fontFamily in UIFont.familyNames {
+            for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
+                print(fontName)
+            }
+        }
         setButton()
         
 //        let tapTerm = UITapGestureRecognizer(target: self, action: nil)
@@ -126,9 +131,9 @@ extension ReadViewController {
         
         // 아무것도 작성하지 않았을 때 (처음 들어온 경우)
         if originalEmoticonId == 0 && newEmoticonId == nil && newContent == nil && newImage == nil {
-            let alert = UIAlertController(title: nil, message: "작성된 정보가 없으므로 해당 일기는 삭제됩니다.", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            let alert = UIAlertController(title: nil, message: "alert_quit_delete".localized, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "cancel".localized, style: .cancel)
+            let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
                 self.dismiss(animated: true)
             }
             alert.addAction(cancel)
@@ -136,9 +141,9 @@ extension ReadViewController {
             present(alert, animated: true)
             return
         }
-        let alert = UIAlertController(title: nil, message: "정말 작성을 멈추고 나가시겠어요?", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+        let alert = UIAlertController(title: nil, message: "alert_quit".localized, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "cancel".localized, style: .cancel)
+        let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
             self.dismiss(animated: true)
         }
         alert.addAction(cancel)
@@ -152,9 +157,9 @@ extension ReadViewController {
         
         guard let objectId = diary?.objectId else { return }
         
-        let alert = UIAlertController(title: nil, message: "정말 일기를 삭제하시겠어요?", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+        let alert = UIAlertController(title: nil, message: "alert_delete".localized, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "cancel".localized, style: .cancel)
+        let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
             
             if let diary = self.repository.getDiary(date: objectId) {
                 
@@ -186,17 +191,17 @@ extension ReadViewController {
         guard let diary = diary else { return }
         
         guard originalEmoticonId != 0 || newEmoticonId != nil else {
-            let alert = UIAlertController(title: nil, message: "감정등록 버튼을 눌러 오늘의 감정을 선택해주세요.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .default)
+            let alert = UIAlertController(title: nil, message: "alert_emoticon".localized, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "ok".localized, style: .default)
             alert.addAction(ok)
             present(alert, animated: true)
             return
         }
         
         if newEmoticonId == nil && newContent == nil && newImage == nil {
-            let alert = UIAlertController(title: nil, message: "수정된 내용이 없습니다.\n나가시겠습니까?", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            let alert = UIAlertController(title: nil, message: "alert_quit_noedit".localized, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "cancel".localized, style: .cancel)
+            let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
                 self.dismiss(animated: true)
             }
             alert.addAction(cancel)
@@ -207,9 +212,9 @@ extension ReadViewController {
         
         if let _ = repository.getDiary(date: diary.objectId) {
             // 기존에 있다면
-            let alert = UIAlertController(title: nil, message: "수정하시겠습니까?", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            let alert = UIAlertController(title: nil, message: "alert_edit".localized, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "cancel".localized, style: .cancel)
+            let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
                 self.repository.updateDiary(diary: diary, newEmoticonId: self.newEmoticonId ?? diary.emoticonId, newContent: self.newContent ?? diary.content)
                 
                 if let reloadCalendar = self.reloadCalendar {
@@ -231,11 +236,16 @@ extension ReadViewController {
             alert.addAction(cancel)
             alert.addAction(ok)
             present(alert, animated: true)
+            
+            Analytics.logEvent("일기 작성 수정", parameters: [
+                "objectId": "\(diary.objectId)",
+                "content": "감정 : \(diary.emoticonId), 일기내용 : \(diary.content ?? "")",
+            ])
         } else {
             // 기존에 없다면
-            let alert = UIAlertController(title: nil, message: "저장하시겠습니까?", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            let alert = UIAlertController(title: nil, message: "alert_save".localized, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "cancel".localized, style: .cancel)
+            let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
                 self.repository.create(diary: Diary(objectId: diary.objectId, emotionId: self.newEmoticonId!, content: self.newContent))
                 
                 if let reloadCalendar = self.reloadCalendar {
@@ -257,7 +267,14 @@ extension ReadViewController {
             alert.addAction(cancel)
             alert.addAction(ok)
             present(alert, animated: true)
+            
+            Analytics.logEvent("일기 작성 신규", parameters: [
+                "objectId": "\(diary.objectId)",
+                "content": "감정 : \(diary.emoticonId), 일기내용 : \(diary.content ?? "")",
+            ])
         }
+
+
     }
     
     @objc
@@ -332,7 +349,7 @@ extension ReadViewController: UITextViewDelegate {
         let text = textView.text.trimmingCharacters(in: ["\n"])
         
         if textView.text.isEmpty || text.trimmingCharacters(in: .whitespaces) == "" {
-            textView.text = "아직 일기를 작성하지 않았어요."
+            textView.text = "read_placeholder".localized
             textView.textColor = .placeholderText
         }
     }

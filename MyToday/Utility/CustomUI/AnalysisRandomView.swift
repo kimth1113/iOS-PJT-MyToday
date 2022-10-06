@@ -12,7 +12,7 @@ class AnalysisRandomView: BaseView {
     
     let randomLabel: UILabel = {
         let view = UILabel()
-        view.text = "랜덤사진"
+        view.text = "analysis_random".localized
         view.font = Constants.BaseFont.Analysis.label
         view.textColor = .white
         view.layer.opacity = 0.5

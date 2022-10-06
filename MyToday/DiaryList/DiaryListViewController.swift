@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import SnapKit
+import FirebaseAnalytics
 
 class DiaryListViewController: BaseViewController {
     
@@ -21,7 +22,7 @@ class DiaryListViewController: BaseViewController {
         self.mainView.diaryTableView.reloadData()
     }
     
-    let emotionList = ["전체", "행복", "설렘", "보통", "화남", "슬픔", "당황", "아픔", "지루", "피곤"]
+    let emotionList = ["all".localized, "happy".localized, "kiss".localized, "normal".localized, "angry".localized, "sad".localized, "fear".localized, "sick".localized, "boring".localized, "sleeping".localized]
     
     private var diaryList: Results<Diary>! {
         didSet {
@@ -119,6 +120,8 @@ extension DiaryListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+
+        
         if indexPath.row == 0 {
             diaryList = repository.getDiaryList(emoticonId: nil)
         } else {
@@ -126,6 +129,11 @@ extension DiaryListViewController: UICollectionViewDelegate, UICollectionViewDat
         }
 
         currentEmotion = indexPath.row
+        
+        Analytics.logEvent("감정 컬렉션 탭", parameters: [
+            "감정종류": "\(emotionList[indexPath.row])",
+            "감정일기개수": "\(diaryList.count)",
+        ])
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -155,7 +163,7 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
         let year = FormatterRepository.yearFormatter.string(from: diaryDate)
         let month = FormatterRepository.monthFormatter.string(from: diaryDate)
         let date = FormatterRepository.dateFormatter.string(from: diaryDate)
-        let eDate = FormatterRepository.eDateFormatter.string(from: diaryDate)
+        let eDate = FormatterRepository.wordEDateFormatter.string(from: diaryDate)
         
         if let diaryImage = loadImageFromDocument(fileName: diaryList[indexPath.row].objectId), let diaryContent = diary.content, diary.content != "" {
             // 둘다
@@ -164,16 +172,16 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
             fullCell.cellFullView.diaryContentlabel.text = diaryContent
             setLineSpacing(lbl: fullCell.cellFullView.diaryContentlabel)
             fullCell.cellDefaultView.yearLabel.text = year
-            fullCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
-            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
+            fullCell.cellDefaultView.dateLabel.text = "\(month)" + "month".localized + " " + "\(date)" + "day".localized
+            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)" + "eday".localized
             return fullCell
         } else if let diaryImage = loadImageFromDocument(fileName: diaryList[indexPath.row].objectId) {
             // 이미지만
             fullCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
             fullCell.cellFullView.diaryImageView.image = diaryImage
             fullCell.cellDefaultView.yearLabel.text = year
-            fullCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
-            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
+            fullCell.cellDefaultView.dateLabel.text = "\(month)" + "month".localized + " " + "\(date)" + "day".localized
+            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)" + "eday".localized
             fullCell.cellFullView.noContentLabel.text = "일기 미작성"
             return fullCell
         } else if let diaryContent = diary.content {
@@ -182,8 +190,8 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
             fullCell.cellFullView.diaryContentlabel.text = diaryContent
             setLineSpacing(lbl: fullCell.cellFullView.diaryContentlabel)
             fullCell.cellDefaultView.yearLabel.text = year
-            fullCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
-            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
+            fullCell.cellDefaultView.dateLabel.text = "\(month)" + "month".localized + " " + "\(date)" + "day".localized
+            fullCell.cellDefaultView.eDateLabel.text = "\(eDate)" + "eday".localized
             fullCell.cellFullView.diaryImageView.image = nil
             fullCell.cellFullView.diaryImageView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.2)
             return fullCell
@@ -191,15 +199,15 @@ extension DiaryListViewController: UITableViewDelegate, UITableViewDataSource {
             // 기본
             defaultCell.cellDefaultView.emoticonImageView.image = Constants.BaseImage.emotion2[diary.emoticonId]
             defaultCell.cellDefaultView.yearLabel.text = year
-            defaultCell.cellDefaultView.dateLabel.text = "\(month)월 \(date)일"
-            defaultCell.cellDefaultView.eDateLabel.text = "\(eDate)요일"
+            defaultCell.cellDefaultView.dateLabel.text = "\(month)" + "month".localized + " " + "\(date)" + "day".localized
+            defaultCell.cellDefaultView.eDateLabel.text = "\(eDate)" + "eday".localized
             return defaultCell
         }
     }
     
     // didSelectRow
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mainView.searchBar.isHidden = true
+//        mainView.searchBar.isHidden = true
         
         let vc = ReadViewController()
         vc.reloadDiaryList = reloadDiaryList

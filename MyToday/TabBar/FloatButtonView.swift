@@ -11,38 +11,46 @@ import SnapKit
 class FloatButtonView: BaseView {
     
     let todayButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("오늘", for: .normal)
-        view.titleLabel?.font = Constants.BaseFont.Tapbar.float
-        view.backgroundColor = .systemOrange
-        view.layer.cornerRadius = 16        
+        var filled = UIButton.Configuration.filled()
+        filled.title = "today".localized
+        filled.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        filled.attributedTitle?.font = Constants.BaseFont.Tapbar.float
+        filled.baseBackgroundColor = .systemOrange
+        let view = UIButton(configuration: filled, primaryAction: nil)
+        view.layer.cornerRadius = 20
         return view
     }()
     
     let yesterdayButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("어제", for: .normal)
-        view.titleLabel?.font = Constants.BaseFont.Tapbar.float
-        view.backgroundColor = .systemBlue
-        view.layer.cornerRadius = 16
+        var filled = UIButton.Configuration.filled()
+        filled.title = "yesterday".localized
+        filled.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        filled.attributedTitle?.font = Constants.BaseFont.Tapbar.float
+        filled.baseBackgroundColor = .systemBlue
+        let view = UIButton(configuration: filled, primaryAction: nil)
+        view.layer.cornerRadius = 20
         return view
     }()
     
     let otherdayButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("다른날", for: .normal)
-        view.titleLabel?.font = Constants.BaseFont.Tapbar.float
-        view.backgroundColor = .systemGreen
-        view.layer.cornerRadius = 16
+        var filled = UIButton.Configuration.filled()
+        filled.title = "otherday".localized
+        filled.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        filled.attributedTitle?.font = Constants.BaseFont.Tapbar.float
+        filled.baseBackgroundColor = .systemGreen
+        let view = UIButton(configuration: filled, primaryAction: nil)
+        view.layer.cornerRadius = 20
         return view
     }()
     
     let cancelButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("취소", for: .normal)
-        view.titleLabel?.font = Constants.BaseFont.Tapbar.float
-        view.backgroundColor = .systemPink
-        view.layer.cornerRadius = 16
+        var filled = UIButton.Configuration.filled()
+        filled.title = "cancel".localized
+        filled.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        filled.attributedTitle?.font = Constants.BaseFont.Tapbar.float
+        filled.baseBackgroundColor = .systemPink
+        let view = UIButton(configuration: filled, primaryAction: nil)
+        view.layer.cornerRadius = 20
         return view
     }()
     

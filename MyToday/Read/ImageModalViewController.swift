@@ -12,28 +12,28 @@ class ImageModalViewContoller: UIViewController {
     
     let saveButton: UIButton = {
         let view = UIButton()
-        view.setTitle("저장", for: .normal)
+        view.setTitle("save".localized, for: .normal)
         view.setTitleColor(.systemBlue, for: .normal)
         return view
     }()
     
     let cancelButton: UIButton = {
         let view = UIButton()
-        view.setTitle("취소", for: .normal)
+        view.setTitle("cancel".localized, for: .normal)
         view.setTitleColor(.systemBlue, for: .normal)
         return view
     }()
     
     let albumButton: UIButton = {
         let view = UIButton()
-        view.setTitle("앨범", for: .normal)
+        view.setTitle("album".localized, for: .normal)
         view.setTitleColor(.systemBlue, for: .normal)
         return view
     }()
     
     let deleteButton: UIButton = {
         let view = UIButton()
-        view.setTitle("삭제", for: .normal)
+        view.setTitle("delete".localized, for: .normal)
         view.setTitleColor(.systemRed, for: .normal)
         return view
     }()

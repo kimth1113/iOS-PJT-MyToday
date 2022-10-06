@@ -25,6 +25,12 @@
 		8C3DF97828C7AAC7001E69ED /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */; };
 		8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C3DF97A28C7AEB8001E69ED /* SnapKit */; };
 		8C3DF97F28C7B310001E69ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */; };
+		8C476CD328EE04AF000EEC20 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8C476CD228EE04AF000EEC20 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		8C476CD528EE04AF000EEC20 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8C476CD428EE04AF000EEC20 /* FirebaseCrashlytics */; };
+		8C476CD728EE05FF000EEC20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C476CD628EE05FF000EEC20 /* GoogleService-Info.plist */; };
+		8C48582728EDB24800B876E3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48582628EDB24800B876E3 /* String+Extension.swift */; };
+		8C48582928EDE85D00B876E3 /* umeboshi_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C48582828EDE85D00B876E3 /* umeboshi_.ttf */; };
+		8C48582D28EDF2BF00B876E3 /* XiaolaiMonoSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C48582C28EDF2BF00B876E3 /* XiaolaiMonoSC-Regular.ttf */; };
 		8C4CB9C428D9793600825D00 /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9C328D9793600825D00 /* DiaryListView.swift */; };
 		8C4CB9C828D9797200825D00 /* DiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9C728D9797200825D00 /* DiaryListViewController.swift */; };
 		8C4CB9CC28D984AB00825D00 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4CB9CB28D984AB00825D00 /* BaseCollectionViewCell.swift */; };
@@ -34,7 +40,6 @@
 		8C6CD3E928D6399200FAB375 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6CD3E828D6399200FAB375 /* IQKeyboardManagerSwift */; };
 		8C7B46B928E4122C006344B0 /* DateAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B46B828E4122C006344B0 /* DateAlertViewController.swift */; };
 		8C9CD7FD28CEF1030064EA0D /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */; };
-		8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD7FE28CF10650064EA0D /* QuoteView.swift */; };
 		8C9CD80928CF7E1D0064EA0D /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */; };
 		8CAD1AAC28E1F8C5002F1BA3 /* FloatButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD1AAB28E1F8C5002F1BA3 /* FloatButtonView.swift */; };
 		8CAD1AAE28E20DA3002F1BA3 /* EmoticonModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD1AAD28E20DA3002F1BA3 /* EmoticonModalViewController.swift */; };
@@ -55,6 +60,8 @@
 		8CB0904428E0B3D100A4FFF7 /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CB0903C28E0B3D100A4FFF7 /* NanumBarunpenB.ttf */; };
 		8CB0904528E0B3D100A4FFF7 /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CB0903D28E0B3D100A4FFF7 /* NanumBarunpenR.ttf */; };
 		8CB89CF828D9BB5C005A28A2 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB89CF728D9BB5C005A28A2 /* BaseTableViewCell.swift */; };
+		8CC5334B28EE8B9900C48EAD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C48582028EDAFD100B876E3 /* Localizable.strings */; };
+		8CC5337628EEC86D00C48EAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5337828EEC86D00C48EAD /* InfoPlist.strings */; };
 		8CC556D328D70C3A007EFCFE /* ReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D228D70C3A007EFCFE /* ReadView.swift */; };
 		8CC556D528D70C49007EFCFE /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D428D70C49007EFCFE /* ReadViewController.swift */; };
 		8CC556D728D70DEF007EFCFE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */; };
@@ -96,6 +103,16 @@
 		8C3DF97528C7AA05001E69ED /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		8C3DF97728C7AAC7001E69ED /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C3DF97E28C7B310001E69ED /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8C476CD628EE05FF000EEC20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C48581228EDADBF00B876E3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		8C48581428EDADCD00B876E3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		8C48581628EDAE1900B876E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		8C48582128EDB01B00B876E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8C48582328EDB02000B876E3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C48582428EDB02000B876E3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C48582628EDB24800B876E3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		8C48582828EDE85D00B876E3 /* umeboshi_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = umeboshi_.ttf; sourceTree = "<group>"; };
+		8C48582C28EDF2BF00B876E3 /* XiaolaiMonoSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "XiaolaiMonoSC-Regular.ttf"; sourceTree = "<group>"; };
 		8C4CB9C328D9793600825D00 /* DiaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListView.swift; sourceTree = "<group>"; };
 		8C4CB9C728D9797200825D00 /* DiaryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewController.swift; sourceTree = "<group>"; };
 		8C4CB9CB28D984AB00825D00 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,7 +121,6 @@
 		8C6CD3D628D5C34900FAB375 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		8C7B46B828E4122C006344B0 /* DateAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAlertViewController.swift; sourceTree = "<group>"; };
 		8C9CD7FC28CEF1030064EA0D /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
-		8C9CD7FE28CF10650064EA0D /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		8C9CD80828CF7E1D0064EA0D /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
 		8CAD1AAB28E1F8C5002F1BA3 /* FloatButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButtonView.swift; sourceTree = "<group>"; };
 		8CAD1AAD28E20DA3002F1BA3 /* EmoticonModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonModalViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +138,16 @@
 		8CB0903C28E0B3D100A4FFF7 /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.ttf; sourceTree = "<group>"; };
 		8CB0903D28E0B3D100A4FFF7 /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenR.ttf; sourceTree = "<group>"; };
 		8CB89CF728D9BB5C005A28A2 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		8CC5334228EE76FA00C48EAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8CC5334428EE76FA00C48EAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8CC5334628EE76FB00C48EAD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8CC5334828EE76FD00C48EAD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8CC5334D28EE923600C48EAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		8CC5337728EEC86D00C48EAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CC5337928EEC87600C48EAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		8CC5337A28EEC87700C48EAD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CC5337B28EEC87900C48EAD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CC5337C28EECE5400C48EAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CC556D228D70C3A007EFCFE /* ReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadView.swift; sourceTree = "<group>"; };
 		8CC556D428D70C49007EFCFE /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -152,6 +178,8 @@
 				8C3DF97B28C7AEB8001E69ED /* SnapKit in Frameworks */,
 				8CB064A428D3A10F007EB273 /* Realm in Frameworks */,
 				8CB064A628D3A10F007EB273 /* RealmSwift in Frameworks */,
+				8C476CD528EE04AF000EEC20 /* FirebaseCrashlytics in Frameworks */,
+				8C476CD328EE04AF000EEC20 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				8CE284AF28CB9C7700AC91EC /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +225,7 @@
 		8C3DF95928C7A79A001E69ED /* MyToday */ = {
 			isa = PBXGroup;
 			children = (
+				8C476CD628EE05FF000EEC20 /* GoogleService-Info.plist */,
 				8C063CC328EA055700D17C70 /* Setting */,
 				8C235DAF28DF251200CA71F3 /* Analysis */,
 				8CB0649F28D3A06C007EB273 /* Realm */,
@@ -214,6 +243,8 @@
 				8C3DF95C28C7A79A001E69ED /* SceneDelegate.swift */,
 				8C3DF95E28C7A79A001E69ED /* ViewController.swift */,
 				8C3DF96828C7A79B001E69ED /* Info.plist */,
+				8C48582028EDAFD100B876E3 /* Localizable.strings */,
+				8CC5337828EEC86D00C48EAD /* InfoPlist.strings */,
 			);
 			path = MyToday;
 			sourceTree = "<group>";
@@ -280,6 +311,7 @@
 				8CB064AC28D3BED4007EB273 /* FileManager+Extension.swift */,
 				8C6CD3D628D5C34900FAB375 /* DateFormatter+Extension.swift */,
 				8CC556D628D70DEF007EFCFE /* UIColor+Extension.swift */,
+				8C48582628EDB24800B876E3 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +348,8 @@
 		8CC556D828D72BA8007EFCFE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8C48582C28EDF2BF00B876E3 /* XiaolaiMonoSC-Regular.ttf */,
+				8C48582828EDE85D00B876E3 /* umeboshi_.ttf */,
 				8CB0903B28E0B3D100A4FFF7 /* nanum-barun-pen */,
 			);
 			path = Resource;
@@ -347,7 +381,6 @@
 			children = (
 				8C7B46B828E4122C006344B0 /* DateAlertViewController.swift */,
 				8CC5572528D7BE07007EFCFE /* DiaryHeaderView.swift */,
-				8C9CD7FE28CF10650064EA0D /* QuoteView.swift */,
 				8CAE775228D0AF2800A1A799 /* CustomButtonView.swift */,
 				8CAE775628D0CD6F00A1A799 /* EmotionListView.swift */,
 				8CCEC2ED28D1F334003F1487 /* WriteDiaryView.swift */,
@@ -372,6 +405,7 @@
 				8C3DF95328C7A79A001E69ED /* Sources */,
 				8C3DF95428C7A79A001E69ED /* Frameworks */,
 				8C3DF95528C7A79A001E69ED /* Resources */,
+				8C476CD828EE0E58000EEC20 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -387,6 +421,8 @@
 				8C6CD3E828D6399200FAB375 /* IQKeyboardManagerSwift */,
 				8CD39BB128EAC5910038B1FA /* AcknowList */,
 				8CD39BB928EB049F0038B1FA /* Toast */,
+				8C476CD228EE04AF000EEC20 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				8C476CD428EE04AF000EEC20 /* FirebaseCrashlytics */,
 			);
 			productName = MyToday;
 			productReference = 8C3DF95728C7A79A001E69ED /* MyToday.app */;
@@ -414,6 +450,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				ja,
+				"zh-Hans",
 			);
 			mainGroup = 8C3DF94E28C7A79A001E69ED;
 			packageReferences = (
@@ -424,6 +463,7 @@
 				8C6CD3E728D6399200FAB375 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				8CD39BB028EAC5910038B1FA /* XCRemoteSwiftPackageReference "AcknowList" */,
 				8CD39BB828EB049F0038B1FA /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				8C476CD128EE04AE000EEC20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8C3DF95828C7A79A001E69ED /* Products */;
 			projectDirPath = "";
@@ -440,15 +480,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3DF96728C7A79B001E69ED /* LaunchScreen.storyboard in Resources */,
+				8CC5337628EEC86D00C48EAD /* InfoPlist.strings in Resources */,
 				8CB0904528E0B3D100A4FFF7 /* NanumBarunpenR.ttf in Resources */,
+				8C48582D28EDF2BF00B876E3 /* XiaolaiMonoSC-Regular.ttf in Resources */,
 				8C3DF96428C7A79B001E69ED /* Assets.xcassets in Resources */,
+				8C48582928EDE85D00B876E3 /* umeboshi_.ttf in Resources */,
+				8CC5334B28EE8B9900C48EAD /* Localizable.strings in Resources */,
 				8C3DF96228C7A79A001E69ED /* Main.storyboard in Resources */,
+				8C476CD728EE05FF000EEC20 /* GoogleService-Info.plist in Resources */,
 				8CD39BB728EACE000038B1FA /* Package.resolved in Resources */,
 				8CB0904428E0B3D100A4FFF7 /* NanumBarunpenB.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C476CD828EE0E58000EEC20 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C3DF95328C7A79A001E69ED /* Sources */ = {
@@ -467,7 +534,6 @@
 				8CC556D728D70DEF007EFCFE /* UIColor+Extension.swift in Sources */,
 				8C3DF97228C7A92A001E69ED /* BaseViewController.swift in Sources */,
 				8C063CC528EA056200D17C70 /* SettingView.swift in Sources */,
-				8C9CD7FF28CF10650064EA0D /* QuoteView.swift in Sources */,
 				8CB064AD28D3BED4007EB273 /* FileManager+Extension.swift in Sources */,
 				8C36804E28E886AB00D15DDB /* CellFullView.swift in Sources */,
 				8CAD1AAE28E20DA3002F1BA3 /* EmoticonModalViewController.swift in Sources */,
@@ -501,6 +567,7 @@
 				8C4CB9C828D9797200825D00 /* DiaryListViewController.swift in Sources */,
 				8CE284A328CB3C5100AC91EC /* Image.swift in Sources */,
 				8CAD1AB028E219D7002F1BA3 /* ImageModalViewController.swift in Sources */,
+				8C48582728EDB24800B876E3 /* String+Extension.swift in Sources */,
 				8CAE2E7128CDABCE00BA79E0 /* DIYCalendarCell.swift in Sources */,
 				8CAE775328D0AF2800A1A799 /* CustomButtonView.swift in Sources */,
 				8CC556D328D70C3A007EFCFE /* ReadView.swift in Sources */,
@@ -518,6 +585,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C3DF96128C7A79A001E69ED /* Base */,
+				8C48581228EDADBF00B876E3 /* ko */,
+				8C48581428EDADCD00B876E3 /* ja */,
+				8C48581628EDAE1900B876E3 /* zh-Hans */,
+				8CC5334D28EE923600C48EAD /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -526,8 +597,34 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C3DF96628C7A79B001E69ED /* Base */,
+				8CC5334228EE76FA00C48EAD /* en */,
+				8CC5334428EE76FA00C48EAD /* zh-Hans */,
+				8CC5334628EE76FB00C48EAD /* ko */,
+				8CC5334828EE76FD00C48EAD /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8C48582028EDAFD100B876E3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C48582128EDB01B00B876E3 /* zh-Hans */,
+				8C48582328EDB02000B876E3 /* ja */,
+				8C48582428EDB02000B876E3 /* ko */,
+				8CC5337C28EECE5400C48EAD /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		8CC5337828EEC86D00C48EAD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CC5337728EEC86D00C48EAD /* en */,
+				8CC5337928EEC87600C48EAD /* zh-Hans */,
+				8CC5337A28EEC87700C48EAD /* ja */,
+				8CC5337B28EEC87900C48EAD /* ko */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -537,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -566,7 +664,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -583,6 +681,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -597,6 +696,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -637,6 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -654,15 +755,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = MZV9V5LY2T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyToday/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "나는오늘";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진촬영을 위하여 카메라 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진을 불러오기 위하여 갤러리 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -671,7 +776,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tason.TodayIWas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -695,10 +800,13 @@
 				INFOPLIST_FILE = MyToday/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "나는오늘";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진촬영을 위하여 카메라 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진을 불러오기 위하여 갤러리 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -707,7 +815,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tason.TodayIWas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -749,6 +857,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
+			};
+		};
+		8C476CD128EE04AE000EEC20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
 		8C6CD3E728D6399200FAB375 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
@@ -806,6 +922,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C3DF97928C7AEB8001E69ED /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8C476CD228EE04AF000EEC20 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C476CD128EE04AE000EEC20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		8C476CD428EE04AF000EEC20 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C476CD128EE04AE000EEC20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		8C6CD3E828D6399200FAB375 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

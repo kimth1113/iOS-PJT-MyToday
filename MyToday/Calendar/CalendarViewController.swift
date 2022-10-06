@@ -9,6 +9,7 @@ import UIKit
 import FSCalendar
 import SnapKit
 import Toast
+import FirebaseAnalytics
 
 class CalendarViewController: BaseViewController {
     
@@ -153,6 +154,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
     
     // didSelect
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
         switch FormatterRepository.eDateFormatter.string(from: date) {
         case "토":
             calendar.appearance.titleSelectionColor = UIColor(rgb: 0x3742fa)
@@ -171,7 +173,13 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         }
         
         if date > Date() {
-            self.view.makeToast("일기를 미리 작성할 수 없어요", duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
+            
+            Analytics.logEvent("캘린더 날짜 탭", parameters: [
+                "날짜종류": "미래 날짜",
+                "날짜정보": "\(date)",
+            ])
+            
+            self.view.makeToast("toast_unwritable".localized, duration: 2.0, point: CGPoint(x: mainView.bounds.width / 2, y: mainView.bounds.height - 150), title: nil, image: nil) { _ in
             }
             return
         }
@@ -181,8 +189,20 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         
         if let diary = repository.getDiary(date: date) {
             vc.diary = diary
+            
+            Analytics.logEvent("캘린더 날짜 탭", parameters: [
+                "날짜종류": "적절한 날짜",
+                "날짜정보": "\(date)",
+                "일기유무": "있음(수정)"
+            ])
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
+            
+            Analytics.logEvent("캘린더 날짜 탭", parameters: [
+                "날짜종류": "적절한 날짜",
+                "날짜정보": "\(date)",
+                "일기유무": "없음(신규)"
+            ])
         }
         
         vc.reloadCalendar = reloadCalendar
@@ -222,7 +242,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
 // Status Bar 설정
 extension CalendarViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .darkContent
     }
         
     override var prefersStatusBarHidden: Bool {

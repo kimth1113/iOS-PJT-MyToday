@@ -41,7 +41,7 @@ class DiaryListView: BaseView {
     
     let headerLabel: UILabel = {
         let view = UILabel()
-        view.text = "일기모음"
+        view.text = "list_header".localized
         view.font = Constants.BaseFont.DiaryList.header
         view.textColor = .black
         view.layer.opacity = 0.6
@@ -62,21 +62,21 @@ class DiaryListView: BaseView {
         return view
     }()
     
-    let searchBar: UISearchBar = {
-        let view = UISearchBar()
-        view.backgroundColor = .clear
-        view.tintColor = .white
-        view.barTintColor = .clear
-        view.searchTextField.textColor = .white
-        view.searchTextField.placeholder = "기억나는 키워드를 입력해주세요."
-        view.isHidden = true
-        view.showsCancelButton = true
-        view.layer.cornerRadius = 16
-        return view
-    }()
+//    let searchBar: UISearchBar = {
+//        let view = UISearchBar()
+//        view.backgroundColor = .clear
+//        view.tintColor = .white
+//        view.barTintColor = .clear
+//        view.searchTextField.textColor = .white
+//        view.searchTextField.placeholder = "기억나는 키워드를 입력해주세요."
+//        view.isHidden = true
+//        view.showsCancelButton = true
+//        view.layer.cornerRadius = 16
+//        return view
+//    }()
     
     override func configureUI() {
-        [backgroundImage, subBackground, headerLabel, emoticonCollectionView, underline, diaryTableView, searchBar].forEach {
+        [backgroundImage, subBackground, headerLabel, emoticonCollectionView, underline, diaryTableView].forEach {
             addSubview($0)
         }
     }
@@ -101,9 +101,9 @@ class DiaryListView: BaseView {
             make.top.equalTo(safeAreaLayoutGuide)
         }
         
-        searchBar.snp.makeConstraints { make in
-            make.edges.equalTo(emoticonCollectionView)
-        }
+//        searchBar.snp.makeConstraints { make in
+//            make.edges.equalTo(emoticonCollectionView)
+//        }
         
         emoticonCollectionView.snp.makeConstraints { make in
             make.top.equalTo(headerLabel.snp.bottom)

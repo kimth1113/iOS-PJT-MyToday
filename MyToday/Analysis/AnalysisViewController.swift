@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import FirebaseAnalytics
 
 class AnalysisViewController: BaseViewController {
     
@@ -34,6 +35,11 @@ class AnalysisViewController: BaseViewController {
         let analysisDate = FormatterRepository.analysisMonthFormatter.string(from: date)
         self.mainView.dateButton.setTitle(analysisDate, for: .normal)
         self.diaryList = self.repository.getAnalysisDiaryList(date: date)
+        
+        Analytics.logEvent("분석 월자 탭", parameters: [
+            "월정보": "\(date)",
+            "일기횟수": "\(self.diaryList.count)"
+        ])
     }
     
     lazy var reloadAnalysis: (() -> Void) = {
@@ -60,66 +66,66 @@ class AnalysisViewController: BaseViewController {
             }
             
             if let count = emoticonCount[1] {
-                mainView.analysisEmoticonView.emotionCountView.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[2] {
-                mainView.analysisEmoticonView.emotionCountView2.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView2.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView2.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView2.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView2.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView2.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[3] {
-                mainView.analysisEmoticonView.emotionCountView3.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView3.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView3.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView3.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView3.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView3.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[4] {
-                mainView.analysisEmoticonView.emotionCountView4.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView4.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView4.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView4.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView4.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView4.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[5] {
-                mainView.analysisEmoticonView.emotionCountView5.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView5.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView5.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView5.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView5.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView5.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[6] {
-                mainView.analysisEmoticonView.emotionCountView6.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView6.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView6.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView6.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView6.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView6.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[7] {
-                mainView.analysisEmoticonView.emotionCountView7.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView7.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView7.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView7.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView7.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView7.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[8] {
-                mainView.analysisEmoticonView.emotionCountView8.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView8.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView8.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView8.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView8.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView8.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             if let count = emoticonCount[9] {
-                mainView.analysisEmoticonView.emotionCountView9.countLabel.text = "\(count)일"
+                mainView.analysisEmoticonView.emotionCountView9.countLabel.text = "\(count)"
                 mainView.analysisEmoticonView.emotionCountView9.countLabel.textColor = .white
             } else {
-                mainView.analysisEmoticonView.emotionCountView9.countLabel.text = "없음"
+                mainView.analysisEmoticonView.emotionCountView9.countLabel.text = "zero".localized
                 mainView.analysisEmoticonView.emotionCountView9.countLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
             }
             
@@ -180,6 +186,11 @@ extension AnalysisViewController {
         
         self.mainView.dateButton.setTitle(nextString, for: .normal)
         self.diaryList = self.repository.getAnalysisDiaryList(date: nextDate!)
+        
+        Analytics.logEvent("분석 월자 왼쪽 탭", parameters: [
+            "월정보": "\(nextDate!)",
+            "일기횟수": "\(self.diaryList.count)"
+        ])
     }
     
     @objc
@@ -191,6 +202,11 @@ extension AnalysisViewController {
         
         self.mainView.dateButton.setTitle(nextString, for: .normal)
         self.diaryList = self.repository.getAnalysisDiaryList(date: nextDate!)
+        
+        Analytics.logEvent("분석 월자 오른쪽 탭", parameters: [
+            "월정보": "\(nextDate!)",
+            "일기횟수": "\(self.diaryList.count)"
+        ])
     }
     
 //    private func textRankAnalysis(text: String) {

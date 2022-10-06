@@ -19,7 +19,7 @@ class SettingView: BaseView {
     
     let header: UILabel = {
         let view = UILabel()
-        view.text = "정보"
+        view.text = "setting_header".localized
         view.font = Constants.BaseFont.Analysis.header
         view.textColor = .black
         view.layer.opacity = 0.6
@@ -28,16 +28,16 @@ class SettingView: BaseView {
     
     let appInfoView: AppInfoView = {
         let view = AppInfoView()
-        view.backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.2)
+        view.backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.6)
         view.layer.cornerRadius = 8
         return view
     }()
     
     let reviewButtonView: CustomButtonView = {
         let view = CustomButtonView()
-        view.backgroundColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.3)
+        view.backgroundColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.6)
         view.layer.cornerRadius = 8
-        view.customButton.setTitle("리뷰쓰기", for: .normal)
+        view.customButton.setTitle("setting_review".localized, for: .normal)
         view.customButton.titleLabel?.font = Constants.BaseFont.DiaryList.header
         view.customButton.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.8), for: .normal)
         return view
@@ -45,9 +45,9 @@ class SettingView: BaseView {
     
     let openInfoButtonView: CustomButtonView = {
         let view = CustomButtonView()
-        view.backgroundColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.3)
+        view.backgroundColor = UIColor(red: 255/255, green: 107/255, blue: 129/255, alpha: 0.6)
         view.layer.cornerRadius = 8
-        view.customButton.setTitle("오픈소스\n라이센스", for: .normal)
+        view.customButton.setTitle("setting_license".localized, for: .normal)
         view.customButton.titleLabel?.textAlignment = .center
         view.customButton.titleLabel?.lineBreakMode = .byWordWrapping
         view.customButton.titleLabel?.font = Constants.BaseFont.DiaryList.header
@@ -57,9 +57,9 @@ class SettingView: BaseView {
     
     let mailButtonView: CustomButtonView = {
         let view = CustomButtonView()
-        view.backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.2)
+        view.backgroundColor = UIColor(red: 18/255, green: 137/255, blue: 167/255, alpha: 0.6)
         view.layer.cornerRadius = 8
-        view.customButton.setTitle("개발자\n메일문의", for: .normal)
+        view.customButton.setTitle("setting_mail".localized, for: .normal)
         view.customButton.titleLabel?.textAlignment = .center
         view.customButton.titleLabel?.lineBreakMode = .byWordWrapping
         view.customButton.titleLabel?.font = Constants.BaseFont.DiaryList.header

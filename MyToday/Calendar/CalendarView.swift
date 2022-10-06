@@ -42,7 +42,7 @@ class CalendarView: BaseView {
 //        view.layer.cornerRadius = 20
         
         //언어 한국어로 변경
-        view.locale = Locale(identifier: "ko_KR")
+        view.locale = Locale(identifier: "locale_identifier".localized)
         
         //MARK: -상단 헤더 뷰 관련
         view.headerHeight = 0 // YYYY년 M월 표시부 영역 높이

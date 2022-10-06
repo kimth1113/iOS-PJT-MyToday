@@ -66,13 +66,13 @@ extension SettingViewController: MFMailComposeViewControllerDelegate {
             
             let mail = MFMailComposeViewController()
             mail.setToRecipients(["kimth1113@gmail.com"])
-            mail.setSubject("[문의] 나는오늘 : ")
+            mail.setSubject("setting_mail_subject".localized)
             mail.mailComposeDelegate = self
             
             self.present(mail, animated: true)
         } else {
-            let alert = UIAlertController(title: nil, message: "아이폰의 메일 APP에 이메일이 미등록 상태입니다.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            let alert = UIAlertController(title: nil, message: "alert_nomail".localized, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
                 self.dismiss(animated: true)
             }
             alert.addAction(ok)

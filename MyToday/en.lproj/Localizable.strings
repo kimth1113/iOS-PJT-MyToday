@@ -1,0 +1,126 @@
+/*
+  Localizable.strings
+  MyToday
+
+  Created by 김태현 on 2022/10/05.
+  
+*/
+
+"font_normal" = "NanumBarunpen";
+
+"font_bold" = "NanumBarunpen-Bold";
+
+"locale_identifier" = "en_US";
+
+"year" = "";
+
+"month" = ".";
+
+"day" = "";
+
+"eday" = "";
+
+"today" = "Today";
+
+"yesterday" = "Yesterday";
+
+"otherday" = "Otherday";
+
+"cancel" = "Cancel";
+
+"ok" = "Ok";
+
+"save" = "Save";
+
+"noimage" = "No Image";
+
+"album" = "Album";
+
+"delete" = "Delete";
+
+"zero" = "0";
+
+"jan" = "Jan";
+
+"feb" = "Feb";
+
+"mar" = "Mar";
+
+"apr" = "Apr";
+
+"may" = "May";
+
+"jun" = "Jun";
+
+"jul" = "Jul";
+
+"aug" = "Aug";
+
+"sep" = "Sep";
+
+"oct" = "Oct";
+
+"nov" = "Nov";
+
+"dec" = "Dec";
+
+"all" = "All";
+
+"happy" = "Happy";
+
+"kiss" = "Kiss";
+
+"normal" = "So-so";
+
+"angry" = "Angry";
+
+"sad" = "Sad";
+
+"fear" = "Scared";
+
+"sick" = "Sick";
+
+"boring" = "Bored";
+
+"sleeping" = "Tired";
+
+"toast_unwritable" = "You can't keep a diary in advance";
+
+"alert_quit" = "Are you sure you want to stop writing and leave?";
+
+"alert_quit_delete" = "Since no data has been written, the diary will be deleted.";
+
+"alert_delete" = "Are you sure you want to delete the diary?";
+
+"alert_emoticon" = "Click the 'Select Emoticon' and select your emotion of the day.";
+
+"alert_quit_noedit" = "Nothing has been modified.\nAre you sure you want to leave?";
+
+"alert_edit" = "Are you sure you want to edit?";
+
+"alert_save" = "Are you sure you want to save?";
+
+"read_emoticon" = "Select Emotion\n(required)";
+
+"read_image" = "Select Photo";
+
+"read_placeholder" = "Write down your precious moments.";
+
+"list_header" = "Diary List";
+
+"analysis_count" = "Number of Writes";
+
+"analysis_random" = "Random Photo";
+
+"setting_header" = "Information";
+
+"setting_review" = "Review\non App Store";
+
+"setting_license" = "OpenSource\nLicense";
+
+"setting_mail" = "Send a mail\nto Developer";
+
+"setting_mail_subject" = "[Contact] Today I Was:";
+
+"alert_nomail" = "The email is not registered in the iPhone's Mail APP.";
+

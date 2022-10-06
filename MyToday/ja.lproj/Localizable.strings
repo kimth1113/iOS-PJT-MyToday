@@ -1,0 +1,125 @@
+/* 
+  Localizable.strings
+  MyToday
+
+  Created by 김태현 on 2022/10/05.
+  
+*/
+
+"font_normal" = "umeboshi";
+
+"font_bold" = "umeboshi";
+
+"locale_identifier" = "ja_JP";
+
+"year" = "";
+
+"month" = "月";
+
+"day" = "日";
+
+"eday" = "曜日";
+
+"today" = "今日";
+
+"yesterday" = "昨日";
+
+"otherday" = "他の日";
+
+"cancel" = "キャンセル";
+
+"ok" = "確認";
+
+"save" = "保存";
+
+"noimage" = "写真未登録";
+
+"album" = "アルバム";
+
+"delete" = "削除";
+
+"zero" = "0";
+
+"jan" = "1月";
+
+"feb" = "2月";
+
+"mar" = "3月";
+
+"apr" = "4月";
+
+"may" = "5月";
+
+"jun" = "6月";
+
+"jul" = "7月";
+
+"aug" = "8月";
+
+"sep" = "9月";
+
+"oct" = "10月";
+
+"nov" = "11月";
+
+"dec" = "12月";
+
+"all" = "全体";
+
+"happy" = "幸せ";
+
+"kiss" = "愛";
+
+"normal" = "通常";
+
+"angry" = "怒り";
+
+"sad" = "悲しみ";
+
+"fear" = "怖い";
+
+"sick" = "痛み";
+
+"boring" = "退屈";
+
+"sleeping" = "疲れた";
+
+"toast_unwritable" = "事前に日記をつけることはできません";
+
+"alert_quit" = "書き込みを停止して終了してもよろしいですか？";
+
+"alert_quit_delete" = "データが書き込まれていないため、日記は削除されます。";
+
+"alert_delete" = "日記を削除してもよろしいですか？";
+
+"alert_emoticon" = "「絵文字の選択」をクリックして、その日の感情を選択します。";
+
+"alert_quit_noedit" = "何も変更されていません。\n本当に終了しますか?";
+
+"alert_edit" = "編集してもよろしいですか？";
+
+"alert_save" = "保存してもよろしいですか？";
+
+"read_emoticon" = "感情を選択\n(必須)";
+
+"read_image" = "写真を選択";
+
+"read_placeholder" = "あなたの大切な瞬間を書き留めてください。";
+
+"list_header" = "日記コレクション";
+
+"analysis_count" = "日記作成回数";
+
+"analysis_random" = "ランダム写真";
+
+"setting_header" = "情報";
+
+"setting_review" = "レビュー\n作成";
+
+"setting_license" = "オープンソース\nライセンス";
+
+"setting_mail" = "開発者に\n連絡する";
+
+"setting_mail_subject" = "[お問い合わせ] 私は今日：";
+
+"alert_nomail" = "メールがiPhoneのメールアプリに登録されていません。";

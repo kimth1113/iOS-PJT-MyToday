@@ -2,27 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>http://aiopen.etri.re.kr</key>
-			<dict>
-				<key>NSExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-		</dict>
-	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>사진을 불러오기 위하여 갤러리 접근 권한이 필요합니다.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>사진촬영을 위하여 카메라 접근 권한이 필요합니다.</string>
+	<key>CFBundleDisplayName</key>
+	<string>나는오늘</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NanumBarunpenB.ttf</string>
 		<string>NanumBarunpenR.ttf</string>
+		<string>umeboshi_.ttf</string>
+		<string>XiaolaiMonoSC-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

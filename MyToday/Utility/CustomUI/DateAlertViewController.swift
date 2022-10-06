@@ -56,7 +56,7 @@ class DateAlertViewController: BaseViewController {
     
     let janButton: UIButton = {
         let view = UIButton()
-        view.setTitle("1월", for: .normal)
+        view.setTitle("jan".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 1
@@ -65,7 +65,7 @@ class DateAlertViewController: BaseViewController {
     
     let febButton: UIButton = {
         let view = UIButton()
-        view.setTitle("2월", for: .normal)
+        view.setTitle("feb".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 2
@@ -74,7 +74,7 @@ class DateAlertViewController: BaseViewController {
     
     let marButton: UIButton = {
         let view = UIButton()
-        view.setTitle("3월", for: .normal)
+        view.setTitle("mar".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 3
@@ -83,7 +83,7 @@ class DateAlertViewController: BaseViewController {
     
     let aprButton: UIButton = {
         let view = UIButton()
-        view.setTitle("4월", for: .normal)
+        view.setTitle("apr".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 4
@@ -92,7 +92,7 @@ class DateAlertViewController: BaseViewController {
     
     let mayButton: UIButton = {
         let view = UIButton()
-        view.setTitle("5월", for: .normal)
+        view.setTitle("may".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 5
@@ -101,7 +101,7 @@ class DateAlertViewController: BaseViewController {
     
     let juneButton: UIButton = {
         let view = UIButton()
-        view.setTitle("6월", for: .normal)
+        view.setTitle("jun".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 6
@@ -110,7 +110,7 @@ class DateAlertViewController: BaseViewController {
     
     let julyButton: UIButton = {
         let view = UIButton()
-        view.setTitle("7월", for: .normal)
+        view.setTitle("jul".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 7
@@ -119,7 +119,7 @@ class DateAlertViewController: BaseViewController {
     
     let augButton: UIButton = {
         let view = UIButton()
-        view.setTitle("8월", for: .normal)
+        view.setTitle("aug".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 8
@@ -128,7 +128,7 @@ class DateAlertViewController: BaseViewController {
     
     let sepButton: UIButton = {
         let view = UIButton()
-        view.setTitle("9월", for: .normal)
+        view.setTitle("sep".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 9
@@ -137,7 +137,7 @@ class DateAlertViewController: BaseViewController {
     
     let octButton: UIButton = {
         let view = UIButton()
-        view.setTitle("10월", for: .normal)
+        view.setTitle("oct".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 10
@@ -146,7 +146,7 @@ class DateAlertViewController: BaseViewController {
     
     let novButton: UIButton = {
         let view = UIButton()
-        view.setTitle("11월", for: .normal)
+        view.setTitle("nov".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 11
@@ -155,7 +155,7 @@ class DateAlertViewController: BaseViewController {
     
     let decButton: UIButton = {
         let view = UIButton()
-        view.setTitle("12월", for: .normal)
+        view.setTitle("dec".localized, for: .normal)
         view.titleLabel?.font = Constants.BaseFont.DateAlert.month
         view.setTitleColor(.white, for: .normal)
         view.tag = 12

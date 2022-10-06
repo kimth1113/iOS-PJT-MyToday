@@ -12,7 +12,7 @@ class CellFullView: BaseView {
     
     let noImageLabel: UILabel = {
         let view = UILabel()
-        view.text = "사진 미등록"
+        view.text = "noimage".localized
         view.font = Constants.BaseFont.DiaryList.content
         view.textColor = .white
         return view

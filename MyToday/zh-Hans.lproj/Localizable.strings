@@ -1,0 +1,125 @@
+/* 
+  Localizable.strings
+  MyToday
+
+  Created by 김태현 on 2022/10/05.
+  
+*/
+
+"font_normal" = "XiaolaiMonoSC";
+
+"font_bold" = "XiaolaiMonoSC";
+
+"locale_identifier" = "zh_Hans_CN";
+
+"year" = "年";
+
+"month" = "月";
+
+"day" = "日";
+
+"eday" = "";
+
+"today" = "今天";
+
+"yesterday" = "昨天";
+
+"otherday" = "另一天";
+
+"cancel" = "取消";
+
+"ok" = "确认";
+
+"save" = "节省";
+
+"noimage" = "照片未注册";
+
+"album" = "专辑";
+
+"delete" = "删除";
+
+"zero" = "0";
+
+"jan" = "1月";
+
+"feb" = "2月";
+
+"mar" = "3月";
+
+"apr" = "4月";
+
+"may" = "5月";
+
+"jun" = "6月";
+
+"jul" = "7月";
+
+"aug" = "8月";
+
+"sep" = "9月";
+
+"oct" = "10月";
+
+"nov" = "11月";
+
+"dec" = "12月";
+
+"all" = "全部";
+
+"happy" = "幸福";
+
+"kiss" = "激动";
+
+"normal" = "普通";
+
+"angry" = "生气的";
+
+"sad" = "伤心";
+
+"fear" = "恐惧";
+
+"sick" = "生病的";
+
+"boring" = "无聊的";
+
+"sleeping" = "疲劳的";
+
+"toast_unwritable" = "你不能提前写日记";
+
+"alert_quit" = "您确定要停止写作并离开吗？";
+
+"alert_quit_delete" = "由于没有写入任何数据，因此该日记将被删除。";
+
+"alert_delete" = "确定要删除日记吗？";
+
+"alert_emoticon" = "单击“选择表情符号”并选择您当天的情绪。";
+
+"alert_quit_noedit" = "未修改任何内容。\n您确定要离开吗？";
+
+"alert_edit" = "您确定要编辑吗？";
+
+"alert_save" = "您确定要保存吗？";
+
+"read_emoticon" = "选择情感\n[必填]";
+
+"read_image" = "选择照片";
+
+"read_placeholder" = "写下你珍贵的时刻。";
+
+"list_header" = "日记清单";
+
+"analysis_count" = "我记日记的次数";
+
+"analysis_random" = "随机图片";
+
+"setting_header" = "信息";
+
+"setting_review" = "写评论";
+
+"setting_license" = "开源\n许可证";
+
+"setting_mail" = "给开发商\n发送电子邮件";
+
+"setting_mail_subject" = "[联系我们] 今天我 ： ";
+
+"alert_nomail" = "该电子邮件未在 iPhone 的 Mail APP 中注册。";
