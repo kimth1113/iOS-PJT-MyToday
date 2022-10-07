@@ -130,7 +130,7 @@ extension DiaryListViewController: UICollectionViewDelegate, UICollectionViewDat
 
         currentEmotion = indexPath.row
         
-        Analytics.logEvent("감정 컬렉션 탭", parameters: [
+        Analytics.logEvent("tap_emotion_collection", parameters: [
             "감정종류": "\(emotionList[indexPath.row])",
             "감정일기개수": "\(diaryList.count)",
         ])

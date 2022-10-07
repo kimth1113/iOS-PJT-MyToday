@@ -36,7 +36,7 @@ class AnalysisViewController: BaseViewController {
         self.mainView.dateButton.setTitle(analysisDate, for: .normal)
         self.diaryList = self.repository.getAnalysisDiaryList(date: date)
         
-        Analytics.logEvent("분석 월자 탭", parameters: [
+        Analytics.logEvent("tap_analysis", parameters: [
             "월정보": "\(date)",
             "일기횟수": "\(self.diaryList.count)"
         ])
@@ -187,7 +187,7 @@ extension AnalysisViewController {
         self.mainView.dateButton.setTitle(nextString, for: .normal)
         self.diaryList = self.repository.getAnalysisDiaryList(date: nextDate!)
         
-        Analytics.logEvent("분석 월자 왼쪽 탭", parameters: [
+        Analytics.logEvent("tap_analysis_left", parameters: [
             "월정보": "\(nextDate!)",
             "일기횟수": "\(self.diaryList.count)"
         ])
@@ -203,7 +203,7 @@ extension AnalysisViewController {
         self.mainView.dateButton.setTitle(nextString, for: .normal)
         self.diaryList = self.repository.getAnalysisDiaryList(date: nextDate!)
         
-        Analytics.logEvent("분석 월자 오른쪽 탭", parameters: [
+        Analytics.logEvent("tap_analysis_right", parameters: [
             "월정보": "\(nextDate!)",
             "일기횟수": "\(self.diaryList.count)"
         ])

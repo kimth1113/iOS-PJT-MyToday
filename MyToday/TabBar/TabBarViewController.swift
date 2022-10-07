@@ -231,7 +231,7 @@ extension TabBarViewController {
         if let diary = self.repository.getDiary(date: date) {
             vc.diary = diary
             
-            Analytics.logEvent("연필 버튼 탭", parameters: [
+            Analytics.logEvent("tap_pencel_float", parameters: [
                 "날짜종류": "오늘",
                 "날짜정보": "\(date)",
                 "일기유무": "있음(수정)"
@@ -239,7 +239,7 @@ extension TabBarViewController {
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
             
-            Analytics.logEvent("연필 버튼 탭", parameters: [
+            Analytics.logEvent("tap_pencel_float", parameters: [
                 "날짜종류": "오늘",
                 "날짜정보": "\(date)",
                 "일기유무": "없음(신규)"
@@ -265,7 +265,7 @@ extension TabBarViewController {
         if let diary = self.repository.getDiary(date: date) {
             vc.diary = diary
             
-            Analytics.logEvent("연필 버튼 탭", parameters: [
+            Analytics.logEvent("tap_pencel_float", parameters: [
                 "날짜종류": "어제",
                 "날짜정보": "\(date)",
                 "일기유무": "있음(수정)"
@@ -273,7 +273,7 @@ extension TabBarViewController {
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
             
-            Analytics.logEvent("연필 버튼 탭", parameters: [
+            Analytics.logEvent("tap_pencel_float", parameters: [
                 "날짜종류": "어제",
                 "날짜정보": "\(date)",
                 "일기유무": "없음(신규)"
@@ -315,7 +315,7 @@ extension TabBarViewController {
         if let diary = self.repository.getDiary(date: date) {
             vc.diary = diary
             
-            Analytics.logEvent("연필 버튼 탭", parameters: [
+            Analytics.logEvent("tap_pencel_float", parameters: [
                 "날짜종류": "다른날",
                 "날짜정보": "\(date)",
                 "일기유무": "있음(수정)"
@@ -323,7 +323,7 @@ extension TabBarViewController {
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
             
-            Analytics.logEvent("연필 버튼 탭", parameters: [
+            Analytics.logEvent("tap_pencel_float", parameters: [
                 "날짜종류": "다른날",
                 "날짜정보": "\(date)",
                 "일기유무": "없음(신규)"

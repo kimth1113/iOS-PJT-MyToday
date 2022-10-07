@@ -50,7 +50,11 @@ class CalendarViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        Analytics.logEvent("booting_total_count", parameters: [
+            "booting": "booting",
+        ])
+
         mainView.leftButton.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
         mainView.rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         mainView.headerButton.addTarget(self, action: #selector(headerButtonTapped), for: .touchUpInside)
@@ -174,7 +178,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         
         if date > Date() {
             
-            Analytics.logEvent("캘린더 날짜 탭", parameters: [
+            Analytics.logEvent("tap_calendar_date", parameters: [
                 "날짜종류": "미래 날짜",
                 "날짜정보": "\(date)",
             ])
@@ -190,7 +194,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         if let diary = repository.getDiary(date: date) {
             vc.diary = diary
             
-            Analytics.logEvent("캘린더 날짜 탭", parameters: [
+            Analytics.logEvent("tap_calendar_date", parameters: [
                 "날짜종류": "적절한 날짜",
                 "날짜정보": "\(date)",
                 "일기유무": "있음(수정)"
@@ -198,7 +202,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
         } else {
             vc.diary = Diary(objectId: date, emotionId: 0, content: nil)
             
-            Analytics.logEvent("캘린더 날짜 탭", parameters: [
+            Analytics.logEvent("tap_calendar_date", parameters: [
                 "날짜종류": "적절한 날짜",
                 "날짜정보": "\(date)",
                 "일기유무": "없음(신규)"

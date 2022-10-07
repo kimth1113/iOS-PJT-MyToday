@@ -237,7 +237,7 @@ extension ReadViewController {
             alert.addAction(ok)
             present(alert, animated: true)
             
-            Analytics.logEvent("일기 작성 수정", parameters: [
+            Analytics.logEvent("edit_diary", parameters: [
                 "objectId": "\(diary.objectId)",
                 "content": "감정 : \(diary.emoticonId), 일기내용 : \(diary.content ?? "")",
             ])
@@ -268,9 +268,9 @@ extension ReadViewController {
             alert.addAction(ok)
             present(alert, animated: true)
             
-            Analytics.logEvent("일기 작성 신규", parameters: [
+            Analytics.logEvent("create_diary", parameters: [
                 "objectId": "\(diary.objectId)",
-                "content": "감정 : \(diary.emoticonId), 일기내용 : \(diary.content ?? "")",
+                "content": "감정 : \(newEmoticonId), 일기내용 : \(newContent ?? "")",
             ])
         }
 

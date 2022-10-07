@@ -7,3 +7,7 @@
 */
 
 "CFBundleDisplayName" = "Today I Was";
+
+"NSPhotoLibraryUsageDescription" = "Gallery access is required to load photos.";
+
+"NSCameraUsageDescription" = "Camera access is required to take pictures.";

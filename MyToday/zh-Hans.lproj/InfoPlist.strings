@@ -7,3 +7,7 @@
 */
 
 "CFBundleDisplayName" = "今天我";
+
+"NSPhotoLibraryUsageDescription" = "加载照片需要画廊访问权限。";
+
+"NSCameraUsageDescription" = "需要使用相机才能拍照。";

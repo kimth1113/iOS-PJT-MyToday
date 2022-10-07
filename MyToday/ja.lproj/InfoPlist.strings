@@ -7,3 +7,7 @@
 */
 
 "CFBundleDisplayName" = "私は今日";
+
+"NSPhotoLibraryUsageDescription" = "写真を読み込むには、ギャラリーへのアクセスが必要です。";
+
+"NSCameraUsageDescription" = "写真を撮るにはカメラへのアクセスが必要です。";
