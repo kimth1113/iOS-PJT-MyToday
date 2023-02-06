@@ -59,10 +59,10 @@ class CalendarView: BaseView {
         
         //MARK: -오늘 날짜(Today) 관련
 //        view.appearance.titleTodayColor = .green //Today에 표시되는 특정 글자색
-//        view.appearance.todayColor = .none //Today에 표시되는 선택 전 동그라미 색
-//        view.appearance.todaySelectionColor = .green  //Today에 표시되는 선택 후 동그라미 색
+//        view.appearance.todayColor = .none //Today에 표시되는 선택 전 동그라미색
+//        view.appearance.todaySelectionColor = .green  //Today에 표시되는 선택 후 동그라미색
         
-        // Month 폰트 설정
+        // Month 폰트설정
 //        view.appearance.headerTitleFont = .boldSystemFont(ofSize: 28)
         
         // day 폰트 설정

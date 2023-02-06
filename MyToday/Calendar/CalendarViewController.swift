@@ -130,7 +130,6 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource, FSCa
             cell.titleImageView.layer.opacity = 0.7
         }
         
-        
         return cell
     }
     

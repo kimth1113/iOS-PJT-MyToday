@@ -105,7 +105,7 @@ extension DiaryListViewController: UICollectionViewDelegate, UICollectionViewDat
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmotionCollectionViewCell.reuseIdentifier, for: indexPath) as? EmotionCollectionViewCell else {
             return UICollectionViewCell()
-        }
+        } 
         
         cell.setCellDate(emotionLabel: emotionList[indexPath.row])
         
